@@ -1,430 +1,1045 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Lemobot (OPC) Private Limited">
-    <meta name="description" content="Lemobot (OPC) Private Limited - Web Development, WordPress, WooCommerce, .NET services.">
-    <meta name="keywords" content="Lemobot, web development, WordPress, WooCommerce, .NET, freelancer">
-    <link rel="shortcut icon" href="favicon.png">
-    <!-- Fonts & CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=PT+Mono&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Lemobot (OPC) Private Limited</title>
-    <style>
-        html
-        {
-            scroll-behavior: smooth;
-        }
-        .btn, .nav-link, .logo
-        {
-            transition: all 0.3s ease-in-out;
-        }
-        .btn:hover
-        {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Links Of CSS File -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/fonts/flaticon_mycollection.css">
+    <link rel="stylesheet" href="assets/css/scrollCue.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Title -->
+    <title>Lemobot - Web & AI Solutions Crafted with Lemobot.</title>
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919819413273" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-        <img src="whatsapp.png" alt="WhatsApp Chat" style="width: 45px; height: 45px;">
-    </a>
-    <style>
-        .whatsapp-float
-        {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-    </style>
-    <div class="lines-wrap">
-        <div class="lines-inner">
-            <div class="lines">
+<body>
+    <!-- Preloader Area Start -->
+    <div class="preloader-area position-fixed text-center" id="preloader">
+        <div class="cube-wrapper">
+            <div class="cube-folding">
+                <span class="leaf1"></span><span class="leaf2"></span><span class="leaf3"></span>
+                <span class="leaf4"></span>
+            </div>
+            <span class="loading" data-name="Loading">Lemobot<span>.</span> </span>
+        </div>
+    </div>
+    <!-- Preloader Area End -->
+    <!-- Start Navbar Area -->
+    <nav class="navbar navbar-expand-lg style1" id="navbar">
+            <div class="container-fluid">
+         <a class="navbar-brand" href="index.html" style="font-size: 32px; font-weight: bold; color: white;">
+    Lemobot<span style="color: #007bff;">.</span>
+</a>
+                <button class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
+                    <span class="burger-menu">
+                        <span class="top-bar"></span>
+                        <span class="middle-bar"></span>
+                        <span class="bottom-bar"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                            <a href="/" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="/about/" class="nav-link">About <span>Us</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/services/" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/projects/" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact/" class="nav-link ">Contact 
+                                <span>Us</span> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!-- End Navbar Area -->
+    <!-- Start Mobile Device Navbar Area -->
+    <div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="index.html" style="font-size: 32px; font-weight: bold;
+                color: black;">Lemobot<span style="color: #007bff;">.</span> </a>
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="accordion" id="navbarAccordion">
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon active" href="index.html">Home </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/about/">About Us </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/services/">Services </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/projects/">Projects </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/contact/">Contact </a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- END lines -->
-    <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close">
-                <span class="icofont-close js-menu-toggle"></span>
+    <!-- End Mobile Device Navbar Area -->
+    <!-- Hero Warp Start -->
+    <div class="hero-warp">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <span class="title">AI-FIRST DIGITAL INNOVATION</span>
+                        <h1>
+                            AI-Driven Chatbots & Digital Solutions</h1>
+                        <p>
+                            At Lemobot, we specialize in AI/ML, LLM-powered chatbot development, and intelligent
+                            automation. From enhancing customer support to transforming workflows, our AI-driven
+                            solutions help businesses scale smarter. We also support robust backends and web
+                            platforms using .NET, WordPress, and Shopify.</p>
+                        <div class="hero-btn">
+                            <a href="/contact/" class="default-btn">Get Started</a> <a href="/services/"
+                                class="default-btn style2">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="assets/images/heros/hero1.png" alt="image">
+                        <img src="assets/images/shapes/hero2-shape.png" class="hero2-shape" alt="image">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="site-mobile-menu-body">
-        </div>
+        <img src="assets/images/shapes/hero1-shape.png" class="hero1-shape" alt="image">
+        <img src="assets/images/shapes/hero3-shape.png" class="hero3-shape" alt="image">
+        <img src="assets/images/shapes/hero4-shape.png" class="hero4-shape" alt="image">
+        <img src="assets/images/shapes/hero5-shape.png" class="hero5-shape" alt="image">
     </div>
-    <nav class="site-nav dark mb-5 site-navbar-target">
-    <div class="container">
-      <div class="site-navigation">
-        <a href="index.html" class="logo m-0">Lemobot<span class="text-primary">.</span></a>
-
-        <ul class="js-clone-nav d-none d-lg-inline-none site-menu float-right site-nav-wrap">
-          <li><a href="#home-section" class="nav-link active">Home</a></li>
-           <li><a href="#about-section" class="nav-link">About us</a></li>        
-          <li><a href="#services-section" class="nav-link">Services</a></li>
-            <li><a href="#projects-section" class="nav-link">Our Projects</a></li>
-          <li><a href="#footer-section" class="nav-link">Contact us</a></li>
-        </ul>
-
-        <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-inline-block" data-toggle="collapse" data-target="#main-navbar">
-          <span></span>
-        </a>
-
-      </div>
-    </div>
-  </nav>
-    <div class="untree_co-section pb-0" id="home-section">
+    <!-- Hero Warp End -->
+    <!-- Service Warp Start -->
+    <div class="service-warp pt-100 pb-75">
         <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-7">
-                    <h1 class="heading gsap-reveal-hero mb-3">
-                        <strong>Lemobot<span class="text-primary">.</span></strong></h1>
-                    <h2 class="subheading gsap-reveal-hero mb-4">
-                        Innovative Web Solutions Crafted with Lemobot.
-                    </h2>
-                    <p class="gsap-reveal-hero">
-                        <a href="#services-section" class="btn btn-outline-black">More about our services</a></p>
+            <div class="section-warp d-flex align-items-end justify-content-between">
+                <div class="single-section">
+                    <span class="title">WHAT WE DO</span>
+                    <h2>
+                        Powering Businesses with AI & Modern Tech</h2>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="untree_co-section pb-0" id="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row justify-content-center mb-3">
-                        <div class="col-lg-12 mx-auto text-center author-wrap">
-                            <img src="images/hacker.png" alt="Image" class="img-fluid rounded-circle mb-3">
-                            <h3 class="text-black h5 font-weight-bold mb-2 gsap-reveal-hero">
-                                About Us
-                                <img src="images/web-development.png" alt="coder" /></h3>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12" style="text-align: justify;">
-                            <p class="gsap-reveal-hero">
-                                At Lemobot, we specialize in crafting robust, scalable, and high-performance web
-                                solutions designed to meet the unique needs of every client. From initial concept
-                                through to final deployment, our team transforms complex ideas into clean, functional,
-                                and user-friendly digital experiences. By leveraging modern technologies, industry
-                                best practices, and a deep understanding of software architecture, we deliver solutions
-                                that are efficient, secure, responsive, and built for scale. Whether it's custom
-                                web development, seamless API integration, or optimized WordPress/WooCommerce platforms,
-                                Lemobot ensures every project delivers measurable value.
-                            </p>
-                            <p class="gsap-reveal-hero">
-                                Collaboration is at the heart of what we do. We work closely with our clients to
-                                understand their goals, align technical strategies with business vision, and consistently
-                                deliver results that exceed expectations. Every line of code is crafted with purpose,
-                                precision, and a forward-thinking mindset. Our passion for innovation and continuous
-                                improvement keeps us ahead of evolving web trends — ensuring the solutions we build
-                                remain relevant today and adaptable for tomorrow.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="untree_co-section pb-0" id="services-section">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-lg-7 text-center mx-auto">
-                    <h2 class="section-heading gsap-reveal-hero mb-0">
-                        <strong>Services</strong></h2>
-                    <p class="gsap-reveal-hero">
-                        Providing Comprehensive and Customized Solutions to Elevate Your Digital Presence
-                        and Achieve Your Business Goals.</p>
-                    <div class="wave gsap-reveal-hero">
-                        <svg>
-                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
-              </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-6">
-                    <div class="service text-center">
-                        <div class="gsap-reveal-hero mb-3">
-                            <img src="images/svg/service-icon-2.svg" class="img-fluid" alt="Web Dev">
-                        </div>
-                        <h3 class="gsap-reveal-hero">
-                            C# / .NET Development</h3>
-                        <p class="gsap-reveal-hero">
-                            Custom enterprise applications, backend systems, and web apps in .NET.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-6">
-                    <div class="service text-center">
-                        <div class="gsap-reveal-hero mb-3">
-                            <img src="images/svg/service-icon-7.svg" class="img-fluid" alt="WordPress">
-                        </div>
-                        <h3 class="gsap-reveal-hero">
-                            WordPress Development</h3>
-                        <p class="gsap-reveal-hero">
-                            Custom WordPress themes, sites, blog setups and full CMS solutions.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-6">
-                    <div class="service text-center">
-                        <div class="gsap-reveal-hero mb-3">
-                            <img src="images/svg/service-icon-6.svg" class="img-fluid" alt="WooCommerce">
-                        </div>
-                        <h3 class="gsap-reveal-hero">
-                            WooCommerce Integration</h3>
-                        <p class="gsap-reveal-hero">
-                            Custom stores, plugin integrations, product configurations and payment gateways.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-6">
-                    <div class="service text-center">
-                        <div class="gsap-reveal-hero mb-3">
-                            <img src="images/svg/service-icon-2.svg" class="img-fluid" alt="Web Dev">
-                        </div>
-                        <h3 class="gsap-reveal-hero">
-                            API Integration</h3>
-                        <p class="gsap-reveal-hero">
-                            Third-party API connections, data exchange, and automation systems.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="untree_co-section pb-0">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-lg-7 text-center mx-auto">
-                    <h2 class="section-heading gsap-reveal-hero mb-0">
-                        <strong>Our Skillset</strong></h2>
-                    <p class="gsap-reveal-hero">
-                        Showcasing Expertise and Proficiency Across a Range of Cutting-Edge Technologies
-                        and Creative Solutions.</p>
-                    <div class="wave gsap-reveal-hero">
-                        <svg>
-                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
-              </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center" data-aos="fade-up">
-                    <div class="progressbar" data-animate="false">
-                        <div class="circle" data-percent="100">
-                            <div class="number">
-                            </div>
-                            <p class="caption">
-                                HTML / CSS / Bootstrap</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center" data-aos="fade-up">
-                    <div class="progressbar" data-animate="false">
-                        <div class="circle" data-percent="95">
-                            <div class="number">
-                            </div>
-                            <p class="caption">
-                                C# / .NET</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center" data-aos="fade-up">
-                    <div class="progressbar" data-animate="false">
-                        <div class="circle" data-percent="90">
-                            <div class="number">
-                            </div>
-                            <p class="caption">
-                                WordPress / WooCommerce</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center" data-aos="fade-up">
-                    <div class="progressbar" data-animate="false">
-                        <div class="circle" data-percent="90">
-                            <div class="number">
-                            </div>
-                            <p class="caption">
-                                Shopify</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="untree_co-section" id="projects-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-7 text-center mx-auto">
-                    <h2 class="section-heading gsap-reveal-hero mb-0">
-                        <strong>Our Projects</strong></h2>
-                    <p class="gsap-reveal-hero">
-                        Showcasing Our Success Stories and Innovative Solutions That Deliver Tangible Results.</p>
-                    <div class="wave gsap-reveal-hero">
-                        <svg>
-                <path d="M10,10 L50,100 L90,50" stroke="#0389ff" stroke-width="2"></path>
-              </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://jntataendowment.org/" target="_blank" class="thumb">
-                            <img src="images/graduation.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://jntataendowment.org/" target="_blank">J N TATA Endowment</a></h3>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://swirlmusic.in/" target="_blank" class="thumb">
-                            <img src="images/music.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://swirlmusic.in/" target="_blank">Swirl Music</a></h3>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://herringboneandsui.com/" target="_blank" class="thumb">
-                            <img src="images/suit.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://herringboneandsui.com/" target="_blank">Herringbone and Sui</a></h3>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://seawoodsorganicstore.com/" target="_blank" class="thumb">
-                            <img src="images/organic.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://seawoodsorganicstore.com/" target="_blank">Seawoods Organic Store</a></h3>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <div class="row">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://waterefficiency.ceexcellence.org/" target="_blank" class="thumb">
-                            <img src="images/waste-water.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://waterefficiency.ceexcellence.org/" target="_blank">Water Efficiency</a></h3>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://www.lovepangolin.com/" target="_blank" class="thumb">
-                            <img src="images/brand.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://www.lovepangolin.com/" target="_blank">Love Pangolin</a></h3>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://aqcs.ceexcellence.org/" target="_blank" class="thumb">
-                            <img src="images/atmosphere.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://aqcs.ceexcellence.org/" target="_blank">AQCS</a></h3>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="post-entry">
-                        <a href="https://etechindustries.co.in/" target="_blank" class="thumb">
-                            <img src="images/question-mark.png" alt="image" class="img-fluid"></a>
-                        <h3>
-                            <a href="https://etechindustries.co.in/" target="_blank">ETech Industries</a></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Google Reviews Section -->
-    <div class="untree_co-section bg-light" id="reviews-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-7 text-center mx-auto">
-                    <h2 class="section-heading gsap-reveal-hero mb-3">
-                        <strong>Client Reviews</strong>
-                    </h2>
-                    <p class="gsap-reveal-hero">
-                        Hear what our clients say about their experience with Lemobot.
-                    </p>
+                <div class="section-btn">
+                    <a href="/services/" class="default-btn">View All Services</a>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <!-- Embed Google Reviews Widget -->
-                    <div class="elfsight-app-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" data-elfsight-app>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <img src="assets/images/svgs/service1.png" alt="image">
+                        </div>
+                        <h3>
+                            <a href="service-details.html">AI Chatbots (LLM)</a></h3>
+                        <p>
+                            Custom GPT-powered chatbots for websites, apps, and automation — trained on your
+                            business to deliver smarter support and engagement.</p>
+                        <div class="btn-style">
+                            <a href="service-details.html" class="read-more d-flex align-items-center"><span>Read
+                                more</span>
+                                <div class="icon1">
+                                    <i class="flaticon-next"></i>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <!-- Replace the 'xxxxxxxx...' with your Elfsight App ID or other embed code -->
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <img src="assets/images/svgs/service2.png" alt="image">
+                        </div>
+                        <h3>
+                            <a href="service-details.html">Machine Learning Solutions</a></h3>
+                        <p>
+                            From predictive analytics to automation, we design and deploy ML systems that drive
+                            intelligent decision-making and business efficiency.</p>
+                        <div class="btn-style">
+                            <a href="service-details.html" class="read-more d-flex align-items-center"><span>Read
+                                more</span>
+                                <div class="icon1">
+                                    <i class="flaticon-next"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <img src="assets/images/svgs/service3.png" alt="image">
+                        </div>
+                        <h3>
+                            <a href="service-details.html">AI Consulting & Integration</a></h3>
+                        <p>
+                            Whether starting from scratch or integrating into existing tools, we guide you through
+                            smart AI adoption with clear impact and ROI.</p>
+                        <div class="btn-style">
+                            <a href="service-details.html" class="read-more d-flex align-items-center"><span>Read
+                                more</span>
+                                <div class="icon1">
+                                    <i class="flaticon-next"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <img src="assets/images/svgs/service4.png" alt="image">
+                        </div>
+                        <h3>
+                            <a href="service-details.html">WordPress Development</a></h3>
+                        <p>
+                            High-performing WordPress websites and WooCommerce stores tailored for scale, SEO,
+                            and ease of management.</p>
+                        <div class="btn-style">
+                            <a href="service-details.html" class="read-more d-flex align-items-center"><span>Read
+                                more</span>
+                                <div class="icon1">
+                                    <i class="flaticon-next"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <img src="assets/images/svgs/service4.png" alt="image">
+                        </div>
+                        <h3>
+                            <a href="service-details.html">Shopify Store Development</a></h3>
+                        <p>
+                            Conversion-optimized Shopify stores, custom-built for your brand and integrated
+                            with smart tools or AI product engines.</p>
+                        <div class="btn-style">
+                            <a href="service-details.html" class="read-more d-flex align-items-center"><span>Read
+                                more</span>
+                                <div class="icon1">
+                                    <i class="flaticon-next"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <img src="assets/images/svgs/service4.png" alt="image">
+                        </div>
+                        <h3>
+                            <a href="service-details.html">.NET & Database Solutions</a></h3>
+                        <p>
+                            Enterprise-grade applications and secure databases built using C# .NET — powering
+                            everything from dashboards to API services.</p>
+                        <div class="btn-style">
+                            <a href="service-details.html" class="read-more d-flex align-items-center"><span>Read
+                                more</span>
+                                <div class="icon1">
+                                    <i class="flaticon-next"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <img src="assets/images/shapes/service-shape1.png" class="service-shape1" alt="image">
+        <img src="assets/images/shapes/service-shape2.png" class="service-shape2" alt="image">
     </div>
-    <div class="site-footer" id="footer-section">
+    <!-- Service Warp End -->
+    <!-- Trusted Warp Start -->
+    <div class="trusted-warp ptb-100">
         <div class="container">
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <p class="mb-0">
-                        <b>Connect</b> @ Mobile No. — 9819-413-273 | Email us — <a href="mailto:lemobotofficial@gmail.com">
-                            lemobotofficial@gmail.com</a>
-                    </p>
-                    <br>
-                    <!-- Google Review Button -->
-                    <a href="https://g.page/r/CUSTOM-GOOGLE-ID/review" target="_blank" class="btn btn-outline-black">
-                        Leave a Google Review</a>
-                    <br>
-                    <br>
-                    <!--  <ul class="list-unstyled social">
-                        <li><a href="#"><span class="icon-instagram"></span></a></li>
-                        <li><a href="#"><span class="icon-twitter"></span></a></li>
-                        <li><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                        <li><a href="#"><span class="icon-dribbble"></span></a></li>
-                    </ul>-->
-                    <br>
-                    <p class="mb-0">
-                        Copyright &copy;<script>                                            document.write(new Date().getFullYear());</script>.
-                        All Rights Reserved. — Designed and Developed by <a href="https://lemobot.in">Lemobot
-                            (OPC) Private Limited</a>
-                    </p>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="trusted-image" data-cues="slideInLeft">
+                        <img src="assets/images/trusteds/trusted1.png" alt="image">
+                        <div class="trusted-box">
+                            <h1>
+                                5+</h1>
+                            <p>
+                                <span>Years</span> Of Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="trusted-content single-section">
+                        <span class="title">WHO WE ARE</span>
+                        <h2>
+                            AI-First Software Studio — Built for Modern Businesses</h2>
+                        <p>
+                            We combine deep AI expertise with proven software engineering. Lemobot helps businesses
+                            automate, engage, and grow with custom LLM chatbots, intelligent ML models, and
+                            solid digital infrastructure using platforms like .NET, WordPress, and Shopify.</p>
+                        <div class="trusted-widget">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="trusted-card">
+                                        <h4>
+                                            AI-Driven Solutions</h4>
+                                        <p>
+                                            Our advanced AI models deliver tailored insights and automation, empowering businesses
+                                            to make smarter decisions faster.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="trusted-card">
+                                        <h4>
+                                            Trusted by Clients</h4>
+                                        <p>
+                                            We’ve earned the confidence of companies across industries by delivering reliable
+                                            results and consistent value.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trusted-btn d-flex align-items-center">
+                            <a href="/about/" class="default-btn">Discover More</a>
+                            <div class="contact-content d-flex align-items-center">
+                                <div class="icon">
+                                    <img src="assets/images/svgs/trusted1.png" alt="image">
+                                </div>
+                                <div class="content">
+                                    <span>Call Us On:</span> <a href="tel:9819413273">+91-9819-413-273</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/shapes/trusted-shape1.png" class="trusted-shape1" alt="image">
+    </div>
+    <!-- Trusted Warp End -->
+    <!-- Process Warp Start -->
+    <div class="process-warp pt-100 pb-75">
+        <div class="container">
+            <div class="section-title">
+                <span class="title">WORK PROCESS</span>
+                <h2>
+                    We Help You To Increase Your Sale Through Solutions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-md-6 col-md-6" data-cue="slideInUp">
+                    <div class="process-widget">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 p-0 col-5">
+                                <div class="image">
+                                    <img src="assets/images/process/process1.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-7">
+                                <div class="content">
+                                    <div class="number">
+                                        <span>01</span>
+                                    </div>
+                                    <h3>
+                                        Explore AI Opportunities</h3>
+                                    <p>
+                                        Let’s define where AI or automation fits in your support, sales, or operations to
+                                        deliver measurable results.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6  col-md-6" data-cue="slideInUp">
+                    <div class="process-widget">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 p-0 col-5">
+                                <div class="image">
+                                    <img src="assets/images/process/process2.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-7">
+                                <div class="content">
+                                    <div class="number">
+                                        <span>02</span>
+                                    </div>
+                                    <h3>
+                                        Book a Strategy Call</h3>
+                                    <p>
+                                        We map out the approach, timeline, and tools — focused on creating smart, scalable
+                                        digital solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6  col-md-6" data-cue="slideInUp">
+                    <div class="process-widget">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 col-5 p-0">
+                                <div class="image">
+                                    <img src="assets/images/process/process3.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-7">
+                                <div class="content">
+                                    <div class="number">
+                                        <span>03</span>
+                                    </div>
+                                    <h3>
+                                        Launch Your AI-Powered Solution</h3>
+                                    <p>
+                                        From development to deployment, we build, test, and refine your solution to drive
+                                        business value from day one.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/shapes/process-shape1.png" class="process-shape1" alt="image">
+        <img src="assets/images/shapes/process-shape2.png" class="process-shape2" alt="image">
+        <img src="assets/images/shapes/process-shape3.png" class="process-shape3" alt="image">
+    </div>
+    <!-- Process Warp End -->
+    <!-- Choose Warp Start -->
+    <div class="choose-warp ptb-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="choose-content single-section">
+                        <span class="title">WHY CHOOSE US </span>
+                        <h2>
+                            Why Choose Lemobot?</h2>
+                        <p>
+                            We’re your end-to-end partner in AI and software. From chatbots to platforms, we
+                            deliver real solutions backed by smart strategy and technical depth.</p>
+                        <div class="choose-list-warp">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="choose-item">
+                                        <div class="icon">
+                                            <i class="flaticon-gear"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h5>
+                                                Precision Engineering</h5>
+                                        </div>
+                                    </div>
+                                    <div class="choose-item">
+                                        <div class="icon">
+                                            <i class="flaticon-technology"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h5>
+                                                Seamless AI Integration</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="choose-item">
+                                        <div class="icon">
+                                            <i class="flaticon-expert"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h5>
+                                                Specialized AI Team</h5>
+                                        </div>
+                                    </div>
+                                    <div class="choose-item">
+                                        <div class="icon">
+                                            <i class="flaticon-24-hours"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h5>
+                                                Consistent Delivery</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/about/" class="default-btn">Discover More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="choose-image">
+                        <div class="row">
+                            <div class="col-lg-5 col-sm-6">
+                                <div class="image-one" data-cues="slideInLeft">
+                                    <img src="assets/images/chooses/choose1.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-sm-6 ">
+                                <div class="image-two" data-cue="slideInUp">
+                                    <img src="assets/images/chooses/choose2.jpg" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <img src="assets/images/shapes/choose-shape.png" class="choose-shape1" alt="image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Scripts -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/wave-animate.js"></script>
-    <script src="js/circle-progress.js"></script>
-    <script src="js/imagesloaded.pkgd.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/TweenMax.min.js"></script>
-    <script src="js/ScrollMagic.min.js"></script>
-    <script src="js/scrollmagic.animation.gsap.min.js"></script>
-    <script src="js/custom.js"></script>
+    <!-- Choose Warp End -->
+    <!-- Funfact Warp Start -->
+    <div class="funfact-warp">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-6 col-sm-4" data-cue="slideInUp">
+                    <div class="funfact-box">
+                        <h1>
+                            10+</h1>
+                        <p>
+                            Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6 col-sm-4" data-cue="slideInUp">
+                    <div class="funfact-box">
+                        <h1>
+                            10+</h1>
+                        <p>
+                            Finished Projects</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6 col-sm-4" data-cue="slideInUp">
+                    <div class="funfact-box">
+                        <h1>
+                            100%</h1>
+                        <p>
+                            Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/shapes/funfact-shape1.png" class="funfact-shape1" alt="image">
+        <img src="assets/images/shapes/funfact-shape2.png" class="funfact-shape2" alt="image">
+        <img src="assets/images/shapes/funfact-shape3.png" class="funfact-shape3" alt="image">
+    </div>
+    <!-- Funfact Warp End -->
+    <!-- Project Warp Start -->
+    <div class="project-warp pt-100">
+        <div class="container style1">
+            <div class="section-title">
+                <span class="title">PROJECTS</span>
+                <h2>
+                    Popular Case Studies That Complete Recently</h2>
+            </div>
+            <div class="project-slider-warp">
+                <div class="swiper project-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="project-widget">
+                                <div class="image">
+                                    <img src="assets/images/projects/project1.jpg" alt="image">
+                                </div>
+                                <div class="content">
+                                    <a href="project-details.html" class="icon"><i class="flaticon-plus"></i></a>
+                                    <h3>
+                                        <a href="project-details.html">Analytics Software</a>
+                                    </h3>
+                                    <ul>
+                                        <li>Design </li>
+                                        <li>Technology </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-widget">
+                                <div class="image">
+                                    <img src="assets/images/projects/project2.jpg" alt="image">
+                                </div>
+                                <div class="content">
+                                    <a href="project-details.html" class="icon"><i class="flaticon-plus"></i></a>
+                                    <h3>
+                                        <a href="project-details.html">Optimizing Manufacturing</a>
+                                    </h3>
+                                    <ul>
+                                        <li>Design </li>
+                                        <li>Technology </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-widget">
+                                <div class="image">
+                                    <img src="assets/images/projects/project3.jpg" alt="image">
+                                </div>
+                                <div class="content">
+                                    <a href="project-details.html" class="icon"><i class="flaticon-plus"></i></a>
+                                    <h3>
+                                        <a href="project-details.html">Analytics Software</a>
+                                    </h3>
+                                    <ul>
+                                        <li>Design </li>
+                                        <li>Technology </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-widget">
+                                <div class="image">
+                                    <img src="assets/images/projects/project1.jpg" alt="image">
+                                </div>
+                                <div class="content">
+                                    <a href="project-details.html" class="icon"><i class="flaticon-plus"></i></a>
+                                    <h3>
+                                        <a href="project-details.html">Optimizing Manufacturing</a>
+                                    </h3>
+                                    <ul>
+                                        <li>Design </li>
+                                        <li>Technology </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-widget">
+                                <div class="image">
+                                    <img src="assets/images/projects/project2.jpg" alt="image">
+                                </div>
+                                <div class="content">
+                                    <a href="project-details.html" class="icon"><i class="flaticon-plus"></i></a>
+                                    <h3>
+                                        <a href="project-details.html">Analytics Software</a>
+                                    </h3>
+                                    <ul>
+                                        <li>Design </li>
+                                        <li>Technology </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-widget">
+                                <div class="image">
+                                    <img src="assets/images/projects/project3.jpg" alt="image">
+                                </div>
+                                <div class="content">
+                                    <a href="project-details.html" class="icon"><i class="flaticon-plus"></i></a>
+                                    <h3>
+                                        <a href="project-details.html">Optimizing Manufacturing</a>
+                                    </h3>
+                                    <ul>
+                                        <li>Design </li>
+                                        <li>Technology </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-btn">
+                    <div class="swiper-button-prev">
+                    </div>
+                    <div class="swiper-button-next">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project Warp End -->
+    <!--Solution Warp Start -->
+    <div class="solution-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="solution-content">
+                        <h2>
+                            IT Solutions & Services At Your Fingertips</h2>
+                        <a href="/contact/" class="default-btn">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="solution-video">
+                        <div class="video-btn" onclick="openPopup()">
+                            <i class="ri-play-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Solution Warp End -->
+    <!-- Management Warp Start -->
+    <div class="management-warp ptb-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-cues="slideInLeft">
+                    <div class="management-image">
+                        <img src="assets/images/management/management1.png" alt="image">
+                        <img src="assets/images/management/management2.png" class="management2" alt="image"
+                            data-cue="slideInUp">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="management-content single-section">
+                        <span class="title">TECH MANAGEMENT</span>
+                        <h2>
+                            AI-Driven Development, Backed by Strong Engineering</h2>
+                        <p>
+                            We deliver high-quality solutions at the intersection of artificial intelligence
+                            and software engineering. From LLM-based chatbots to scalable APIs, our tech management
+                            approach is focused on intelligent architecture and real-world results.</p>
+                        <div class="management-item d-flex align-items-center">
+                            <div class="icon">
+                                <div class="icon-style">
+                                    <i class="flaticon-technology"></i>
+                                </div>
+                            </div>
+                            <h4>
+                                We build smarter — not just faster.</h4>
+                        </div>
+                        <ul class="management-list">
+                            <li><i class="flaticon-check"></i>Advanced AI solutions that streamline your operations</li>
+                            <li><i class="flaticon-check"></i>Data-driven architecture for accurate, fast decision-making</li>
+                            <li><i class="flaticon-check"></i>Stable infrastructure using .NET, optimized databases,
+                                and clean code</li>
+                        </ul>
+                        <a href="/about/" class="default-btn">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/shapes/management-shape11.png" class="management-shape11"
+            alt="management-shape">
+    </div>
+    <!-- Management Warp End -->
+    <!-- Testimonial Warp Start -->
+    <div class="testimonial-warp ptb-100">
+        <div class="container">
+            <div class="section-warp d-flex align-items-end justify-content-between">
+                <div class="single-section">
+                    <span class="title">TESTIMONIALS</span>
+                    <h2>
+                        What Our Clients Say</h2>
+                </div>
+                <div class="section-btn">
+                    <a href="https://g.page/r/Cbi1CyE9L0bFEBM/review" class="default-btn" target="_blank">
+                        Write a Review </a>
+                </div>
+            </div>
+            <div class="testimonial-slider-warp">
+                <div class="swiper testimonial-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Review 1 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-box">
+                                <div class="items d-flex align-items-center">
+                                    <div class="user">
+                                        <img src="https://lh3.googleusercontent.com/a-/AOh14GgXYZ123EXAMPLE=s120-c" class="rounded-circle"
+                                            alt="Amit Sharma">
+                                    </div>
+                                    <div class="content">
+                                        <h5>
+                                            Amit Sharma</h5>
+                                        <span>2 weeks ago</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    “Super impressed by Lemobot’s AI chatbot services. They delivered exactly what we
+                                    envisioned and improved customer interaction instantly.”</p>
+                                <div class="icon">
+                                    <img src="assets/images/svgs/testimonial1.png" alt="quote icon">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-box">
+                                <div class="items d-flex align-items-center">
+                                    <div class="user">
+                                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjSampleImage2=s120-c" class="rounded-circle"
+                                            alt="Priya Desai">
+                                    </div>
+                                    <div class="content">
+                                        <h5>
+                                            Priya Desai</h5>
+                                        <span>1 month ago</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    “Their team was flexible, fast, and deeply knowledgeable about AI and automation.
+                                    Definitely working with them again!”</p>
+                                <div class="icon">
+                                    <img src="assets/images/svgs/testimonial1.png" alt="quote icon">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 3 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-box">
+                                <div class="items d-flex align-items-center">
+                                    <div class="user">
+                                        <img src="https://lh3.googleusercontent.com/a-/AOh14GjSampleImage3=s120-c" class="rounded-circle"
+                                            alt="Rohit Verma">
+                                    </div>
+                                    <div class="content">
+                                        <h5>
+                                            Rohit Verma</h5>
+                                        <span>3 days ago</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    “Lemobot helped us integrate an AI chatbot in our WordPress store — our support
+                                    load dropped by 40% within a week. Amazing!”</p>
+                                <div class="icon">
+                                    <img src="assets/images/svgs/testimonial1.png" alt="quote icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Navigation Buttons -->
+                <div class="swiper-btn">
+                    <div class="swiper-button-prev">
+                    </div>
+                    <div class="swiper-button-next">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial Warp End -->
+    <!-- Footer Warp Start -->
+    <div class="footer-warp pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <a class="navbar-brand" href="index.html" style="font-size: 32px; font-weight: bold;
+                            color: white;">Lemobot<span style="color: #007bff;">.</span> </a>
+                        <ul class="footer-contact mt-4">
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-phone-call"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="tel:9819413273">+ (91) 9819-413-273</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-placeholder"></i>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        Unit No.7, Shivaji Nagar,<br>
+                                        Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Quick Links</h3>
+                        <ul class="footer-link">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Our Projects -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Our Services</h3>
+                        <ul class="footer-link">
+                            <li><a href="/services/">AI Chatbots</a></li>
+                            <li><a href="/services/">Machine Learning</a></li>
+                            <li><a href="/services/">WordPress</a></li>
+                            <li><a href="/services/">Shopify</a></li>
+                            <li><a href="/services/">.NET Applications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect Now -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Connect With Us</h3>
+                        <p>
+                            Have a project or question? Let's talk directly on WhatsApp.</p>
+                        <a href="https://wa.me/919819413273" target="_blank" class="default-btn d-inline-block mt-2">
+                            Connect Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Shapes -->
+    </div>
+    <!-- Footer Warp End -->
+    <!-- Copyright Warp Start -->
+    <div class="copyright-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="copy-right-content">
+                        <p>
+                            Copyright ©2025. All Rights Reserved. — Designed and Developed by <a href="https://www.lemobot.in/"
+                                target="_blank">Lemobot (OPC) Private Limited</a>
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-6 col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Warp End -->
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class="ri-arrow-up-circle-fill"></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+    <!-- Sidebar Area Start -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="flaticon-close"></i>
+            </button>
+            <div class="sidebar-warp">
+                <div class="footer-widget style2">
+                    <div class="logo">
+                        <img src="assets/images/logo2.svg" class="logo" alt="logo">
+                    </div>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-phone-call"></i>
+                            </div>
+                            <div class="content">
+                                <a href="tel:9819413273">+ (91) 9819-413-273</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Unit No.7, Shivaji Nagar, Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="content">
+                                <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget style2">
+                    <h3>
+                        Get Newsletter</h3>
+                    <p>
+                        Get on the list and get 10% off your first order!</p>
+                    <form>
+                    <input type="text" class="form-control" placeholder="Enter Your Email">
+                    <button class="default-btn" type="submit">
+                        Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="footer-widget">
+                    <h3>
+                        Follow Us</h3>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Area End -->
+    <!-- Modal Area Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    <div class="input-group search-warp mb-3">
+                        <div class="input-box">
+                            <form>
+                            <input type="text" class="form-control" placeholder="Search Here" aria-describedby="button-addon2">
+                            <button class="btn" type="submit" id="button-addon2">
+                                <i class="flaticon-loupe"></i>
+                            </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Area End -->
+    <div class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="modal-body">
+                <iframe class="video-bg-btn" src="https://www.youtube.com/embed/u9prcUCHlqM" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Links of JS File -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/scrollCue.min.js"></script>
+    <script src="assets/js/custom.js"></script>
 </body>
 </html>

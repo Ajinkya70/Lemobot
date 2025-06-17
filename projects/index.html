@@ -15,6 +15,47 @@
     <!-- Title -->
     <title>Lemobot - Web & AI Solutions Crafted with Lemobot.</title>
     <link rel="icon" type="image/svg" href="../assets/images/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .blog-card .image
+        {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 10px;
+            overflow: hidden;
+        }
+        
+        .blog-card .image img
+        {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .logo-fix
+        {
+            width: 80% !important;
+            height: auto;
+        }
+        .blog-card .image .logo-text
+        {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            text-transform: capitalize;
+            line-height: 1.3;
+        }
+        
+        .blog-card .image.no-logo
+        {
+            background-color: #fff !important; /* Ensure white background */
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader Area Start -->
@@ -32,7 +73,7 @@
     <div class="top-header-warp">
         <div class="container-fluid">
             <div class="row">
-             <div class="col-lg-8">
+                <div class="col-lg-8">
                     <div class="header-content">
                         <ul>
                             <li><i class="flaticon-phone-call"></i><a href="tel:9819413273">+ (91) 9819-413-273</a>
@@ -86,8 +127,8 @@
     <!-- Start Mobile Device Navbar Area -->
     <div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
         <div class="offcanvas-header">
-            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold;
-                color: black;">Lemobot<span style="color: #007bff;">.</span> </a>
+            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+                Lemobot<span style="color: #007bff;">.</span> </a>
             <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="ri-close-line"></i>
             </button>
@@ -144,132 +185,96 @@
                         with real business outcomes.</p>
                 </div>
             </div>
-            <div class="row">
-                <!-- J N Tata -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6" data-cue="slideInUp" data-show="true" style="animation-name: slideInUp;
+                    animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms;
+                    animation-direction: normal; animation-fill-mode: both;">
+                    <div class="blog-card">
                         <div class="image">
-                            <a href="https://jntataendowment.org/" target="_blank">
-                                <img src="images/graduation.png" alt="J N Tata Endowment" class="img-fluid">
+                            <a href="https://jntataendowment.org/">
+                                <img src="../images/tata-logo.png" alt="J N Tata Endowment">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="https://jntataendowment.org/" target="_blank">J N Tata Endowment</a></h3>
-                            <ul>
-                                <li>Educational Funding Portal</li></ul>
+                                <a href="https://jntataendowment.org/">J N Tata Endowment</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
-                <!-- Swirl Music -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
+                <div class="col-lg-4 col-sm-6" data-cue="slideInUp" data-show="true" style="animation-name: slideInUp;
+                    animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms;
+                    animation-direction: normal; animation-fill-mode: both;">
+                    <div class="blog-card">
                         <div class="image">
-                            <a href="https://swirlmusic.in/" target="_blank">
-                                <img src="images/music.png" alt="Swirl Music" class="img-fluid">
+                            <a href="https://swirlmusic.in/">
+                                <img src="../images/Swirl-Logo.png" alt="Swirl Music">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="https://swirlmusic.in/" target="_blank">Swirl Music</a></h3>
-                            <ul>
-                                <li>Music Platform & Booking</li></ul>
+                                <a href="https://swirlmusic.in/">Swirl Music</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
-                <!-- Herringbone and Sui -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
+                <div class="col-lg-4 col-sm-6" data-cue="slideInUp" data-show="true" style="animation-name: slideInUp;
+                    animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms;
+                    animation-direction: normal; animation-fill-mode: both;">
+                    <div class="blog-card">
                         <div class="image">
-                            <a href="https://herringboneandsui.com/" target="_blank">
-                                <img src="images/suit.png" alt="Herringbone & Sui" class="img-fluid">
+                            <a href="https://seawoodsorganicstore.com/">
+                                <img src="../images/seawoodsOrganic-Logo.png" alt="Seawoods Organic Store" class="logo-fix">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="https://herringboneandsui.com/" target="_blank">Herringbone and Sui</a></h3>
-                            <ul>
-                                <li>Luxury Tailoring eCommerce</li></ul>
+                                <a href="https://seawoodsorganicstore.com/">Seawoods Organic Store</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
-                <!-- Seawoods Organic Store -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
-                        <div class="image">
-                            <a href="https://seawoodsorganicstore.com/" target="_blank">
-                                <img src="images/organic.png" alt="Seawoods Organic" class="img-fluid">
+                <div class="col-lg-4 col-sm-6" data-cue="slideInUp" data-show="true" style="animation-name: slideInUp;
+                    animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms;
+                    animation-direction: normal; animation-fill-mode: both;">
+                    <div class="blog-card">
+                        <div class="image no-logo">
+                            <a href="https://herringboneandsui.com/"><span class="logo-text">Herringbone and Sui</span>
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="https://seawoodsorganicstore.com/" target="_blank">Seawoods Organic Store</a></h3>
-                            <ul>
-                                <li>Organic Grocery Webshop</li></ul>
+                                <a href="https://herringboneandsui.com/">Herringbone and Sui</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
-                <!-- Water Efficiency -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
-                        <div class="image">
-                            <a href="https://waterefficiency.ceexcellence.org/" target="_blank">
-                                <img src="images/waste-water.png" alt="Water Efficiency" class="img-fluid">
+                <div class="col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="blog-card">
+                        <div class="image no-logo">
+                            <a href="https://www.lovepangolin.com/"><span class="logo-text">Love Pangolin</span>
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="https://waterefficiency.ceexcellence.org/" target="_blank">Water Efficiency</a></h3>
-                            <ul>
-                                <li>Environmental Dashboard</li></ul>
+                                <a href="https://www.lovepangolin.com/">Love Pangolin</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
-                <!-- Love Pangolin -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
+                <div class="col-lg-4 col-sm-6" data-cue="slideInUp" data-show="true" style="animation-name: slideInUp;
+                    animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms;
+                    animation-direction: normal; animation-fill-mode: both;">
+                    <div class="blog-card">
                         <div class="image">
-                            <a href="https://www.lovepangolin.com/" target="_blank">
-                                <img src="images/brand.png" alt="Love Pangolin" class="img-fluid">
+                            <a href="https://etechindustries.co.in/">
+                                <img src="../images/etech-logo.png" alt="ETech Industries" class="logo-fix">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a href="https://www.lovepangolin.com/" target="_blank">Love Pangolin</a></h3>
-                            <ul>
-                                <li>Sustainable Fashion Brand</li></ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- AQCS -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
-                        <div class="image">
-                            <a href="https://aqcs.ceexcellence.org/" target="_blank">
-                                <img src="images/atmosphere.png" alt="AQCS" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="https://aqcs.ceexcellence.org/" target="_blank">AQCS</a></h3>
-                            <ul>
-                                <li>Air Quality Monitoring Portal</li></ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- ETech Industries -->
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="project-box">
-                        <div class="image">
-                            <a href="https://etechindustries.co.in/" target="_blank">
-                                <img src="images/question-mark.png" alt="ETech Industries" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="https://etechindustries.co.in/" target="_blank">ETech Industries</a></h3>
-                            <ul>
-                                <li>Industrial Product Showcase</li></ul>
+                                <a href="https://etechindustries.co.in/">ETech Industries</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -284,8 +289,8 @@
                 <!-- Contact Info -->
                 <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
                     <div class="footer-widget">
-                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold;
-                            color: white;">Lemobot<span style="color: #007bff;">.</span> </a>
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
                         <ul class="footer-contact mt-4">
                             <li>
                                 <div class="icon">
@@ -401,8 +406,8 @@
             </button>
             <div class="sidebar-warp">
                 <div class="footer-widget style2">
-                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold;
-                        color: white;">Lemobot<span style="color: #007bff;">.</span> </a>
+                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                        Lemobot<span style="color: #007bff;">.</span> </a>
                     <ul class="footer-contact">
                         <li>
                             <div class="icon">

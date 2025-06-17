@@ -1,88 +1,95 @@
-﻿
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Links Of CSS File -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/fonts/flaticon_mycollection.css">
+    <link rel="stylesheet" href="../assets/css/scrollCue.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <!-- Title -->
+    <title>Lemobot - Web & AI Solutions Crafted with Lemobot.</title>
+    <style>
+  .heading-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.heading-with-icon h5 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a0142;
+}
+
+/* Default SVG inside heading (e.g., Data Engineering) */
+.heading-with-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #0057ff;
+  animation: pulse-ring 2s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+/* Specific override for brain icon */
+.svg-brain {
+  color: #5b35f2;
+  animation: pulse-brain 2.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-brain {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.6; }
+}
 
 
-        <!-- Links Of CSS File -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../assets/fonts/remixicon.css">
-        <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
-        <link rel="stylesheet" href="../assets/fonts/flaticon_mycollection.css">
-        <link rel="stylesheet" href="../assets/css/scrollCue.css">
-        <link rel="stylesheet" href="../assets/css/navbar.css">
-        <link rel="stylesheet" href="../assets/css/style.css">
-        <link rel="stylesheet" href="../assets/css/responsive.css">
-        
-        <!-- Title -->
-        <title>Lemobot - Web & AI Solutions Crafted with Lemobot.</title>
-        <link rel="icon" type="image/svg" href="../assets/images/favicon.svg">
-    </head>
-    <body>
-
-        <!-- Preloader Area Start -->
-        <div class="preloader-area position-fixed text-center" id="preloader">
-            <div class="cube-wrapper">
-                <div class="cube-folding">
-                  <span class="leaf1"></span>
-                  <span class="leaf2"></span>
-                  <span class="leaf3"></span>
-                  <span class="leaf4"></span>
-                </div>
+    </style>
+</head>
+<body>
+    <!-- Preloader Area Start -->
+    <div class="preloader-area position-fixed text-center" id="preloader">
+        <div class="cube-wrapper">
+            <div class="cube-folding">
+                <span class="leaf1"></span><span class="leaf2"></span><span class="leaf3"></span>
+                <span class="leaf4"></span>
+            </div>
             <span class="loading" data-name="Loading">Lemobot</span>
-            </div>
         </div>
-        <!-- Preloader Area End -->
-
-        <!-- Top Header Warp Start -->
-        <div class="top-header-warp">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="header-content">
-                            <ul>
-                                <li>
-                                    <i class="flaticon-phone-call"></i>
-                                    <a href="tel:+01887689870859">(+0188) 768 987 0859</a>
-                                </li>
-                                <li>
-                                    <i class="flaticon-email"></i>
-                                    <a href="/cdn-cgi/l/email-protection#2e464b4242416e5a415c4f4a41004d4143"><span class="__cf_email__" data-cfemail="8ce4e9e0e0e3ccf8e3feede8e3a2efe3e1">[email&#160;protected]</span></a>
-                                </li>
-                                <li>
-                                    <i class="flaticon-placeholder"></i>
-                                    <p>4b, Walse Street , USA</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="header-social">
-                            <ul class="social-list">
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i></a>
-                                </li>
-                                
-                                <li>
-                                    <a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+    </div>
+    <!-- Preloader Area End -->
+    <!-- Top Header Warp Start -->
+    <div class="top-header-warp">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <ul>
+                            <li><i class="flaticon-phone-call"></i><a href="tel:9819413273">+ (91) 9819-413-273</a>
+                            </li>
+                            <li><i class="flaticon-email"></i><a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Top Header Warp End -->
-
-          <!-- Start Navbar Area -->
+    </div>
+    <!-- Top Header Warp End -->
+    <!-- Start Navbar Area -->
     <nav class="navbar navbar-expand-lg" id="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
@@ -102,10 +109,10 @@
                             <a href="/" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/about/" class="nav-link active">About <span>Us</span></a>
+                            <a href="/about/" class="nav-link">About <span>Us</span></a>
                         </li>
                           <li class="nav-item">
-                            <a href="/services/.html active" class="nav-link">/services/</a>
+                            <a href="/services/" class="nav-link active">Services</a>
                         </li>
                           <li class="nav-item">
                               <a href="/projects/" class="nav-link">Projects</a>
@@ -122,8 +129,8 @@
     <!-- Start Mobile Device Navbar Area -->
     <div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
         <div class="offcanvas-header">
-            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold;
-                color: black;">Lemobot<span style="color: #007bff;">.</span> </a>
+            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+                Lemobot<span style="color: #007bff;">.</span> </a>
             <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="ri-close-line"></i>
             </button>
@@ -137,7 +144,7 @@
                     <a class="accordion-button without-icon" href="/about/">About Us </a>
                 </div>
                 <div class="accordion-item">
-                    <a class="accordion-button without-icon active" href="/services/.html">/services/ </a>
+                    <a class="accordion-button without-icon active" href="/services/">Services </a>
                 </div>
                 <div class="accordion-item">
                     <a class="accordion-button without-icon" href="/projects/">Projects </a>
@@ -149,521 +156,1069 @@
         </div>
     </div>
     <!-- End Mobile Device Navbar Area -->
-
-        <!-- Inner Hero Warp Start -->
-        <div class="inner-hero-warp">
-            <div class="container">
-                <div class="inner-hero-content">
-                    <h1>Service Details </h1>
-                    <ul>
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            Service  Details
-                        </li>
-                    </ul>
-                </div>
+    <!-- Hero Section -->
+    <div class="inner-hero-warp">
+        <div class="container">
+            <div class="inner-hero-content">
+                <h1>
+                    Service Details</h1>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li>Service Details</li>
+                </ul>
             </div>
-            <img src="../assets/images/shapes/inner-shape1.png" class="inner-shape1" alt="inner-shape">
-            <img src="../assets/images/shapes/inner-shape2.png" class="inner-shape2" alt="inner-shape">
-            <img src="../assets/images/shapes/inner-shape3.png" class="inner-shape3" alt="inner-shape">
-            <img src="../assets/images/shapes/inner-shape4.png" class="inner-shape4" alt="inner-shape">
-            <img src="../assets/images/shapes/inner-shape5.png" class="inner-shape5" alt="inner-shape">
         </div>
-        <!-- Inner Hero Warp End -->
-
-        <!-- Service Details Warp Start -->
-        <div class="service-details-warp ptb-100">
-            <div class="container">
-                <div class="question-widget-one">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="service-tab-list all-boxes">
-                                <h3>All /services/</h3>
-                                <ul class="nav nav-tabs d-flex" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                         <a class="nav-tab-link active" id="one-tab" data-bs-toggle="tab" href="#one" role="tab" aria-controls="one"> 
-                                            <div class="goal-button">
-                                                <span>
-                                                    It Management
-                                                </span>
-                                                <div class="icon">
-                                                    <i class="flaticon-next-1"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                         <a class="nav-tab-link" id="two-tab" data-bs-toggle="tab" href="#two" role="tab" aria-controls="two">
-                                            <div class="goal-button">
-                                                <span>
-                                                    Cyber Security
-                                                </span>
-                                                <div class="icon">
-                                                    <i class="flaticon-next-1"></i>
-                                                </div>
-    
-                                            </div>
-                                        </a> 
-                                    </li>
-                                    <li class="nav-item"> 
-                                        <a class="nav-tab-link" id="three-tab" data-bs-toggle="tab" href="#three" role="tab" aria-controls="three"> 
-                                            <div class="goal-button">
-                                                <span>
-                                                    UX/UI Strategy
-                                                </span>
-                                                <div class="icon">
-                                                    <i class="flaticon-next-1"></i>
-                                                </div>
-    
-                                            </div>
-                                        </a> 
-                                    </li>
-                                    <li class="nav-item"> 
-                                        <a class="nav-tab-link" id="three-tab" data-bs-toggle="tab" href="#four" role="tab" aria-controls="three"> 
-                                            <div class="goal-button">
-                                                <span>
-                                                    Web Development
-                                                </span>
-                                                <div class="icon">
-                                                    <i class="flaticon-next-1"></i>
-                                                </div>
-    
-                                            </div>
-                                        </a> 
-                                    </li>
-                                    <li class="nav-item">
-                                         <a class="nav-tab-link" id="three-tab" data-bs-toggle="tab" href="#five" role="tab" aria-controls="three"> 
-                                            <div class="goal-button">
-                                                <span>
-                                                    Web Marketing
-                                                </span>
-                                                <div class="icon">
-                                                    <i class="flaticon-next-1"></i>
-                                                </div>
-                                            </div>
-                                        </a> 
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-tab-link" id="three-tab1" data-bs-toggle="tab" href="#six" role="tab" aria-controls="three"> 
-                                           <div class="goal-button">
-                                               <span>
-                                                Wep Application
-                                               </span>
-                                               <div class="icon">
-                                                   <i class="flaticon-next-1"></i>
-                                               </div>
-   
-                                           </div>
-                                       </a> 
-                                   </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="one" role="tabpanel"> 
-                                    <div class="question-answer">
-                                        <h5>UX/UI Strategy</h5>
-                                        <img src="../assets/images/heros/service-details1.jpg" class="service-details1" alt="image">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage oLorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="two" role="tabpanel">
-                                    <div class="question-answer">
-                                        <h5>It Management</h5>
-                                        <img src="../assets/images/heros/service-details1.jpg" class="service-details1" alt="image">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage oLorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="three" role="tabpanel">
-                                    <div class="question-answer">
-                                        <h5>Cyber Security</h5>
-                                        <img src="../assets/images/heros/service-details1.jpg" class="service-details1" alt="image">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage oLorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="four" role="tabpanel">
-                                    <div class="question-answer">
-                                        <h5>Web Development</h5>
-                                        <img src="../assets/images/heros/service-details1.jpg" class="service-details1" alt="image">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage oLorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="five" role="tabpanel">
-                                    <div class="question-answer">
-                                        <h5>Web Development</h5>
-                                        <img src="../assets/images/heros/service-details1.jpg" class="service-details1" alt="image">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage oLorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="six" role="tabpanel">
-                                    <div class="question-answer">
-                                        <h5>Web Development</h5>
-                                        <img src="../assets/images/heros/service-details1.jpg" class="service-details1" alt="image">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage oLorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    </div>
+    <!-- Service Details Warp Start -->
+    <div class="service-details-warp ptb-100">
+        <div class="container">
+            <div class="question-widget-one">
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="service-small-widget">
-                            <div class="all-boxes brochures">
-                                <h3>Brochures</h3>
-                                <ul>
-                                    <li>
+                        <div class="service-tab-list all-boxes">
+                            <h3>
+                                All Services</h3>
+                            <ul class="nav nav-tabs d-flex flex-column" id="myTab" role="tablist">
+                                <li class="nav-item"><a class="nav-tab-link active" id="data-eng-tab" data-bs-toggle="tab"
+                                    href="#data-eng" role="tab" aria-controls="data-eng">
+                                    <div class="goal-button">
+                                        <span>Data Engineering</span>
                                         <div class="icon">
-                                            <img src="../assets/images/svgs/pdf1.svg" class="pdf1" alt="pdf">
+                                            <i class="flaticon-next-1"></i>
                                         </div>
-                                        <h5>Download .PDF</h5>
-                                    </li>
-                                    <li>
+                                    </div>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="llm-tab" data-bs-toggle="tab" href="#llm"
+                                    role="tab">
+                                    <div class="goal-button">
+                                        <span>LLM & Data Science</span>
                                         <div class="icon">
-                                            <img src="../assets/images/svgs/pdf2.svg" class="pdf1" alt="pdf">
-                                        </div>
-                                        <h5>Download .DOC</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="service-provider text-center">
-                                <h4>Need Any Help?</h4>
-                                <h5>Best /services/ Provider</h5>
-                                <p>Look like readable English. Many desktop its publishing packages and web</p>
-                                <a href="/contact/" class="default-btn">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="service-details-big-widget">
-                            <div class="variation">
-                                <h6>“There are many variations of passages of Lorem Ipsum available, but the mhave suffered alteration in some form, by injected humour, or randomised words”</h6>
-                                <img src="../assets/images/svgs/quote2.svg" class="quote2" alt="image">
-                            </div>
-                            <div class="under-service">
-                                <h3>What You Will Get Under This Service</h3>
-                                <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always</p>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="image-box mb-3">
-                                            <img src="../assets/images/heros/service-details2.jpg" alt="image">
-                                            <h5>It Management</h5>
-                                            <p>There are many variations of passages of orem Ipsum available, but the majority</p>
+                                            <i class="flaticon-next-1"></i>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="image-box mb-3">
-                                            <img src="../assets/images/heros/service-details3.jpg" alt="image">
-                                            <h5>Cyber Security</h5>
-                                            <p>There are many variations of passages of orem Ipsum available, but the majority</p>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="bi-tab" data-bs-toggle="tab" href="#bi"
+                                    role="tab">
+                                    <div class="goal-button">
+                                        <span>BI Dashboards</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="what-can">
-                                <h4>What We Can </h4>
-                                <p>Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free repetition, injected humour, Lorem Ipsum is therefore always freeor non-characteristic words etc</p>
-                                <div class="row">
-                                    <div class="col-lg-6 col-sm-6">
-                                        <ul>
-                                            <li>
-                                                1. Words is roughly being maintained
-                                            </li>
-                                            <li>
-                                                3. Words is roughly being maintained
-                                            </li>
-                                        </ul>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="backend-tab" data-bs-toggle="tab"
+                                    href="#backend" role="tab">
+                                    <div class="goal-button">
+                                        <span>Backend Development</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6 col-sm-6">
-                                        <ul>
-                                            <li>
-                                                2. Words is roughly being maintained
-                                            </li>
-                                            <li>
-                                                4. Words is roughly being maintained
-                                            </li>
-                                        </ul>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="frontend-tab" data-bs-toggle="tab"
+                                    href="#frontend" role="tab" aria-controls="data-eng">
+                                    <div class="goal-button">
+                                        <span>Frontend Development</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service Details Warp End -->
-
-        <!-- Footer Warp Start -->
-        <div class="footer-warp pt-100 pb-75">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3" data-cue="fadeIn">
-                        <div class="footer-widget">
-                            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
-    Lemobot<span style="color: #007bff;">.</span>
-</a>
-                            <ul class="footer-contact">
-                                <li>
-                                    <div class="icon">
-                                        <i class="flaticon-phone-call"></i>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="chatbot-tab" data-bs-toggle="tab"
+                                    href="#chatbot" role="tab">
+                                    <div class="goal-button">
+                                        <span>AI Chatbots (LLM)</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                    <div class="content">
-                                        <a href="tel:008185659635">+ (91) 9819-413-273</a>
-                                        <a href="tel:008185659635">+ (008) 186654965</a>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="ml-tab" data-bs-toggle="tab" href="#ml"
+                                    role="tab">
+                                    <div class="goal-button">
+                                        <span>Machine Learning Solutions</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="flaticon-placeholder"></i>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="ai-tab" data-bs-toggle="tab" href="#ai"
+                                    role="tab">
+                                    <div class="goal-button">
+                                        <span>AI Integration & Automation</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                    <div class="content">
-                                        <p>Riv1418erwood Drive, Suite 3245
-                                       <span> CA 96052, United States</span></p>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="wp-tab" data-bs-toggle="tab" href="#wp"
+                                    role="tab" aria-controls="data-eng">
+                                    <div class="goal-button">
+                                        <span>WordPress Development</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="flaticon-email"></i>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="shopify-tab" data-bs-toggle="tab"
+                                    href="#shopify" role="tab">
+                                    <div class="goal-button">
+                                        <span>Shopify Store Setup</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                    <div class="content">
-                                       <a href="/cdn-cgi/l/email-protection#cda5a8a1a1a28db9a2bfaca9a2e3aea2a0"><span class="__cf_email__" data-cfemail="e78f828b8b88a7938895868388c984888a">[email&#160;protected]</span></a>
-                                       <a href="/cdn-cgi/l/email-protection#c2b1b7b2b2adb0b682b6adb0a3a6adeca1adaf"><span class="__cf_email__" data-cfemail="8dfef8fdfde2fff9cdf9e2ffece9e2a3eee2e0">[email&#160;protected]</span></a>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="net-tab" data-bs-toggle="tab" href="#net"
+                                    role="tab">
+                                    <div class="goal-button">
+                                        <span>.NET Development</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
                                     </div>
-                                </li>
+                                </a></li>
+                                <li class="nav-item"><a class="nav-tab-link" id="db-tab" data-bs-toggle="tab" href="#db"
+                                    role="tab">
+                                    <div class="goal-button">
+                                        <span>Database Architecture</span>
+                                        <div class="icon">
+                                            <i class="flaticon-next-1"></i>
+                                        </div>
+                                    </div>
+                                </a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-9">
-                        <div class="row">
-                            <div class="col-lg-2 col-sm-6 col-md-3" data-cue="fadeIn">
-                                <div class="footer-widget">
-                                    <h3>About Us</h3>
-                                    <ul class="footer-link">
-                                        <li>
-                                            <a href="/">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Shop</a>
-                                        </li>
-                                        <li>
-                                            <a href="/about/">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog.html">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="/contact/">Contact</a>
-                                        </li>
+                    <div class="col-lg-8">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="data-eng" role="tabpanel" aria-labelledby="data-eng-tab">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            Data Engineering</h5>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewbox="0 0 24 24"
+                                            stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M4 4v5h.582a1 1 0 00.7-.3l2.7-2.7a1 1 0 011.416 0l2.7 2.7a1 1 0 00.7.3H20V4H4zM4 20v-5h.582a1 1 0 01.7.3l2.7 2.7a1 1 0 001.416 0l2.7-2.7a1 1 0 01.7-.3H20v5H4z" />
+  </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        Data Engineering is the backbone of modern data systems. It involves building robust
+                                        pipelines to collect, transform, and load data from multiple sources into a centralized
+                                        storage (data lakes/warehouses), ensuring data is clean, timely, and accessible
+                                        for analytics and AI.</p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Scalable ETL (Extract, Transform, Load) pipelines</li>
+                                        <li>Real-time data streaming with Kafka and Spark</li>
+                                        <li>Data warehousing using Snowflake, BigQuery, or Redshift</li>
+                                        <li>Batch and incremental data processing</li>
+                                        <li>Secure data lake integration with governance</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>Apache Spark, Kafka, Airflow</li>
+                                        <li>Databricks, Snowflake, BigQuery</li>
+                                        <li>AWS Glue, Azure Data Factory, Google Dataflow</li>
+                                        <li>SQL, Python, Delta Lake</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Consolidating customer data across departments</li>
+                                        <li>Streaming IoT device data for real-time analytics</li>
+                                        <li>Migrating legacy data systems to cloud-based warehouses</li>
+                                        <li>Setting up data marts for BI reporting</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Proven experience with enterprise-scale data pipelines</li>
+                                        <li>Expertise across all major cloud platforms</li>
+                                        <li>We ensure data quality, governance, and performance</li>
+                                        <li>Flexible, cost-efficient architectures</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-sm-6 col-md-3" data-cue="fadeIn">
-                                <div class="footer-widget">
-                                    <h3>Pages</h3>
-                                    <ul class="footer-link">
-                                        <li>
-                                            <a href="/contact/">Contact Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="/services/.html">Purchase Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="faq.html">FAQ's</a>
-                                        </li>
-                                        <li>
-                                            <a href="terms-condition.html">Terms of Service</a>
-                                        </li>
-                                        <li>
-                                            <a href="privacy-policy.html">Privacy Policy</a>
-                                        </li>
+                            <div class="tab-pane fade" id="llm" role="tabpanel" aria-labelledby="llm-tab">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            LLM & Data Science</h5>
+                                        <!-- AI Brain Icon -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <path d="M8 4a4 4 0 0 0-4 4v4a4 4 0 0 0 4 4"></path>
+        <path d="M16 4a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4"></path>
+        <path d="M12 12h.01"></path>
+        <path d="M12 8h.01"></path>
+        <path d="M12 16h.01"></path>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We build, fine-tune, and deploy powerful language models and ML systems tailored
+                                        to your business needs. Our services include LLM integration (like GPT-4), RAG pipelines,
+                                        and scalable machine learning workflows powered by MLOps best practices.</p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Custom LLM development (e.g. GPT, Falcon, Mistral)</li>
+                                        <li>Retrieval-Augmented Generation (RAG) pipelines</li>
+                                        <li>Lifecycle management using MLflow, Weights & Biases</li>
+                                        <li>Agent-based architectures for automation</li>
+                                        <li>Model hosting, inference & optimization</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>OpenAI, HuggingFace Transformers, LangChain</li>
+                                        <li>Vector DBs: FAISS, Weaviate, Pinecone</li>
+                                        <li>MLOps: MLflow, Kubeflow, Prefect</li>
+                                        <li>Cloud: AWS Sagemaker, Azure ML, Vertex AI</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Customer support bots with contextual memory</li>
+                                        <li>Intelligent search across enterprise documents</li>
+                                        <li>Automated report generation or summarization</li>
+                                        <li>Conversational apps for HR, sales, or onboarding</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>LLM-aware engineering with domain expertise</li>
+                                        <li>We balance speed, cost, and accuracy for scale</li>
+                                        <li>Security-first design with API & cloud governance</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-sm-6 col-md-3" data-cue="fadeIn">
-                                <div class="footer-widget">
-                                    <h3>/services/</h3>
-                                    <ul class="footer-link">
-                                        <li>
-                                            <a href="/services/.html">IT Management</a>
-                                        </li>
-                                        <li>
-                                            <a href="/services/.html">Cyber Security</a>
-                                        </li>
-                                        <li>
-                                            <a href="/services/.html">UX/UI Strategy</a>
-                                        </li>
-                                        <li>
-                                            <a href="/services/.html">Web Marketing</a>
-                                        </li>
-                                        <li>
-                                            <a href="/services/.html">Web application</a>
-                                        </li>
+                            <div class="tab-pane fade" id="bi" role="tabpanel" aria-labelledby="bi-tab">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            BI Dashboards</h5>
+                                        <!-- Dashboard Icon SVG -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7" />
+        <rect x="14" y="3" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" />
+        <rect x="3" y="14" width="7" height="7" />
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We create insightful dashboards and reporting tools that empower your teams with
+                                        real-time data visibility. Our solutions are highly customizable and enable informed
+                                        decision-making across all levels.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Interactive, real-time dashboards with filterable views</li>
+                                        <li>KPI tracking, alerts, and automated report generation</li>
+                                        <li>Multi-source data integration (SQL, APIs, Excel, CRMs)</li>
+                                        <li>Mobile-friendly, shareable, and role-based access</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>Power BI, Tableau, Metabase, Superset, Redash</li>
+                                        <li>Databricks SQL, Snowflake, BigQuery</li>
+                                        <li>Python for data preprocessing and ETL logic</li>
+                                        <li>Data Warehousing via Lakehouse/Star Schema models</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Executive dashboards for strategic monitoring</li>
+                                        <li>Sales & marketing performance analytics</li>
+                                        <li>Operational metrics for supply chain or inventory</li>
+                                        <li>Finance & compliance dashboards with drill-downs</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Business-driven design with UX-first approach</li>
+                                        <li>Support for embedded analytics & white-labeling</li>
+                                        <li>Expertise across BI tools and backend integrations</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-sm-6 col-md-3" data-cue="fadeIn">
-                                <div class="footer-widget">
-                                    <h3>Get Newsletter</h3>
-                                    <p>Get on the list and get 10% off your first order!</p>
-                                    <form >
-                                        <input type="text" class="form-control" placeholder="Enter Your Email">
-                                        <button class="default-btn" type="submit">Subscribe Now</button>
-                                    </form>
+                            <div class="tab-pane fade" id="backend" role="tabpanel" aria-labelledby="backend-tab">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            Backend Development</h5>
+                                        <!-- Server Icon SVG -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="8" rx="2" ry="2"></rect>
+        <rect x="2" y="13" width="20" height="8" rx="2" ry="2"></rect>
+        <line x1="6" y1="7" x2="6.01" y2="7"></line>
+        <line x1="6" y1="17" x2="6.01" y2="17"></line>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We specialize in building scalable, performant, and secure backend systems that
+                                        power modern applications. From APIs to infrastructure orchestration, we deliver
+                                        clean architecture and resilient deployments.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>RESTful & GraphQL APIs with authentication and rate-limiting</li>
+                                        <li>Async programming with FastAPI & Celery task queues</li>
+                                        <li>Custom admin panels and dashboards using Streamlit or Django Admin</li>
+                                        <li>Socket.io and WebSocket support for real-time applications</li>
+                                        <li>Robust testing & CI/CD pipelines for backend reliability</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>Django, FastAPI, Flask, Streamlit</li>
+                                        <li>PostgreSQL, MongoDB, Redis, SQLite</li>
+                                        <li>Docker, Nginx, Gunicorn, Supervisor</li>
+                                        <li>CI/CD: GitHub Actions, Jenkins, Docker Compose</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Custom APIs for web and mobile applications</li>
+                                        <li>Enterprise data pipelines and ETL automation</li>
+                                        <li>Admin portals for CMS, CRM, or HR systems</li>
+                                        <li>Chat systems, bots, or event-driven microservices</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>We write clean, scalable code that follows design principles</li>
+                                        <li>Experience with both monoliths and microservices</li>
+                                        <li>Built-in observability and logging (Prometheus, Sentry, ELK)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="frontend" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            Frontend Development</h5>
+                                        <!-- Monitor/Icon SVG for UI Dev -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We craft modern, high-performance frontends that are responsive, accessible, and
+                                        delightful to use. Our team builds seamless UI/UX across web and mobile using cutting-edge
+                                        frameworks and standards.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Responsive UI for all screen sizes (mobile-first)</li>
+                                        <li>Reusable components built with React & Next.js</li>
+                                        <li>Accessibility standards (WCAG, ARIA roles)</li>
+                                        <li>Client-side routing, animation, and form validation</li>
+                                        <li>Performance tuning: lazy loading, code splitting</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>React, Next.js, TypeScript, Redux Toolkit</li>
+                                        <li>HTML5, CSS3, SCSS, Tailwind, Bootstrap</li>
+                                        <li>Vite, Webpack, Babel, ESLint, Prettier</li>
+                                        <li>Testing: Jest, React Testing Library, Cypress</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Custom dashboard interfaces for SaaS platforms</li>
+                                        <li>Landing pages and marketing websites</li>
+                                        <li>Single Page Applications (SPAs) & PWAs</li>
+                                        <li>Component libraries and design systems</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Pixel-perfect UI development with UX precision</li>
+                                        <li>Strong collaboration with designers and backend teams</li>
+                                        <li>Optimized for speed, accessibility, and SEO</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="chatbot" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            AI Chatbots (LLM)</h5>
+                                        <!-- Chatbot SVG Icon -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <path d="M12 3a9 9 0 1 1-3.53 17.36L4 21l1.64-4.47A9 9 0 0 1 12 3z"></path>
+        <line x1="8" y1="9" x2="8.01" y2="9"></line>
+        <line x1="16" y1="9" x2="16.01" y2="9"></line>
+        <path d="M8 13a4 4 0 0 0 8 0"></path>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We build intelligent, GPT-powered chatbot systems tailored for your use case. Whether
+                                        for customer support, internal tools, onboarding, or lead generation — our bots
+                                        understand context, remember conversations, and deliver value.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>GPT-4, Claude, or open-source LLM-based chatbots</li>
+                                        <li>Memory-aware & context-persistent conversations</li>
+                                        <li>Custom tools/functions via LangChain agents</li>
+                                        <li>Multi-turn dialogue and fallback strategies</li>
+                                        <li>Seamless frontend integrations (React, Streamlit, web widgets)</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>OpenAI, LangChain, RAG pipelines</li>
+                                        <li>Streamlit, React, WebSocket, FastAPI</li>
+                                        <li>Vector search with Pinecone, Weaviate, FAISS</li>
+                                        <li>Deployment: Vercel, Render, HuggingFace Spaces</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>24/7 automated customer service chatbots</li>
+                                        <li>Lead qualification and booking bots</li>
+                                        <li>Internal assistants for HR, finance, IT</li>
+                                        <li>Document-based search bots (PDF, HTML, Markdown)</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Custom workflows, tone, and branding</li>
+                                        <li>Enterprise-ready: authentication, audit trails, analytics</li>
+                                        <li>Ongoing training, updates, and hosting support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="ml" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            Machine Learning Solutions</h5>
+                                        <!-- ML Gear Icon -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        Our Machine Learning solutions deliver predictive insights, intelligent automation,
+                                        and advanced analytics. We build, train, and deploy production-grade ML systems
+                                        tailored to your business problems and infrastructure.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>End-to-end ML pipeline development and deployment</li>
+                                        <li>Predictive modeling, classification, regression</li>
+                                        <li>Computer vision, NLP, and time-series forecasting</li>
+                                        <li>Intelligent automation and decision support systems</li>
+                                        <li>Hyperparameter tuning and performance evaluation</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>Python, TensorFlow, PyTorch, Scikit-learn</li>
+                                        <li>Airflow, Prefect, MLflow for orchestration</li>
+                                        <li>Docker, Kubernetes for scalable deployment</li>
+                                        <li>GCP, AWS Sagemaker, Azure ML</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Customer churn and retention prediction</li>
+                                        <li>Fraud detection and anomaly monitoring</li>
+                                        <li>Document classification and text summarization</li>
+                                        <li>Sales forecasting and inventory optimization</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Expertise in production ML systems at scale</li>
+                                        <li>We integrate data engineering + MLOps + CI/CD</li>
+                                        <li>Business-first thinking with measurable ROI</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="ai" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            AI Integration & Automation</h5>
+                                        <!-- AI Network SVG Icon -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <path d="M12 2v4"></path>
+        <path d="M12 18v4"></path>
+        <path d="M4.93 4.93l2.83 2.83"></path>
+        <path d="M16.24 16.24l2.83 2.83"></path>
+        <path d="M2 12h4"></path>
+        <path d="M18 12h4"></path>
+        <path d="M4.93 19.07l2.83-2.83"></path>
+        <path d="M16.24 7.76l2.83-2.83"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We help you harness the power of artificial intelligence by embedding it directly
+                                        into your workflows, apps, and operations. Our solutions enable automation, smarter
+                                        decision-making, and seamless integration across systems using secure and scalable
+                                        APIs.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>End-to-end AI system integration via REST or GraphQL APIs</li>
+                                        <li>Automation of repetitive workflows using AI agents</li>
+                                        <li>Embedding AI insights into dashboards or mobile apps</li>
+                                        <li>Event-driven architecture and webhook handling</li>
+                                        <li>Realtime or batch AI inference pipelines</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>OpenAI API, Hugging Face Inference API, LangChain</li>
+                                        <li>Zapier, Make (Integromat), and custom Python bots</li>
+                                        <li>Node.js, FastAPI, Django Rest Framework for endpoints</li>
+                                        <li>Cloud-native integration: AWS Lambda, Azure Functions, GCP Cloud Functions</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Slack or WhatsApp AI assistants with natural replies</li>
+                                        <li>Auto-tagging and routing of support tickets</li>
+                                        <li>AI-generated CRM notes and emails</li>
+                                        <li>Automated report generation for BI dashboards</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Secure, scalable and cost-effective integrations</li>
+                                        <li>Low-latency response handling with monitoring</li>
+                                        <li>Built for real-world use cases, not just prototypes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="wp" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            WordPress Development</h5>
+                                        <!-- WordPress Gear SVG Icon -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"></path>
+        <path d="M4.93 4.93l14.14 14.14"></path>
+        <path d="M9.17 9.17a3 3 0 0 0 0 4.24"></path>
+        <path d="M14.83 14.83a3 3 0 0 0 0-4.24"></path>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We build high-performance WordPress websites that are visually stunning, responsive
+                                        across all devices, and easy to manage. From corporate pages to WooCommerce-powered
+                                        online stores, our solutions combine speed, scalability, and SEO best practices.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Custom themes, child themes, and FSE (Full Site Editing)</li>
+                                        <li>WooCommerce setup, configuration & payment integration</li>
+                                        <li>Optimized for speed (LCP, CLS, Core Web Vitals)</li>
+                                        <li>SEO-friendly markup, schema.org, and meta control</li>
+                                        <li>Blog, portfolio, membership, or LMS setups</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies & Tools</h6>
+                                    <ul>
+                                        <li>WordPress, Elementor, Advanced Custom Fields (ACF)</li>
+                                        <li>WooCommerce, WP Rocket, Yoast SEO, Rank Math</li>
+                                        <li>Custom plugins, CPTs, and shortcode development</li>
+                                        <li>WP REST API for headless or mobile integrations</li>
+                                        <li>CDN + caching (Cloudflare, Bunny.net, Redis object cache)</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Marketing websites with fast landing pages</li>
+                                        <li>Scalable WooCommerce stores with custom workflows</li>
+                                        <li>Headless WordPress with React/Next.js frontends</li>
+                                        <li>Multi-language and multisite deployments</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>SEO-first, mobile-friendly builds</li>
+                                        <li>Fast delivery, full ownership and minimal dependencies</li>
+                                        <li>Custom admin panels to empower content editors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="shopify" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            Shopify Store Setup</h5>
+                                        <!-- Shopify Cart Icon with Pulse Animation -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <path d="M6 6h15l-1.5 9h-13z"></path>
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="18" cy="21" r="1"></circle>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We design and launch stunning Shopify storefronts that convert. Whether you're just
+                                        starting or migrating from another platform, we help you build an optimized, branded,
+                                        and high-converting eCommerce presence on Shopify.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Fully customized Shopify theme development</li>
+                                        <li>Branded storefront design (desktop + mobile)</li>
+                                        <li>Third-party app integration & automation</li>
+                                        <li>Multi-currency, multi-language setup</li>
+                                        <li>Payment, shipping & tax configurations</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies & Tools</h6>
+                                    <ul>
+                                        <li>Shopify Online Store 2.0, Liquid, Hydrogen</li>
+                                        <li>Custom Shopify Apps (Node, Python, GraphQL)</li>
+                                        <li>Storefront API for JAMstack integration</li>
+                                        <li>Shopify CLI, Polaris, and ThemeKit</li>
+                                        <li>Analytics: GA4, Hotjar, Klaviyo</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>DTC (Direct-to-Consumer) product launches</li>
+                                        <li>Subscription-based or digital product stores</li>
+                                        <li>Fashion, health, electronics, and niche commerce</li>
+                                        <li>Global stores with international checkout</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Fast-loading, visually polished storefronts</li>
+                                        <li>Custom workflows tailored to your business</li>
+                                        <li>Post-launch training & support included</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="net" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            .NET Development</h5>
+                                        <!-- Animated Server Icon (Symbolizing Backend/Dashboard/API) -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="7" rx="2"></rect>
+        <rect x="2" y="14" width="20" height="7" rx="2"></rect>
+        <path d="M6 7h.01M6 18h.01"></path>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We deliver secure, scalable .NET solutions using C#, ASP.NET Core, and the Microsoft
+                                        ecosystem. From enterprise dashboards to mission-critical APIs, our team builds
+                                        software that's fast, maintainable, and ready for growth.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Custom APIs, microservices, and RESTful backends</li>
+                                        <li>Enterprise-grade architecture (clean code, SOLID principles)</li>
+                                        <li>Multi-tenant SaaS platform development</li>
+                                        <li>Secure user authentication & role-based access</li>
+                                        <li>Real-time data handling with SignalR/WebSockets</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>.NET Core / ASP.NET Core / C#</li>
+                                        <li>Entity Framework, Dapper ORM</li>
+                                        <li>SQL Server, PostgreSQL, MongoDB</li>
+                                        <li>Azure DevOps, CI/CD Pipelines, Docker</li>
+                                        <li>Blazor, Razor Pages, and REST APIs</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Enterprise internal tools and dashboards</li>
+                                        <li>Healthcare, finance, and B2B SaaS applications</li>
+                                        <li>High-performance reporting or workflow systems</li>
+                                        <li>Legacy .NET migration & modernization</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Proven expertise in building robust .NET systems</li>
+                                        <li>Security-first architecture with audit logs & encryption</li>
+                                        <li>Modern dev practices (CI/CD, testing, agile delivery)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="db" role="tabpanel">
+                                <div class="question-answer">
+                                    <div class="heading-with-icon">
+                                        <h5>
+                                            Database Architecture</h5>
+                                        <!-- Animated Database Icon -->
+                                        <svg class="svg-brain" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+        <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"></path>
+        <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"></path>
+      </svg>
+                                    </div>
+                                    <h6>
+                                        Overview</h6>
+                                    <p>
+                                        We architect reliable, secure, and scalable database systems tailored to your application’s
+                                        needs. Whether it’s designing from scratch or optimizing legacy infrastructure,
+                                        our solutions ensure performance, integrity, and flexibility.
+                                    </p>
+                                    <h6>
+                                        Key Features</h6>
+                                    <ul>
+                                        <li>Relational (PostgreSQL, MySQL, SQL Server) and NoSQL (MongoDB, DynamoDB)</li>
+                                        <li>Data modeling, normalization, and ERD design</li>
+                                        <li>Performance tuning, indexing, and query optimization</li>
+                                        <li>Backup, replication, and disaster recovery setup</li>
+                                        <li>Schema migrations and data versioning</li>
+                                    </ul>
+                                    <h6>
+                                        Technologies Used</h6>
+                                    <ul>
+                                        <li>PostgreSQL, MySQL, SQL Server, Oracle</li>
+                                        <li>MongoDB, DynamoDB, Firestore</li>
+                                        <li>Flyway, Liquibase, pgAdmin, Prisma</li>
+                                        <li>Cloud DBs on AWS RDS, Azure SQL, GCP Spanner</li>
+                                    </ul>
+                                    <h6>
+                                        Use Cases</h6>
+                                    <ul>
+                                        <li>Transactional systems for e-commerce, finance, healthcare</li>
+                                        <li>Multi-tenant SaaS apps with tenant-aware schema designs</li>
+                                        <li>Hybrid cloud setups with backup & failover strategies</li>
+                                        <li>Data warehouse preparation for BI/reporting tools</li>
+                                    </ul>
+                                    <h6>
+                                        Why Choose Us?</h6>
+                                    <ul>
+                                        <li>Battle-tested expertise in modern and legacy DB systems</li>
+                                        <li>Scalable designs that grow with your business</li>
+                                        <li>End-to-end support from modeling to maintenance</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+                        <!-- End of tab-content -->
                     </div>
                 </div>
+                <!-- End row -->
             </div>
-            <img src="../assets/images/shapes/footer-shape1.png" class="footer-shape1" alt="footer-shape">
-            <img src="../assets/images/shapes/footer-shape2.png" class="footer-shape2" alt="footer-shape">
-            <img src="../assets/images/shapes/footer-shape3.png" class="footer-shape3" alt="footer-shape">
+            <!-- End question-widget-one -->
+            <!-- Optional Brochures & CTA area can go here -->
         </div>
-        <!-- Footer Warp End -->
-
-        <!-- Copyright Warp Start -->
-        <div class="copyright-warp">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="copy-right-content">
-                            <p>© Lemobot is proudly owned by 
-                                <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="social-list">
-                            <li>
-                                <a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i></a>
-                            </li>
-                            
-                            <li>
-                                <a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright Warp End -->
-
-        <!-- Scroll Top Btn -->
-        <div class="top-button-icon">
-            <button id="scrollTopBtn">
-                <i class="ri-arrow-up-circle-fill"></i>
-            </button>
-        </div>
-        <!-- Scroll Top Btn -->
-
-        <!-- Sidebar Area Start -->
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"    aria-labelledby="offcanvasWithBothOptionsLabel">
-            <div class="offcanvas-body">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"> <i class="flaticon-close"></i>
-                </button>
-                <div class="sidebar-warp">
-                    <div class="footer-widget style2">
-                  <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
-    Lemobot<span style="color: #007bff;">.</span>
-</a>
-                        <ul class="footer-contact">
+        <!-- End container -->
+    </div>
+    <!-- End service-details-warp -->
+    <!-- Footer Warp Start -->
+    <div class="footer-warp pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
+                        <ul class="footer-contact mt-4">
                             <li>
                                 <div class="icon">
                                     <i class="flaticon-phone-call"></i>
                                 </div>
                                 <div class="content">
-                                    <a href="tel:008185659635">+ (91) 9819-413-273</a>
-                                    <a href="tel:008185659635">+ (008) 186654965</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="flaticon-placeholder"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Riv1418erwood Drive, Suite 3245
-                                    CA 96052, United States</p>
-                                </div>
+                                    <a href="tel:9819413273">+ (91) 9819-413-273</a></div>
                             </li>
                             <li>
                                 <div class="icon">
                                     <i class="flaticon-email"></i>
                                 </div>
                                 <div class="content">
-                                   <a href="/cdn-cgi/l/email-protection#6008050c0c0f20140f1201040f4e030f0d"><span class="__cf_email__" data-cfemail="18707d747477586c776a797c77367b7775">[email&#160;protected]</span></a>
-                                   <a href="/cdn-cgi/l/email-protection#94e7e1e4e4fbe6e0d4e0fbe6f5f0fbbaf7fbf9"><span class="__cf_email__" data-cfemail="c2b1b7b2b2adb0b682b6adb0a3a6adeca1adaf">[email&#160;protected]</span></a>
+                                    <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-placeholder"></i>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        Unit No.7, Shivaji Nagar,<br>
+                                        Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-widget style2">
-                        <h3>Get Newsletter</h3>
-                        <p>Get on the list and get 10% off your first order!</p>
-                        <form >
-                            <input type="text" class="form-control" placeholder="Enter Your Email">
-                            <button class="default-btn" type="submit">Subscribe Now</button>
-                        </form>
-                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
                     <div class="footer-widget">
-                        <h3>Follow Us</h3>
-                        <ul class="social-list">
-                            <li>
-                                <a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i></a>
-                            </li>
-                            
-                            <li>
-                                <a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
-                            </li>
+                        <h3>
+                            Quick Links</h3>
+                        <ul class="footer-link">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
                         </ul>
                     </div>
-                    
+                </div>
+                <!-- Our Projects -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Our Services</h3>
+                        <ul class="footer-link">
+                            <li><a href="/services/">AI Chatbots</a></li>
+                            <li><a href="/services/">Machine Learning</a></li>
+                            <li><a href="/services/">WordPress</a></li>
+                            <li><a href="/services/">Shopify</a></li>
+                            <li><a href="/services/">.NET Applications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect Now -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Connect With Us</h3>
+                        <p>
+                            Have a project or question? Let's talk directly on WhatsApp.</p>
+                        <a href="https://wa.me/919819413273" target="_blank" class="default-btn d-inline-block mt-2">
+                            Connect Now </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Sidebar Area End -->
-  
-        <!-- Modal Area Start -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen ">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="input-group search-warp mb-3">
-                            <div class="input-box">
-                                <form>
-                                    <input type="text" class="form-control" placeholder="Search Here"  aria-describedby="button-addon2">
-                                    <button class="btn" type="submit" id="button-addon2">
-                                        <i class="flaticon-loupe"></i>
-                                    </button>
-                                </form>
+        <!-- Decorative Shapes -->
+    </div>
+    <!-- Footer Warp End -->
+    <!-- Copyright Warp Start -->
+    <div class="copyright-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="copy-right-content">
+                        <p>
+                            Copyright ©2025. All Rights Reserved. — Designed and Developed by <a href="https://www.lemobot.in/"
+                                target="_blank">Lemobot (OPC) Private Limited</a>
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-6 col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Warp End -->
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class="ri-arrow-up-circle-fill"></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+    <!-- Sidebar Area Start -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="flaticon-close"></i>
+            </button>
+            <div class="sidebar-warp">
+                <div class="footer-widget style2">
+                    <div class="logo">
+                        <img src="assets/images/logo2.svg" class="logo" alt="logo">
+                    </div>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-phone-call"></i>
                             </div>
+                            <div class="content">
+                                <a href="tel:9819413273">+ (91) 9819-413-273</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Unit No.7, Shivaji Nagar, Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="content">
+                                <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget style2">
+                    <h3>
+                        Get Newsletter</h3>
+                    <p>
+                        Get on the list and get 10% off your first order!</p>
+                    <form>
+                    <input type="text" class="form-control" placeholder="Enter Your Email">
+                    <button class="default-btn" type="submit">
+                        Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="footer-widget">
+                    <h3>
+                        Follow Us</h3>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Area End -->
+    <!-- Modal Area Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    <div class="input-group search-warp mb-3">
+                        <div class="input-box">
+                            <form>
+                            <input type="text" class="form-control" placeholder="Search Here" aria-describedby="button-addon2">
+                            <button class="btn" type="submit" id="button-addon2">
+                                <i class="flaticon-loupe"></i>
+                            </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Modal Area End -->
+    </div>
+    <!-- Modal Area End -->
+    <div class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="modal-body">
+                <iframe class="video-bg-btn" src="https://www.youtube.com/embed/u9prcUCHlqM" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Links of JS File -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/scrollCue.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabLinks = document.querySelectorAll('.nav-tab-link');
+    const scrollTarget = document.querySelector('.question-widget-one');
 
-        <!-- Links of JS File -->
-        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../assets/js/swiper-bundle.min.js"></script>
-        <script src="../assets/js/scrollCue.min.js"></script>
-        <script src="../assets/js/custom.js"></script>
-    </body>
-</html>   
+    const headerOffset = 150; // adjust this value based on your header height
+
+    tabLinks.forEach(tab => {
+      tab.addEventListener('click', function () {
+        setTimeout(() => {
+          const elementPosition = scrollTarget.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 100);
+      });
+    });
+  });
+    </script>
+</body>
+</html>

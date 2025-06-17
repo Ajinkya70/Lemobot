@@ -15,6 +15,78 @@
     <!-- Title -->
     <title>Lemobot - Web & AI Solutions Crafted with Lemobot.</title>
     <link rel="icon" type="image/svg" href="../assets/images/favicon.svg">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <style>
+        /* Fix for equal-height cards and prevent overflow */
+        .row.justify-content-center
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .col-xl-3, .col-lg-4, .col-sm-6
+        {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+        
+        .service-widget
+        {
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+            text-align: center; /* <-- this was 'left' before */
+            height: 100%;
+            min-height: 340px;
+        }
+        
+        .service-widget .icon
+        {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #0057ff;
+        }
+        
+        .service-widget h3
+        {
+            font-size: 20px;
+            margin-bottom: 10px; /* reduce this to tighten gap */
+            font-weight: 600;
+        }
+        
+        .service-widget p
+        {
+            font-size: 15px;
+            color: #666;
+            margin-top: 0; /* removes unnecessary top space */
+            margin-bottom: 0;
+        }
+        .service-widget .icon
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background-color: #f1f6fd; /* soft blue circle */
+            border-radius: 50%;
+            margin: 0 auto 15px auto; /* centers horizontally & adds spacing below */
+            position: relative;
+        }
+        
+        .service-widget .icon i
+        {
+            font-size: 28px; /* better vertical fit */
+            color: #0057ff;
+            line-height: 1;
+            position: relative;
+            top: 1px; /* tweak vertical centering */
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader Area Start -->
@@ -86,8 +158,8 @@
     <!-- Start Mobile Device Navbar Area -->
     <div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
         <div class="offcanvas-header">
-            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold;
-                color: black;">Lemobot<span style="color: #007bff;">.</span> </a>
+            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+                Lemobot<span style="color: #007bff;">.</span> </a>
             <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="ri-close-line"></i>
             </button>
@@ -136,11 +208,71 @@
     <div class="inner-service-warp pt-100 pb-75">
         <div class="container">
             <div class="row justify-content-center">
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <i class="fi fi-rr-database"></i>
+                        </div>
+                        <h3>
+                            <a href="service-details.html">Data Engineering</a></h3>
+                        <p>
+                            ETL pipelines, real-time streaming, data warehousing using Databricks, Kafka, Snowflake,
+                            and cloud-native services.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <i class="fi fi-rr-brain"></i>
+                        </div>
+                        <h3>
+                            <a href="service-details.html">LLM & Data Science</a></h3>
+                        <p>
+                            Custom ML/LLM model development, lifecycle management, RAG pipelines, and agentic
+                            SaaS solutions using OpenAI, HuggingFace, and more.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <i class="fi fi-rr-chart-pie"></i>
+                        </div>
+                        <h3>
+                            <a href="service-details.html">BI Dashboards</a></h3>
+                        <p>
+                            Insightful dashboards & reports built with Databricks, Tableau, and Power BI to
+                            support business decision-making.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <i class="fi fi-rr-file-code"></i>
+                        </div>
+                        <h3>
+                            <a href="service-details.html">Backend Development</a></h3>
+                        <p>
+                            APIs and systems built with Django, Streamlit, FastAPI, and databases like MongoDB,
+                            PostgreSQL, and Redis.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
+                    <div class="service-widget">
+                        <div class="icon">
+                            <i class="fi fi-rr-browser"></i>
+                        </div>
+                        <h3>
+                            <a href="service-details.html">Frontend Development</a></h3>
+                        <p>
+                            Responsive, interactive UI development using HTML, CSS, JavaScript, and React for
+                            all device types.</p>
+                    </div>
+                </div>
                 <!-- AI Chatbots -->
                 <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
                     <div class="service-widget">
                         <div class="icon">
-                            <img src="../assets/images/svgs/service1.png" alt="AI Chatbots">
+                            <i class="fi fi-rr-brain-circuit"></i>
                         </div>
                         <h3>
                             <a href="service-details.html">AI Chatbots (LLM)</a></h3>
@@ -153,7 +285,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
                     <div class="service-widget">
                         <div class="icon">
-                            <img src="../assets/images/svgs/service2.png" alt="ML Services">
+                            <i class="fi fi-rr-diagram-project"></i>
                         </div>
                         <h3>
                             <a href="service-details.html">Machine Learning Solutions</a></h3>
@@ -166,7 +298,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
                     <div class="service-widget">
                         <div class="icon">
-                            <img src="../assets/images/svgs/service3.png" alt="AI Integration">
+                            <i class="fi fi-rr-settings-sliders"></i>
                         </div>
                         <h3>
                             <a href="service-details.html">AI Integration & Automation</a></h3>
@@ -178,7 +310,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
                     <div class="service-widget">
                         <div class="icon">
-                            <img src="../assets/images/svgs/service4.png" alt="WordPress">
+                            <i class="fi fi-rr-layout-fluid"></i>
                         </div>
                         <h3>
                             <a href="service-details.html">WordPress Development</a></h3>
@@ -191,7 +323,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
                     <div class="service-widget">
                         <div class="icon">
-                            <img src="../assets/images/svgs/service5.png" alt="Shopify">
+                            <i class="fi fi-rr-shop"></i>
                         </div>
                         <h3>
                             <a href="service-details.html">Shopify Store Setup</a></h3>
@@ -204,7 +336,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
                     <div class="service-widget">
                         <div class="icon">
-                            <img src="../assets/images/svgs/service6.png" alt=".NET">
+                            <i class="fi fi-rr-file-code"></i>
                         </div>
                         <h3>
                             <a href="service-details.html">.NET Development</a></h3>
@@ -217,7 +349,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
                     <div class="service-widget">
                         <div class="icon">
-                            <img src="../assets/images/svgs/service7.png" alt="Database Design">
+                            <i class="fi fi-rr-folder-tree"></i>
                         </div>
                         <h3>
                             <a href="service-details.html">Database Architecture</a></h3>
@@ -226,31 +358,18 @@
                             and growth.</p>
                     </div>
                 </div>
-                <!-- Custom APIs -->
-                <div class="col-xl-3 col-lg-4 col-sm-6" data-cue="slideInUp">
-                    <div class="service-widget">
-                        <div class="icon">
-                            <img src="../assets/images/svgs/service8.png" alt="Custom Tools">
-                        </div>
-                        <h3>
-                            <a href="service-details.html">Custom Tools & APIs</a></h3>
-                        <p>
-                            Need something custom? We build APIs, integrations, and internal tools to fit your
-                            exact needs.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-     <!-- Footer Warp Start -->
+    <!-- Footer Warp Start -->
     <div class="footer-warp pt-100 pb-75">
         <div class="container">
             <div class="row">
                 <!-- Contact Info -->
                 <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
                     <div class="footer-widget">
-                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold;
-                            color: white;">Lemobot<span style="color: #007bff;">.</span> </a>
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
                         <ul class="footer-contact mt-4">
                             <li>
                                 <div class="icon">
@@ -296,7 +415,7 @@
                 <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
                     <div class="footer-widget">
                         <h3>
-                           Our Services</h3>
+                            Our Services</h3>
                         <ul class="footer-link">
                             <li><a href="/services/">AI Chatbots</a></li>
                             <li><a href="/services/">Machine Learning</a></li>
@@ -320,10 +439,9 @@
             </div>
         </div>
         <!-- Decorative Shapes -->
-     
     </div>
     <!-- Footer Warp End -->
-   <!-- Copyright Warp Start -->
+    <!-- Copyright Warp Start -->
     <div class="copyright-warp">
         <div class="container">
             <div class="row align-items-center">
@@ -367,8 +485,8 @@
             </button>
             <div class="sidebar-warp">
                 <div class="footer-widget style2">
-                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold;
-                        color: white;">Lemobot<span style="color: #007bff;">.</span> </a>
+                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                        Lemobot<span style="color: #007bff;">.</span> </a>
                     <ul class="footer-contact">
                         <li>
                             <div class="icon">

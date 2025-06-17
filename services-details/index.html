@@ -1202,9 +1202,9 @@
   document.addEventListener("DOMContentLoaded", function () {
     const tabLinks = document.querySelectorAll('.nav-tab-link');
     const scrollTarget = document.querySelector('.question-widget-one');
-
     const headerOffset = 150; // adjust this value based on your header height
 
+    // Smooth scroll on tab click
     tabLinks.forEach(tab => {
       tab.addEventListener('click', function () {
         setTimeout(() => {
@@ -1218,6 +1218,32 @@
         }, 100);
       });
     });
+
+    // Activate tab based on hash in URL
+    const hash = window.location.hash;
+
+    if (hash) {
+      document.querySelectorAll('.nav-tab-link, .tab-pane').forEach(el => {
+        el.classList.remove('active', 'show');
+      });
+
+      const tabLink = document.querySelector(`.nav-tab-link[href="${hash}"]`);
+      const tabPane = document.querySelector(hash);
+
+      if (tabLink && tabPane) {
+        tabLink.classList.add('active');
+        tabPane.classList.add('active', 'show');
+      }
+    } else {
+      // Optional fallback to first tab if no hash
+      const firstTab = document.querySelector('.nav-tab-link');
+      const firstPane = document.querySelector('.tab-pane');
+
+      if (firstTab && firstPane) {
+        firstTab.classList.add('active');
+        firstPane.classList.add('active', 'show');
+      }
+    }
   });
     </script>
 </body>

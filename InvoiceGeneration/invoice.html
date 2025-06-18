@@ -39,6 +39,50 @@
             display: none !important;
         }
     </style>
+    <style>
+        body
+        {
+            font-family: 'Poppins' , sans-serif;
+            background: #f8f9fa;
+        }
+        .invoice-container
+        {
+            background: #fff;
+            padding: 40px;
+            max-width: 960px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .text-1
+        {
+            font-size: 14px;
+            color: #666;
+        }
+        @media print
+        {
+            .d-print-none
+            {
+                display: none !important;
+            }
+        }
+        .d-none
+        {
+            display: none !important;
+        }
+        
+        /* Remove borders from specific inputs */
+        input[type="date"], input[type="text"], input.rate, input.qty
+        {
+            border: none !important;
+            box-shadow: none !important;
+            background-color: transparent !important;
+        }
+        
+        input[type="date"]:focus, input[type="text"]:focus, input.rate:focus, input.qty:focus
+        {
+            outline: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid invoice-container">
@@ -112,11 +156,11 @@
           <thead class="table-light">
             <tr>
               <th>Service</th>
-              <th>Description</th>
+              <th class="text-center">Description</th>
               <th class="text-center">Rate(₹)</th>
               <th class="text-center">QTY</th>
-              <th class="text-end">GST(₹)</th>
-              <th class="text-end">Total(₹)</th>
+              <th class="text-center"">GST(₹)</th>
+              <th class="text-center"">Total(₹)</th>
               <th class="d-print-none text-center">Actions</th>
             </tr>
           </thead>

@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Retail Invoice - H.R. ENTERPRISE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body
+        {
+            font-family: 'Poppins' , sans-serif;
+            background: #f1f3f6;
+        }
+        .invoice-container
+        {
+            background: #fff;
+            padding: 20px;
+            max-width: 960px;
+            margin: 30px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table td, table th
+        {
+            vertical-align: middle;
+        }
+        @media print
+        {
+            .d-print-none
+            {
+                display: none !important;
+            }
+        }
+        input, textarea
+        {
+            border: none;
+            background: transparent;
+            width: 100%;
+        }
+        .btn-remove
+        {
+            color: red;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 1;
+        }
+        @media print
+        {
+            body
+            {
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: visible !important;
+            }
+        
+            .table-responsive
+            {
+                overflow: visible !important;
+            }
+        
+            .invoice-container
+            {
+                box-shadow: none !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+                padding: 0 !important;
+            }
+        
+            input, select
+            {
+                border: none !important;
+                outline: none !important;
+            }
+        }
+        
+        .qty, .rate, .amount
+        {
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        th, td
+        {
+            font-size: 14px;
+        }
+        .qty input, .rate input
+        {
+            max-width: 70px;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+        }
+        
+        .amount
+        {
+            min-width: 80px;
+            text-align: right;
+        }
+        
+        th:nth-child(3), td:nth-child(3)
+        {
+            text-align: center;
+        }
+        /* Qty */
+        th:nth-child(4), td:nth-child(4)
+        {
+            text-align: center;
+        }
+        /* Rate */
+        th:nth-child(5), td:nth-child(5)
+        {
+            text-align: right;
+        }
+        /* Amount */
+    </style>
+</head>
+<body>
+    <div class="container-fluid invoice-container">
+        <main>
+  <div class="table-responsive">
+    <table class="table table-bordered border border-secondary mb-0">
+      <tbody>
+        <tr>
+          <td colspan="2" class="bg-light text-center"><h3 contenteditable="true" class="mb-0">H.R. ENTERPRISE</h3></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center text-uppercase" contenteditable="true">
+            12, Vrundavan Nagar, Odhav Ring Road, B/h Gauri Cinema,<br> Odhav, Ahmedabad-382415, India.
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="py-1">
+            <div class="row">
+              <div class="col">Debit Memo</div>
+              <div class="col text-center fw-bold text-uppercase">Tax Invoice</div>
+              <div class="col text-end">Original</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-7">
+            <strong>M/s. :</strong>
+            <address contenteditable="true">
+              Smith Rhodes<br />
+              15 Hodges Mews,<br />
+              High Wycombe<br />
+              HP12 3JL<br />
+              Thailand
+            </address>
+          </td>
+          <td class="col-5 bg-light">
+            <div class="row fw-bold">
+              <div class="col-5">Invoice No:</div>
+              <div class="col-7"><input type="text" value="56"></div>
+              <div class="col-5">Date:</div>
+              <div class="col-7"><input type="date" value="2025-06-18"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <select id="gstType" class="form-select form-select-sm w-auto d-print-none mb-2" onchange="calculate()">
+              <option value="cgst_sgst" selected>CGST + SGST (9% + 9%)</option>
+              <option value="igst">IGST (18%)</option>
+            </select>
+            <table class="table table-sm mb-0" id="invoice-items">
+              <thead>
+                <tr class="bg-light">
+                  <th class="text-center">SrNo</th>
+                  <th>Product Name</th>
+                  <th class="text-center">Qty</th>
+                  <th class="text-end">Rate (₹)</th>
+                  <th class="text-end">Amount (₹)</th>
+                  <th class="text-center d-print-none">×</th>
+                </tr>
+              </thead>
+              <tbody id="item-body">
+                <tr>
+                  <td class="text-center">1</td>
+                  <td contenteditable="true">STYLE KERATIN SH. 250ML</td>
+                  <td class="text-center"><input type="number" class="qty" value="3" /></td>
+                  <td class="text-end"><input type="number" class="rate" value="25.75" /></td>
+                  <td class="text-end amount">₹0.00</td>
+                  <td class="text-center d-print-none"><span class="btn-remove" onclick="removeRow(this)">×</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="text-end mt-2 d-print-none">
+              <button class="btn btn-sm btn-outline-primary" onclick="addRow()">+ Add Item</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="bg-light fw-bold">
+          <td class="py-1">GSTIN No.: <input type="text" value="26AKJPG9221E1W5" /></td>
+          <td class="py-1 pe-1 text-end">Sub Total: <span id="subtotal">₹0.00</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bill Amount:</strong> <i id="amountWords">Zero Rupees Only</i></td>
+          <td class="pe-1 text-end">
+            <div class="tax-cgst-sgst">Central Tax (9%): <span id="cgst">₹0.00</span></div>
+            <div class="tax-cgst-sgst">State Tax (9%): <span id="sgst">₹0.00</span></div>
+            <div class="tax-igst d-none">IGST (18%): <span id="igst">₹0.00</span></div>
+          </td>
+        </tr>
+        <tr>
+        <td><strong>Note :</strong> <div contenteditable="true" style="min-height: 40px;">Enter note here...</div></td>
+          <td class="pe-1 bg-light fw-bold text-end">Grand Total: <span id="grandtotal">₹0.00</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Terms & Condition :</strong>
+            <ol>
+              <li contenteditable="true">Goods once sold will not be taken back.</li>
+              <li contenteditable="true">Our risk and responsibility ceases as soon as goods are dispatched.</li>
+            </ol>
+          </td>
+          <td class="pe-1 text-end">
+            For, <strong contenteditable="true">H.R. ENTERPRISE</strong><br /><br />
+            <span class="fst-italic">(Authorised Signatory)</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+        <footer class="text-center mt-3">
+  <p class="small text-muted" contenteditable="true">Helpline: 1800 222 9888</p>
+  <button onclick="window.print()" class="btn btn-light border d-print-none">
+    <i class="fa fa-print"></i> Print & Download
+  </button>
+</footer>
+    </div>
+    <script>
+function convertToWords(num) {
+  const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+    "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+    "Seventeen", "Eighteen", "Nineteen"];
+  const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+  function toWords(n) {
+    if (n < 20) return ones[n];
+    if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
+    if (n < 1000) return ones[Math.floor(n / 100)] + " Hundred" + (n % 100 ? " and " + toWords(n % 100) : "");
+    if (n < 100000) return toWords(Math.floor(n / 1000)) + " Thousand " + toWords(n % 1000);
+    if (n < 10000000) return toWords(Math.floor(n / 100000)) + " Lakh " + toWords(n % 100000);
+    return toWords(Math.floor(n / 10000000)) + " Crore " + toWords(n % 10000000);
+  }
+  return toWords(Math.floor(num)) + " Rupees Only";
+}
+
+function calculate() {
+  let subtotal = 0, cgst = 0, sgst = 0, igst = 0;
+  const gstType = document.getElementById("gstType").value;
+
+  document.querySelectorAll("#item-body tr").forEach((row, i) => {
+    row.children[0].textContent = i + 1;
+    const qty = parseFloat(row.querySelector(".qty")?.value || 0);
+    const rate = parseFloat(row.querySelector(".rate")?.value || 0);
+    const total = qty * rate;
+    subtotal += total;
+    row.querySelector(".amount").textContent = "₹" + total.toFixed(2);
+  });
+
+  if (gstType === "cgst_sgst") {
+    cgst = subtotal * 0.09;
+    sgst = subtotal * 0.09;
+  } else {
+    igst = subtotal * 0.18;
+  }
+
+  const total = subtotal + cgst + sgst + igst;
+  document.getElementById("subtotal").textContent = "₹" + subtotal.toFixed(2);
+  document.getElementById("cgst").textContent = "₹" + cgst.toFixed(2);
+  document.getElementById("sgst").textContent = "₹" + sgst.toFixed(2);
+  document.getElementById("igst").textContent = "₹" + igst.toFixed(2);
+  document.getElementById("grandtotal").textContent = "₹" + total.toFixed(2);
+  document.getElementById("amountWords").textContent = convertToWords(total);
+
+  document.querySelectorAll(".tax-cgst-sgst").forEach(el => el.classList.toggle("d-none", gstType !== "cgst_sgst"));
+  document.querySelectorAll(".tax-igst").forEach(el => el.classList.toggle("d-none", gstType !== "igst"));
+}
+
+function addRow() {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td class="text-center">0</td>
+    <td contenteditable="true">New Item</td>
+    <td class="text-center"><input type="number" class="qty" value="1" /></td>
+    <td class="text-end"><input type="number" class="rate" value="0" /></td>
+    <td class="text-end amount">₹0.00</td>
+    <td class="text-center d-print-none"><span class="btn-remove" onclick="removeRow(this)">×</span></td>
+  `;
+  document.getElementById("item-body").appendChild(row);
+  bindInputs();
+  calculate();
+}
+
+function removeRow(btn) {
+  btn.closest("tr").remove();
+  calculate();
+}
+
+function bindInputs() {
+  document.querySelectorAll(".qty, .rate").forEach(input => {
+    input.removeEventListener("input", calculate);
+    input.addEventListener("input", calculate);
+  });
+}
+
+window.onload = function () {
+  bindInputs();
+  calculate();
+};
+    </script>
+</body>
+</html>

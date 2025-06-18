@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic GST Invoice - Modern</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; }
+    .invoice-container { background: #fff; padding: 40px; max-width: 960px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .table th, .table td { vertical-align: middle; }
+    @media print { .d-print-none { display: none !important; } }
+    input, textarea { border: none; background: transparent; width: 100%; }
+    .btn-remove { color: red; cursor: pointer; font-size: 20px; line-height: 1; }
+  </style>
+</head>
+<body>
+<div class="container-fluid invoice-container">
+  <header>
+    <div class="row gy-3 align-items-center">
+      <div class="col-12 text-center">
+        <h2 contenteditable="true">Tax Invoice</h2>
+      </div>
+      <div class="col-sm-9">
+        <h3 contenteditable="true">Koice Inc.</h3>
+        <p contenteditable="true">Ship-from: 2705 N. Enterprise St, Orange, CA 92865</p>
+      </div>
+      <div class="col-sm-3">
+        <strong>Invoice No:</strong>
+        <input type="text" value="16835" />
+      </div>
+    </div>
+    <hr>
+  </header>
+
+  <main>
+    <div class="row gy-3">
+      <div class="col-sm-4">
+        <p><strong>Order ID:</strong> <input type="text" value="OD223244238" /></p>
+        <p><strong>Order Date:</strong> <input type="date" /></p>
+        <p><strong>Invoice Date:</strong> <input type="date" /></p>
+        <p><strong>PAN:</strong> <input type="text" value="AGGC30K44E" /></p>
+        <p><strong>CIN:</strong> <input type="text" value="U5260910KA2017PTC0306" /></p>
+      </div>
+      <div class="col-sm-4">
+        <strong>Bill To:</strong>
+        <address contenteditable="true">
+          Smith Rhodes<br>
+          15 Hodges Mews, High Wycombe<br>
+          HP12 3JL<br>
+          United Kingdom
+        </address>
+      </div>
+      <div class="col-sm-4">
+        <strong>Ship To:</strong>
+        <address contenteditable="true">
+          Smith Rhodes<br>
+          15 Hodges Mews, High Wycombe<br>
+          HP12 3JL<br>
+          United Kingdom
+        </address>
+      </div>
+    </div>
+
+    <div class="row mt-3 mb-2 d-print-none">
+      <div class="col-sm-6">
+        <label><strong>GST Type:</strong></label>
+        <select class="form-select form-select-sm w-auto d-inline-block" id="gstType" onchange="calculate()">
+          <option value="cgst_sgst" selected>CGST + SGST (9% + 9%)</option>
+          <option value="igst">IGST (18%)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-responsive mt-2">
+      <table class="table border mb-0" id="invoice-items">
+        <thead class="bg-light">
+          <tr>
+            <th>Product</th>
+            <th class="text-center">QTY</th>
+            <th class="text-center">Price (₹)</th>
+            <th class="text-center">Discount (₹)</th>
+            <th class="text-end">Total (₹)</th>
+            <th class="text-center d-print-none">Remove</th>
+          </tr>
+        </thead>
+        <tbody id="item-body">
+          <tr>
+            <td contenteditable="true">NUUVO C11 2023 (Cool Blue, 128 GB)</td>
+            <td class="text-center"><input type="number" value="1" class="qty" /></td>
+            <td class="text-center"><input type="number" value="299" class="price" /></td>
+            <td class="text-center"><input type="number" value="25" class="discount" /></td>
+            <td class="text-end amount">₹0.00</td>
+            <td class="text-center d-print-none"><span class="btn-remove" onclick="removeRow(this)">×</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-end my-2 d-print-none">
+      <button class="btn btn-sm btn-outline-primary" onclick="addRow()">+ Add Item</button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table border border-top-0 mb-0">
+        <tr class="bg-light">
+          <td class="text-end"><strong>Sub Total:</strong></td>
+          <td class="col-sm-2 text-end" id="subtotal">₹0.00</td>
+        </tr>
+        <tr class="bg-light tax-cgst-sgst">
+          <td class="text-end"><strong>CGST (9%):</strong></td>
+          <td class="text-end" id="cgst">₹0.00</td>
+        </tr>
+        <tr class="bg-light tax-cgst-sgst">
+          <td class="text-end"><strong>SGST (9%):</strong></td>
+          <td class="text-end" id="sgst">₹0.00</td>
+        </tr>
+        <tr class="bg-light tax-igst d-none">
+          <td class="text-end"><strong>IGST (18%):</strong></td>
+          <td class="text-end" id="igst">₹0.00</td>
+        </tr>
+        <tr class="bg-light">
+          <td class="text-end"><strong>Grand Total:</strong></td>
+          <td class="text-end" id="grandtotal">₹0.00</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+    <footer class="mt-5">
+    <div class="text-end mb-4">
+      <small class="text-muted">Thank You!<br>For Shopping with us</small>
+    </div>
+    <p class="text-muted small">
+      <strong>Returns Policy:</strong> Please retain original packaging and invoice for returns.
+    </p>
+    <hr class="my-2">
+    <p class="text-center" contenteditable="true">Helpline: 1800 222 9888</p>
+    <div class="text-center d-print-none">
+      <button class="btn btn-light border" onclick="window.print()">
+        <i class="fa fa-print"></i> Print & Download
+      </button>
+    </div>
+  </footer>
+</div>
+
+<script>
+function calculate() {
+  let subtotal = 0;
+  let cgst = 0, sgst = 0, igst = 0;
+  const gstType = document.getElementById("gstType").value;
+
+  document.querySelectorAll("#item-body tr").forEach(row => {
+    const qty = parseFloat(row.querySelector(".qty")?.value || 0);
+    const price = parseFloat(row.querySelector(".price")?.value || 0);
+    const discount = parseFloat(row.querySelector(".discount")?.value || 0);
+    const total = (qty * price) - discount;
+    subtotal += total;
+    row.querySelector(".amount").textContent = "₹" + total.toFixed(2);
+  });
+
+  if (gstType === "cgst_sgst") {
+    cgst = subtotal * 0.09;
+    sgst = subtotal * 0.09;
+    igst = 0;
+  } else {
+    cgst = 0;
+    sgst = 0;
+    igst = subtotal * 0.18;
+  }
+
+  const grandtotal = subtotal + cgst + sgst + igst;
+
+  document.getElementById("subtotal").textContent = "₹" + subtotal.toFixed(2);
+  document.getElementById("cgst").textContent = "₹" + cgst.toFixed(2);
+  document.getElementById("sgst").textContent = "₹" + sgst.toFixed(2);
+  document.getElementById("igst").textContent = "₹" + igst.toFixed(2);
+  document.getElementById("grandtotal").textContent = "₹" + grandtotal.toFixed(2);
+
+  document.querySelectorAll(".tax-cgst-sgst").forEach(el => el.classList.toggle("d-none", gstType !== "cgst_sgst"));
+  document.querySelectorAll(".tax-igst").forEach(el => el.classList.toggle("d-none", gstType !== "igst"));
+}
+
+function addRow() {
+  const tbody = document.getElementById("item-body");
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td contenteditable="true">New Product</td>
+    <td class="text-center"><input type="number" value="1" class="qty" /></td>
+    <td class="text-center"><input type="number" value="0" class="price" /></td>
+    <td class="text-center"><input type="number" value="0" class="discount" /></td>
+    <td class="text-end amount">₹0.00</td>
+    <td class="text-center d-print-none"><span class="btn-remove" onclick="removeRow(this)">×</span></td>
+  `;
+  tbody.appendChild(row);
+  bindEvents();
+  calculate();
+}
+
+function removeRow(btn) {
+  btn.closest("tr").remove();
+  calculate();
+}
+
+function bindEvents() {
+  document.querySelectorAll(".qty, .price, .discount").forEach(el => {
+    el.removeEventListener("input", calculate);
+    el.addEventListener("input", calculate);
+  });
+}
+
+window.onload = function() {
+  bindEvents();
+  calculate();
+};
+</script>
+</body>
+</html>

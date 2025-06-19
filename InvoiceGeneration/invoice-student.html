@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Billing Invoice</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+    [contenteditable]:focus {
+      outline: 1px dashed #999;
+    }
+    input[type="text"], input[type="number"], input[type="date"] {
+      background: transparent;
+      border: none;
+      outline: none;
+      width: 100%;
+      font-family: inherit;
+      font-size: inherit;
+    }
+    .btn-remove {
+      color: red;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  @media print {
+  .cs-focus_bg {
+    background-color: #f1f1f1 !important; /* Light gray */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+    td input.amount {
+  text-align: right;
+}
+  </style>
+</head>
+<body>
+    <div class="cs-container">
+        <div class="cs-invoice cs-style1">
+            <div class="cs-invoice_in" id="download_section">
+                <!-- Header -->
+                <div class="cs-invoice_head cs-type1 cs-mb25">
+                    <div class="cs-invoice_left">
+                        <p class="cs-invoice_number cs-primary_color cs-mb0 cs-f16">
+                            <b contenteditable="true" class="cs-primary_color">Invoice No:</b>
+                            <input type="text" value="SM75692" />
+                        </p>
+                    </div>
+                    <div class="cs-invoice_right cs-text_right">
+                        <div class="cs-logo cs-mb5">
+                            <h2 contenteditable="true" style="margin: 0; font-weight: 600;">
+                                Your Company Name</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Must Read -->
+                <div class="cs-invoice_head cs-mb10">
+                    <div class="cs-invoice_left">
+                        <b contenteditable="true" class="cs-primary_color">Must Read:</b>
+                        <p class="cs-mb8" contenteditable="true">
+                            Seating is on a first come, first served basis unless you have purchased ticket
+                            for a Reserved Seating performance.</p>
+                        <p>
+                            <b contenteditable="true" class="cs-primary_color cs-semi_bold">Date Of Services:</b><br />
+                            <input type="date" value="2025-06-19" />
+                        </p>
+                    </div>
+                    <div class="cs-invoice_right cs-text_right">
+                        <b contenteditable="true" class="cs-primary_color">IVONNE UNIVERSITY</b>
+                        <p contenteditable="true">
+                            237 Roanoke Road, North York,<br />
+                            Ontario, Canada<br />
+                            demo@email.com<br />
+                            +1-613-555-0141
+                        </p>
+                    </div>
+                </div>
+                <!-- Student Info -->
+                <ul class="cs-list cs-style2">
+                    <li>
+                        <div class="cs-list_left">
+                            <b contenteditable="true">Student ID:</b>
+                            <input type="text" value="AS2534568" />
+                        </div>
+                        <div class="cs-list_right">
+                            <b contenteditable="true">Balance Due:</b> <b id="balanceDue" class="cs-primary_color cs-semi_bold">
+                                ₹0.00</b>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cs-list_left">
+                            <b contenteditable="true">Student Name:</b>
+                            <input type="text" value="Johan Smith" />
+                        </div>
+                        <div class="cs-list_right">
+                            <b contenteditable="true">Due Date:</b>
+                            <input type="date" value="2025-06-19" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cs-list_left">
+                            <b contenteditable="true">Term:</b>
+                            <input type="text" value="Winter" />
+                        </div>
+                        <div class="cs-list_right">
+                            <b contenteditable="true">Statement For:</b>
+                            <input type="text" value="2022 Spring" />
+                        </div>
+                    </li>
+                </ul>
+                <!-- Invoice Table -->
+                <div class="cs-table cs-style2">
+                    <div class="cs-round_border">
+                        <div class="cs-table_responsive">
+                            <table id="invoice-items">
+                                <thead>
+                                    <tr class="cs-focus_bg">
+                                        <th contenteditable="true">
+                                            Details
+                                        </th>
+                                        <th contenteditable="true">
+                                            Due Date
+                                        </th>
+                                        <th contenteditable="true" class="cs-text_right">
+                                            Amount (₹)
+                                        </th>
+                                        <th class="cs-hide_print" contenteditable="true">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="item-body">
+                                    <tr>
+                                        <td contenteditable="true">
+                                            Semester Fee
+                                        </td>
+                                        <td>
+                                            <input type="date" value="2025-06-19" />
+                                        </td>
+                                        <td>
+                                            <input type="number" class="amount" value="60" />
+                                        </td>
+                                        <td class="cs-hide_print">
+                                            <button class="btn-remove" onclick="removeRow(this)">
+                                                ×</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td contenteditable="true">
+                                            Exam Fee
+                                        </td>
+                                        <td>
+                                            <input type="date" value="2025-06-19" />
+                                        </td>
+                                        <td>
+                                            <input type="number" class="amount" value="120" />
+                                        </td>
+                                        <td class="cs-hide_print">
+                                            <button class="btn-remove" onclick="removeRow(this)">
+                                                ×</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="cs-invoice_btn cs-hide_print" onclick="addRow()">
+                                + Add Row</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total -->
+                <div class="cs-table cs-style2">
+                    <div class="cs-table_responsive">
+                        <table>
+                            <tbody>
+                                <tr class="cs-table_baseline">
+                                    <td class="cs-width_5">
+                                        <b contenteditable="true" class="cs-primary_color">Pay By</b><br />
+                                        Credit Card - 236***************<br />
+                                        Amount: ₹113 - Due: ₹0
+                                    </td>
+                                    <td class="cs-width_5 cs-primary_color cs-bold cs-f16 cs-text_right" contenteditable="true">
+                                        Total Amount:
+                                    </td>
+                                    <td class="cs-width_2 cs-text_right cs-primary_color cs-bold cs-f16" id="totalAmount">
+                                        ₹0.00
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Notes -->
+                <div class="cs-note">
+                    <div class="cs-note_left">
+                        📄</div>
+                    <div class="cs-note_right">
+                        <p class="cs-mb0">
+                            <b contenteditable="true" class="cs-primary_color cs-bold">Note:</b></p>
+                        <p class="cs-m0" contenteditable="true">
+                            Additional notes for clarification about the invoice can go here.</p>
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="cs-invoice_btns cs-hide_print">
+                    <a href="javascript:window.print()" class="cs-invoice_btn cs-color1">🖨️ <span>Print</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    <script>
+    function convertToWords(num) {
+      const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+        "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+        "Seventeen", "Eighteen", "Nineteen"];
+      const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+      function toWords(n) {
+        if (n < 20) return ones[n];
+        if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
+        if (n < 1000) return ones[Math.floor(n / 100)] + " Hundred" + (n % 100 ? " and " + toWords(n % 100) : "");
+        if (n < 100000) return toWords(Math.floor(n / 1000)) + " Thousand " + toWords(n % 1000);
+        return toWords(Math.floor(n / 100000)) + " Lakh " + toWords(n % 100000);
+      }
+      return toWords(Math.floor(num)) + " Rupees Only";
+    }
+
+    function calculate() {
+      let total = 0;
+      document.querySelectorAll("#item-body .amount").forEach(input => {
+        total += parseFloat(input.value || 0);
+      });
+      const formatted = "₹" + total.toFixed(2);
+      document.getElementById("totalAmount").textContent = formatted;
+      document.getElementById("balanceDue").textContent = formatted;
+    }
+
+    function addRow() {
+      const row = document.createElement("tr");
+      const today = new Date().toISOString().split("T")[0];
+      row.innerHTML = `
+        <td contenteditable="true">New Item</td>
+        <td><input type="date" value="${today}" /></td>
+        <td><input type="number" class="amount" value="0" /></td>
+        <td class="cs-hide_print"><button class="btn-remove" onclick="removeRow(this)">×</button></td>
+      `;
+      document.getElementById("item-body").appendChild(row);
+      bindEvents();
+      calculate();
+    }
+
+    function removeRow(btn) {
+      btn.closest("tr").remove();
+      calculate();
+    }
+
+    function bindEvents() {
+      document.querySelectorAll(".amount").forEach(input => {
+        input.removeEventListener("input", calculate);
+        input.addEventListener("input", calculate);
+      });
+    }
+
+    window.onload = function () {
+      bindEvents();
+      calculate();
+    };
+    </script>
+</body>
+</html>

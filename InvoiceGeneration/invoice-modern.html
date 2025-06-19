@@ -28,7 +28,7 @@
         <p contenteditable="true">Ship-from: 2705 N. Enterprise St, Orange, CA 92865</p>
       </div>
       <div class="col-sm-3">
-        <strong>Invoice No:</strong>
+        <strong contenteditable="true">Invoice No:</strong>
         <input type="text" value="16835" />
       </div>
     </div>
@@ -38,14 +38,14 @@
   <main>
     <div class="row gy-3">
       <div class="col-sm-4">
-        <p><strong>Order ID:</strong> <input type="text" value="OD223244238" /></p>
-        <p><strong>Order Date:</strong> <input type="date" /></p>
-        <p><strong>Invoice Date:</strong> <input type="date" /></p>
-        <p><strong>PAN:</strong> <input type="text" value="AGGC30K44E" /></p>
-        <p><strong>CIN:</strong> <input type="text" value="U5260910KA2017PTC0306" /></p>
+        <p><strong contenteditable="true">Order ID:</strong> <input type="text" value="OD223244238" /></p>
+        <p><strong contenteditable="true">Order Date:</strong> <input type="date" /></p>
+        <p><strong contenteditable="true">Invoice Date:</strong> <input type="date" /></p>
+        <p><strong contenteditable="true">PAN:</strong> <input type="text" value="AGGC30K44E" /></p>
+        <p><strong contenteditable="true">CIN:</strong> <input type="text" value="U5260910KA2017PTC0306" /></p>
       </div>
       <div class="col-sm-4">
-        <strong>Bill To:</strong>
+        <strong contenteditable="true">Bill To:</strong>
         <address contenteditable="true">
           Smith Rhodes<br>
           15 Hodges Mews, High Wycombe<br>
@@ -54,7 +54,7 @@
         </address>
       </div>
       <div class="col-sm-4">
-        <strong>Ship To:</strong>
+        <strong contenteditable="true">Ship To:</strong>
         <address contenteditable="true">
           Smith Rhodes<br>
           15 Hodges Mews, High Wycombe<br>
@@ -66,7 +66,7 @@
 
     <div class="row mt-3 mb-2 d-print-none">
       <div class="col-sm-6">
-        <label><strong>GST Type:</strong></label>
+        <label><strong contenteditable="true">GST Type:</strong></label>
         <select class="form-select form-select-sm w-auto d-inline-block" id="gstType" onchange="calculate()">
           <option value="cgst_sgst" selected>CGST + SGST (9% + 9%)</option>
           <option value="igst">IGST (18%)</option>
@@ -78,12 +78,12 @@
       <table class="table border mb-0" id="invoice-items">
         <thead class="bg-light">
           <tr>
-            <th>Product</th>
-            <th class="text-center">QTY</th>
-            <th class="text-center">Price (₹)</th>
-            <th class="text-center">Discount (₹)</th>
-            <th class="text-end">Total (₹)</th>
-            <th class="text-center d-print-none">Remove</th>
+            <th contenteditable="true">Product</th>
+            <th class="text-center" contenteditable="true">QTY</th>
+            <th class="text-center" contenteditable="true">Price (₹)</th>
+            <th class="text-center" contenteditable="true">Discount (₹)</th>
+            <th class="text-end" contenteditable="true">Total (₹)</th>
+            <th class="text-center d-print-none" contenteditable="true">Remove</th>
           </tr>
         </thead>
         <tbody id="item-body">
@@ -100,46 +100,48 @@
     </div>
 
     <div class="text-end my-2 d-print-none">
-      <button class="btn btn-sm btn-outline-primary" onclick="addRow()">+ Add Item</button>
+      <button class="btn btn-sm btn-outline-primary" onclick="addRow()">+ <span contenteditable="true">Add Item</span></button>
     </div>
 
     <div class="table-responsive">
       <table class="table border border-top-0 mb-0">
         <tr class="bg-light">
-          <td class="text-end"><strong>Sub Total:</strong></td>
+          <td class="text-end"><strong contenteditable="true">Sub Total:</strong></td>
           <td class="col-sm-2 text-end" id="subtotal">₹0.00</td>
         </tr>
         <tr class="bg-light tax-cgst-sgst">
-          <td class="text-end"><strong>CGST (9%):</strong></td>
+          <td class="text-end"><strong contenteditable="true">CGST (9%):</strong></td>
           <td class="text-end" id="cgst">₹0.00</td>
         </tr>
         <tr class="bg-light tax-cgst-sgst">
-          <td class="text-end"><strong>SGST (9%):</strong></td>
+          <td class="text-end"><strong contenteditable="true">SGST (9%):</strong></td>
           <td class="text-end" id="sgst">₹0.00</td>
         </tr>
         <tr class="bg-light tax-igst d-none">
-          <td class="text-end"><strong>IGST (18%):</strong></td>
+          <td class="text-end"><strong contenteditable="true">IGST (18%):</strong></td>
           <td class="text-end" id="igst">₹0.00</td>
         </tr>
         <tr class="bg-light">
-          <td class="text-end"><strong>Grand Total:</strong></td>
+          <td class="text-end"><strong contenteditable="true">Grand Total:</strong></td>
           <td class="text-end" id="grandtotal">₹0.00</td>
         </tr>
       </table>
     </div>
   </main>
-    <footer class="mt-5">
+
+  <footer class="mt-5">
     <div class="text-end mb-4">
-      <small class="text-muted">Thank You!<br>For Shopping with us</small>
+      <small class="text-muted" contenteditable="true">Thank You!<br>For Shopping with us</small>
     </div>
     <p class="text-muted small">
-      <strong>Returns Policy:</strong> Please retain original packaging and invoice for returns.
+      <strong contenteditable="true">Returns Policy:</strong>
+      <span contenteditable="true">Please retain original packaging and invoice for returns.</span>
     </p>
     <hr class="my-2">
     <p class="text-center" contenteditable="true">Helpline: 1800 222 9888</p>
     <div class="text-center d-print-none">
       <button class="btn btn-light border" onclick="window.print()">
-        <i class="fa fa-print"></i> Print & Download
+        <i class="fa fa-print"></i> <span contenteditable="true">Print & Download</span>
       </button>
     </div>
   </footer>

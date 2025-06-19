@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advance Tax Estimator – India | Lemobot</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #144272, #205295);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-weight: 600;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero-section">
+  <div class="container">
+    <h1>Advance Tax Estimator</h1>
+    <p class="lead">Plan your quarterly advance tax payments based on estimated income.</p>
+  </div>
+</section>
+
+<!-- Calculator -->
+<section class="container my-5">
+  <div class="card p-4">
+    <h5 class="section-title mb-3">Estimate Advance Tax for FY 2024–25</h5>
+
+    <div class="mb-3">
+      <label for="annualIncome" class="form-label">Estimated Annual Income (₹)</label>
+      <input type="number" class="form-control" id="annualIncome" placeholder="e.g. 1200000" />
+    </div>
+
+    <div class="mt-4 p-3 bg-light rounded" id="output">
+      🧮 Enter your income above to view your advance tax schedule.
+    </div>
+  </div>
+</section>
+
+<!-- Explanation -->
+<section class="container mb-5">
+  <div class="card p-4">
+    <details>
+      <summary class="mb-2"><strong>📘 What is Advance Tax?</strong></summary>
+      <p>Advance Tax is tax you pay in installments during the year instead of a lump sum at year-end. If your total tax liability for the year exceeds ₹10,000, you must pay advance tax.</p>
+      <ul>
+        <li>✅ Due on estimated income from business, salary, or other sources.</li>
+        <li>📅 Payable in 4 installments (June, Sept, Dec, March).</li>
+        <li>⚠️ Missing deadlines may attract interest under Sections <b>234B & 234C</b>.</li>
+      </ul>
+      <p>This tool gives you suggested payment amounts based on your income estimate.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Lemobot · Advance Tax Estimator · Built with HTML + JS
+</footer>
+
+<!-- JS -->
+<script>
+  function computeTax(income) {
+    let tax = 0;
+    if (income <= 250000) return 0;
+    if (income <= 500000) return (income - 250000) * 0.05;
+    if (income <= 1000000) return (250000 * 0.05) + (income - 500000) * 0.2;
+    return (250000 * 0.05) + (500000 * 0.2) + (income - 1000000) * 0.3;
+  }
+
+  function calculateAdvanceTax() {
+    const income = parseFloat(document.getElementById("annualIncome").value) || 0;
+    const totalTax = computeTax(income);
+    const advanceTax = {
+      "15th June": totalTax * 0.15,
+      "15th September": totalTax * 0.45,
+      "15th December": totalTax * 0.75,
+      "15th March": totalTax
+    };
+
+    let output = `<b>Total Estimated Tax:</b> ₹${totalTax.toFixed(0)}<br><br>`;
+    output += `<b>Suggested Advance Tax Payments:</b><br>`;
+    for (const [dueDate, amount] of Object.entries(advanceTax)) {
+      output += `📅 <b>${dueDate}:</b> ₹${amount.toFixed(0)}<br>`;
+    }
+
+    if (income > 500000) {
+      output += `<br><span class="text-danger">⚠️ Note:</span> Advance Tax is mandatory to avoid penalties if total tax due exceeds ₹10,000.`;
+    }
+
+    document.getElementById("output").innerHTML = output;
+  }
+
+  document.getElementById("annualIncome").addEventListener("input", calculateAdvanceTax);
+</script>
+
+</body>
+</html>

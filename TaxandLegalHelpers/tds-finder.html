@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TDS Finder Tool | Lemobot</title>
+
+  <!-- Bootstrap & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #144272, #205295);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-weight: 600;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <h1>TDS Finder Tool</h1>
+    <p class="lead">Quickly check if TDS applies to your income — and how much.</p>
+  </div>
+</section>
+
+<!-- Tool Section -->
+<section class="container my-5">
+  <div class="card p-4">
+    <h5 class="section-title mb-3">Income Details</h5>
+
+    <label for="incomeType" class="form-label">Type of Income:</label>
+    <select id="incomeType" class="form-select mb-3">
+      <option value="">-- Select --</option>
+      <option value="freelance">Freelance / Professional Fees</option>
+      <option value="rent">Rent Received</option>
+      <option value="interest">Interest Income</option>
+      <option value="contract">Contract Payment</option>
+      <option value="salary">Salary</option>
+    </select>
+
+    <label for="payerType" class="form-label">Payer Type:</label>
+    <select id="payerType" class="form-select mb-3">
+      <option value="">-- Select --</option>
+      <option value="company">Company / Business</option>
+      <option value="individual">Individual (not doing business)</option>
+      <option value="bank">Bank / Financial Institution</option>
+    </select>
+
+    <label for="amount" class="form-label">Amount Received or Expected (₹):</label>
+    <input type="number" id="amount" class="form-control mb-4" placeholder="e.g. 150000" />
+
+    <div class="bg-light p-3 rounded" id="output">
+      Select options above to check if TDS applies.
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Lemobot · TDS Applicability Checker Tool
+</footer>
+
+<!-- Script -->
+<script>
+  function checkTDS() {
+    const type = document.getElementById("incomeType").value;
+    const payer = document.getElementById("payerType").value;
+    const amount = parseFloat(document.getElementById("amount").value) || 0;
+
+    let msg = "<b>TDS Rule:</b><br>";
+
+    if (!type || !payer) {
+      msg += "Please select all options to proceed.";
+      document.getElementById("output").innerHTML = msg;
+      return;
+    }
+
+    if (type === "freelance" && payer === "company" && amount > 30000) {
+      msg += "✔️ TDS of <b>10%</b> applies under <b>Section 194J</b>.";
+    } else if (type === "contract" && payer === "company" && amount > 30000) {
+      msg += "✔️ TDS of <b>1%</b> (individual/HUF) or <b>2%</b> (others) under <b>Section 194C</b>.";
+    } else if (type === "rent" && payer === "company" && amount > 240000) {
+      msg += "✔️ TDS of <b>10%</b> under <b>Section 194I</b> applies.";
+    } else if (type === "interest" && payer === "bank" && amount > 40000) {
+      msg += "✔️ TDS of <b>10%</b> under <b>Section 194A</b> on interest income.";
+    } else if (type === "salary" && payer === "company") {
+      msg += "✔️ TDS applies as per income tax slab under <b>Section 192</b>.";
+    } else {
+      msg += "❌ No TDS likely required for this combination.";
+    }
+
+    document.getElementById("output").innerHTML = msg;
+  }
+
+  document.querySelectorAll("select, input").forEach(el => {
+    el.addEventListener("change", checkTDS);
+    el.addEventListener("input", checkTDS);
+  });
+</script>
+
+</body>
+</html>

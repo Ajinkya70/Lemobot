@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HRA Exemption Calculator – India</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #144272, #205295);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-weight: 600;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1><i class="fas fa-home"></i> HRA Exemption Calculator</h1>
+      <p class="lead">Instantly calculate your House Rent Allowance exemption as per Indian tax rules.</p>
+    </div>
+  </section>
+
+  <!-- Explanation -->
+  <section class="container my-5">
+    <div class="card p-4">
+      <h5 class="section-title mb-3">What is HRA Exemption?</h5>
+      <p class="text-muted mb-2">If you live in a rented home and receive House Rent Allowance (HRA) from your employer, you can claim tax exemption under <strong>Section 10(13A)</strong>.</p>
+      <p class="text-muted mb-2">The exempt portion is calculated as the <em>lowest</em> of the following three:</p>
+      <ul>
+        <li>Actual HRA received</li>
+        <li>50% of basic salary (metro) or 40% (non-metro)</li>
+        <li>Rent paid – 10% of basic salary</li>
+      </ul>
+      <p class="text-muted">Only the exempt amount is tax-free. The rest is added to your taxable income.</p>
+    </div>
+  </section>
+
+  <!-- Calculator Form -->
+  <section class="container my-4">
+    <div class="card p-4">
+      <h5 class="section-title mb-3">Enter Salary & Rent Details</h5>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="basic" class="form-label">Basic Salary (Monthly)</label>
+          <input type="number" class="form-control" id="basic" placeholder="e.g. 50000" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="hra" class="form-label">HRA Received (Monthly)</label>
+          <input type="number" class="form-control" id="hra" placeholder="e.g. 20000" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="rent" class="form-label">Rent Paid (Monthly)</label>
+          <input type="number" class="form-control" id="rent" placeholder="e.g. 15000" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="metro" class="form-label">City Type</label>
+          <select id="metro" class="form-select">
+            <option value="yes">Metro (Delhi, Mumbai, Kolkata, Chennai)</option>
+            <option value="no">Non-Metro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-light rounded" id="output">
+        🧮 Fill in your details above to calculate HRA exemption.
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Lemobot · HRA Exemption Tool · Free & Open for All
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function calculateHRA() {
+      const basic = parseFloat(document.getElementById("basic").value) || 0;
+      const hra = parseFloat(document.getElementById("hra").value) || 0;
+      const rent = parseFloat(document.getElementById("rent").value) || 0;
+      const metro = document.getElementById("metro").value === "yes";
+
+      const percLimit = metro ? 0.5 : 0.4;
+      const cityLabel = metro ? "50% of Basic (Metro)" : "40% of Basic (Non-Metro)";
+
+      const rule1 = hra;
+      const rule2 = percLimit * basic;
+      const rule3 = Math.max(rent - 0.1 * basic, 0);
+
+      const hraExempt = Math.min(rule1, rule2, rule3);
+      const hraTaxable = hra - hraExempt;
+
+      const annualExempt = hraExempt * 12;
+      const annualTaxable = hraTaxable * 12;
+      const totalAnnualHRA = hra * 12;
+
+      let reason = "";
+      if (hraExempt === rule1) reason = "Rule #1: Actual HRA Received";
+      else if (hraExempt === rule2) reason = `Rule #2: ${cityLabel}`;
+      else reason = "Rule #3: Rent Paid – 10% of Basic";
+
+      const resultHTML = `
+        ✅ <span class="highlight">Exempt HRA (Monthly): ₹${hraExempt.toFixed(2)}</span><br>
+        💼 Taxable HRA (Monthly): ₹${hraTaxable.toFixed(2)}<br>
+        📅 <span class="highlight">Exempt HRA (Yearly): ₹${annualExempt.toFixed(2)}</span><br>
+        🧾 Taxable HRA (Yearly): ₹${annualTaxable.toFixed(2)}<br><br>
+        💡 <i>Total Annual HRA Received:</i> ₹${totalAnnualHRA.toFixed(2)}<br>
+        📊 <i>Exemption Percentage:</i> ${(totalAnnualHRA > 0 ? (annualExempt / totalAnnualHRA * 100).toFixed(1) : 0)}%<br><br>
+        🔍 <i>Exemption based on:</i> <b>${reason}</b>
+      `;
+
+      document.getElementById("output").innerHTML = resultHTML;
+    }
+
+    document.querySelectorAll("input, select").forEach(el => {
+      el.addEventListener("input", calculateHRA);
+      el.addEventListener("change", calculateHRA);
+    });
+  </script>
+</body>
+</html>

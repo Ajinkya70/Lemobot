@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Take-Home Salary Calculator | Lemobot</title>
+
+  <!-- Bootstrap & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #144272, #205295);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-weight: 600;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <h1>Take-Home Salary Calculator</h1>
+    <p class="lead">Understand what lands in your bank after deductions — from your CTC.</p>
+  </div>
+</section>
+
+<!-- Calculator -->
+<section class="container my-5">
+  <div class="card p-4">
+    <h5 class="section-title mb-3">Enter Salary Details</h5>
+
+    <label for="ctc">Annual CTC (₹):</label>
+    <input type="number" id="ctc" placeholder="e.g. 800000" class="form-control mb-3" />
+
+    <label for="basicPercent">Basic Salary (% of CTC):</label>
+    <input type="number" id="basicPercent" placeholder="e.g. 40" class="form-control mb-3" />
+
+    <label for="hraPercent">HRA (% of CTC):</label>
+    <input type="number" id="hraPercent" placeholder="e.g. 20" class="form-control mb-3" />
+
+    <label for="pfPercent">PF Contribution (% of Basic):</label>
+    <input type="number" id="pfPercent" placeholder="e.g. 12" value="12" class="form-control mb-3" />
+
+    <label for="city">City Type:</label>
+    <select id="city" class="form-select mb-3">
+      <option value="metro">Metro</option>
+      <option value="nonmetro">Non-Metro</option>
+    </select>
+
+    <div class="bg-light p-3 rounded mt-4" id="output">
+      Fill out the details above to see your estimated monthly take-home.
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Lemobot · Take-Home Estimator Tool
+</footer>
+
+<!-- Script -->
+<script>
+  function calculateTakeHome() {
+    const ctc = parseFloat(document.getElementById("ctc").value) || 0;
+    const basicPercent = parseFloat(document.getElementById("basicPercent").value) || 0;
+    const hraPercent = parseFloat(document.getElementById("hraPercent").value) || 0;
+    const pfPercent = parseFloat(document.getElementById("pfPercent").value) || 12;
+
+    const basicAnnual = ctc * (basicPercent / 100);
+    const hraAnnual = ctc * (hraPercent / 100);
+    const pfAnnual = basicAnnual * (pfPercent / 100);
+    const gratuityAnnual = basicAnnual * 0.048;
+
+    const totalFixed = basicAnnual + hraAnnual;
+    const variablePay = ctc - totalFixed;
+
+    const totalDeductions = pfAnnual + gratuityAnnual;
+    const inHandAnnual = ctc - totalDeductions;
+    const inHandMonthly = inHandAnnual / 12;
+
+    const result = `
+      💼 <b>Total Annual CTC:</b> ₹${ctc.toLocaleString()}<br>
+      💰 <b>Estimated Monthly Take-Home:</b> <span class="highlight">₹${inHandMonthly.toFixed(0)}</span><br><br>
+      📊 <b>Deductions:</b><br>
+      • Provident Fund (Annual): ₹${pfAnnual.toFixed(0)}<br>
+      • Gratuity (Est.): ₹${gratuityAnnual.toFixed(0)}<br>
+      <hr>
+      🧾 <b>Annual In-Hand:</b> ₹${inHandAnnual.toFixed(0)}
+    `;
+    document.getElementById("output").innerHTML = result;
+  }
+
+  document.querySelectorAll("input, select").forEach(el => {
+    el.addEventListener("input", calculateTakeHome);
+    el.addEventListener("change", calculateTakeHome);
+  });
+</script>
+
+</body>
+</html>

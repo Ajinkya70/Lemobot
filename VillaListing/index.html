@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radha Niwas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+    <div class="hero-text">
+      <h1>Radha Niwas</h1>
+      <p>Your peaceful, vintage getaway</p>
+    </div>
+  </header>
+    <section class="about">
+    <h2>About Radha Niwas</h2>
+  <p>
+  Welcome to <strong>Radha Niwas</strong>, a 2-bedroom vintage villa located in the heart of <strong>Lonavala city</strong>. With its charming interiors, peaceful garden, and nostalgic atmosphere, it offers a perfect blend of heritage and comfort — ideal for couples, families, or a quiet weekend with friends.<br><br>
+  The villa includes a kitchen equipped with basic essentials such as utensils and cutlery, ideal for making tea or light snacks. While full-scale cooking facilities like a gas stove are not provided, guests will find plenty of excellent restaurants and food delivery options nearby to enjoy a variety of cuisines.
+</p>
+  </section>
+    <section class="gallery">
+    <h2>Gallery</h2>
+  <div class="gallery-grid">
+  <img src="Images/hero-bg.jpg" alt="Villa Image 1">
+  <img src="Images/Img2.jpeg" alt="Villa Image 2">
+  <img src="Images/Img3.jpeg" alt="Villa Image 3">
+  <img src="Images/Img4.jpeg" alt="Villa Image 4">
+  <img src="Images/Img5.jpeg" alt="Villa Image 5">
+  <img src="Images/Img6.jpeg" alt="Villa Image 6">
+  <img src="Images/Img7.jpeg" alt="Villa Image 7">
+  <img src="Images/Img8.jpeg" alt="Villa Image 8">
+  <img src="Images/Img9.jpeg" alt="Villa Image 9">
+  <img src="Images/Img10.jpeg" alt="Villa Image 10">
+  <img src="Images/Img11.jpeg" alt="Villa Image 11">
+  <img src="Images/Img12.jpeg" alt="Villa Image 12">
+  <img src="Images/Img13.jpeg" alt="Villa Image 13">
+  <img src="Images/Img14.jpeg" alt="Villa Image 14">
+  <img src="Images/Img15.jpeg" alt="Villa Image 15">
+  <img src="Images/Img16.jpeg" alt="Villa Image 16">
+</div>
+
+  </section>
+    <section class="features">
+    <h2>Features & Amenities</h2>
+ <div class="feature-grid">
+  <div class="feature">2 Comfortable Bedrooms</div>
+  <div class="feature">Peaceful Private Garden</div>
+  <div class="feature">Beautiful Vintage Interiors</div>
+  <div class="feature">Located in Lonavala City</div>
+  <div class="feature">Kitchen with Basic Essentials</div>
+  <div class="feature">Nearby Dining & Delivery Options</div>
+  <div class="feature">Rooftop Sit-out Area</div>
+  <div class="feature">Ideal for Families & Couples</div>
+</div>
+<section class="note">
+  <div class="note-box">
+    <p>
+      <strong>Note:</strong> The villa includes a kitchen with basic essentials like utensils, a sink, and a fridge. However, please note that a gas stove or induction is not available, so cooking full meals isn't possible. Guests often enjoy exploring the many excellent restaurants and cafés nearby or using popular food delivery services in Lonavala.
+    </p>
+  </div>
+</section>
+  </section>
+    <section class="contact">
+    <h2>Get in Touch</h2>
+    <div class="contact-box">
+      <p><strong>📧 Email:</strong> <a href="mailto:radhaniwas@example.com">radhaniwas@example.com</a></p>
+      <p><strong>📞 Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+      <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank">Message on WhatsApp</a></p>
+    </div>
+  </section>
+  <section class="map">
+  <h2>Find Us</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.13182068152656!2d73.42101268646!3d18.748661823489883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be801a0c3ede915%3A0xc8603bec169815c8!2sNew%20A1%20Icecream!5e0!3m2!1sen!2sin!4v1750429313797!5m2!1sen!2sin" 
+      width="100%" 
+      height="350" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+    <footer>
+    <p>&copy; 2025 Radha Niwas. All rights reserved.</p>
+  </footer>
+    <!-- Lightbox Popup Container -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded view">
+    </div>
+    <script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.gallery-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  }
+
+  // Close when clicking outside the image
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+    </script>
+</body>
+</html>

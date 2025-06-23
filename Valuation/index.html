@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Startup Valuation Estimator | Free Tools by Lemobot</title>
+    <meta name="description" content="Estimate your startup valuation based on revenue, burn rate, and growth. No login, no ads — just clarity.">
+    <meta name="keywords" content="Startup Valuation, Business Estimator, Lemobot Free Tools, Revenue Multiplier, Burn Rate">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/fonts/flaticon_mycollection.css">
+    <link rel="stylesheet" href="../assets/css/scrollCue.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .valuation-card
+        {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            border: 1px solid #e2e2e2;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        .valuation-card input
+        {
+            margin-bottom: 15px;
+        }
+        .valuation-result
+        {
+            font-weight: bold;
+            margin-top: 20px;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+      Lemobot<span style="color: #007bff;">.</span>
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas">
+      <span class="burger-menu"><span class="top-bar"></span><span class="middle-bar"></span><span class="bottom-bar"></span></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about/" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="/services/" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="/freetools/" class="nav-link active">Free Tools</a></li>
+        <li class="nav-item"><a href="/contact/" class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- Hero -->
+    <section class="inner-hero-warp">
+  <div class="container">
+    <div class="inner-hero-content text-center">
+      <h1>Startup Valuation Estimator</h1>
+      <p class="lead mt-2">Estimate your business worth — without login or jargon. Built for Indian founders.</p>
+      <a href="#valuation" class="default-btn mt-3">Start Estimating</a>
+    </div>
+  </div>
+</section>
+    <!-- Mission -->
+    <section class="container my-5">
+  <h2 class="section-heading text-center mb-3">Why Use This Tool?</h2>
+  <p class="text-muted fs-5" style="max-width: 900px; margin: auto;">
+    Most startup founders in India struggle to price their idea or early-stage revenue. Investors ask for metrics you’ve never heard of. This tool is designed to give you a realistic, market-based benchmark valuation — instantly.
+  </p>
+  <p class="text-muted fst-italic mb-4" style="max-width: 800px; margin: auto;">
+    No signups. No spreadsheets. Just answers.
+  </p>
+</section>
+    <!-- Why We Made This Tool -->
+    <section class="container my-5">
+  <h2 class="section-heading text-center mb-3">Why We Made This Tool</h2>
+  <div class="text-muted fs-6" style="max-width: 900px; margin: auto;">
+    <p>Most Indian founders are either guessing their valuation or depending on outdated pitch decks. But knowing what your business is worth shouldn’t require an MBA or investor access.</p>
+    <p>We built this tool for freelancers-turned-founders, D2C hustlers, SaaS dreamers, and everyone in between. It’s simple, no-nonsense, and based on real-world revenue multipliers used in early-stage investing.</p>
+    <ul>
+      <li>No logins</li>
+      <li>No NDAs</li>
+      <li>No pitch decks</li>
+      <li>No investor pressure</li>
+    </ul>
+    <p>Whether you’re preparing for funding, bootstrapping, or just curious — this tool gives you a realistic benchmark, with zero fluff.</p>
+    <p class="text-end mt-3">— Team Lemobot</p>
+  </div>
+</section>
+    <!-- Calculator -->
+    <section class="container py-5" id="valuation">
+  <div class="valuation-card">
+    <h4 class="mb-4 text-center"><i class="fas fa-rocket me-2"></i>Estimate Your Startup Valuation</h4>
+    <form id="valuationForm">
+      <label for="monthlyRevenue">Monthly Revenue (₹)</label>
+      <input type="number" class="form-control" id="monthlyRevenue" placeholder="e.g. 50000" required>
+
+      <label for="monthlyBurn">Monthly Burn Rate (₹)</label>
+      <input type="number" class="form-control" id="monthlyBurn" placeholder="e.g. 30000" required>
+
+      <label for="growthRate">Growth Rate (Annual, %)</label>
+      <input type="number" class="form-control" id="growthRate" placeholder="e.g. 30" required>
+
+      <label for="multiplier">Valuation Multiplier (x)</label>
+      <input type="number" class="form-control" id="multiplier" placeholder="e.g. 12" value="12" required>
+
+      <button type="submit" class="default-btn d-block w-100 mt-3">Calculate Valuation</button>
+    </form>
+    <div id="valuationResult" class="valuation-result d-none"></div>
+  </div>
+</section>
+    <!-- Explanation -->
+    <section class="container my-5">
+  <h2 class="section-heading text-center mb-4">How We Calculate</h2>
+  <p class="text-muted" style="max-width: 800px; margin: auto;">
+    We use a revenue-multiplier method, common for tech and D2C startups. It considers net revenue (after burn) over 12 months and adjusts based on growth. 
+    <br><br><strong>Formula:</strong> <code>(Revenue - Burn) × 12 × Multiplier</code>
+    <br>Higher growth can justify a higher multiplier.
+  </p>
+</section>
+    <!-- Inner Project Warp End -->
+    <!-- Footer Warp Start -->
+    <div class="footer-warp pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
+                        <ul class="footer-contact mt-4">
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-phone-call"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="tel:9819413273">+ (91) 9819-413-273</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-placeholder"></i>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        Unit No.7, Shivaji Nagar,<br>
+                                        Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Quick Links</h3>
+                        <ul class="footer-link">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Our Projects -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Our Services</h3>
+                        <ul class="footer-link">
+                            <li><a href="/services/">AI Chatbots</a></li>
+                            <li><a href="/services/">Machine Learning</a></li>
+                            <li><a href="/services/">WordPress</a></li>
+                            <li><a href="/services/">Shopify</a></li>
+                            <li><a href="/services/">.NET Applications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect Now -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Connect With Us</h3>
+                        <p>
+                            Have a project or question? Let's talk directly on WhatsApp.</p>
+                        <a href="https://wa.me/919819413273" target="_blank" class="default-btn d-inline-block mt-2">
+                            Connect Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Shapes -->
+    </div>
+    <!-- Footer Warp End -->
+    <!-- Copyright Warp Start -->
+    <div class="copyright-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="copy-right-content">
+                        <p>
+                            Copyright ©2025. All Rights Reserved. — Designed and Developed by <a href="https://www.lemobot.in/"
+                                target="_blank">Lemobot (OPC) Private Limited</a>
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-6 col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Warp End -->
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class="ri-arrow-up-circle-fill"></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+    <!-- Sidebar Area Start -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="flaticon-close"></i>
+            </button>
+            <div class="sidebar-warp">
+                <div class="footer-widget style2">
+                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                        Lemobot<span style="color: #007bff;">.</span> </a>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-phone-call"></i>
+                            </div>
+                            <div class="content">
+                                <a href="tel:008185659635">+ (91) 9819-413-273</a> <a href="tel:008185659635">+ (008)
+                                    186654965</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Riv1418erwood Drive, Suite 3245 CA 96052, United States</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="content">
+                                <a href="/cdn-cgi/l/email-protection#4f272a2323200f3b203d2e2b20612c2022"><span class="__cf_email__"
+                                    data-cfemail="b4dcd1d8d8dbf4c0dbc6d5d0db9ad7dbd9">[email&#160;protected]</span></a>
+                                <a href="/cdn-cgi/l/email-protection#14676164647b666054607b6675707b3a777b79"><span
+                                    class="__cf_email__" data-cfemail="3d4e484d4d524f497d49524f5c5952135e5250">[email&#160;protected]</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget style2">
+                    <h3>
+                        Get Newsletter</h3>
+                    <p>
+                        Get on the list and get 10% off your first order!</p>
+                    <form>
+                    <input type="text" class="form-control" placeholder="Enter Your Email">
+                    <button class="default-btn" type="submit">
+                        Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="footer-widget">
+                    <h3>
+                        Follow Us</h3>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Area End -->
+    <!-- Modal Area Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    <div class="input-group search-warp mb-3">
+                        <div class="input-box">
+                            <form>
+                            <input type="text" class="form-control" placeholder="Search Here" aria-describedby="button-addon2">
+                            <button class="btn" type="submit" id="button-addon2">
+                                <i class="flaticon-loupe"></i>
+                            </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Area End -->
+    <!-- Links of JS File -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/scrollCue.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+document.getElementById("valuationForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const rev = parseFloat(document.getElementById("monthlyRevenue").value);
+  const burn = parseFloat(document.getElementById("monthlyBurn").value);
+  const growth = parseFloat(document.getElementById("growthRate").value);
+  let multiplier = parseFloat(document.getElementById("multiplier").value);
+
+  if (growth > 50) multiplier += 1.5;
+  else if (growth > 30) multiplier += 1.0;
+  else if (growth > 15) multiplier += 0.5;
+
+  const net = rev - burn;
+  const annualProfit = net * 12;
+  const valuation = annualProfit * multiplier;
+
+  const resultDiv = document.getElementById("valuationResult");
+  resultDiv.classList.remove("d-none");
+  resultDiv.innerHTML = `
+    <p>📊 <strong>Estimated Valuation:</strong> ₹${valuation.toLocaleString()}</p>
+    <ul class="text-muted small mt-2">
+      <li>Monthly Revenue: ₹${rev.toLocaleString()}</li>
+      <li>Monthly Burn: ₹${burn.toLocaleString()}</li>
+      <li>Annual Profit: ₹${annualProfit.toLocaleString()}</li>
+      <li>Adjusted Multiplier: ${multiplier.toFixed(1)}x</li>
+    </ul>
+  `;
+});
+    </script>
+</body>
+</html>

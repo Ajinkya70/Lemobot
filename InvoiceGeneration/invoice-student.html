@@ -25,16 +25,20 @@
       font-size: 18px;
       cursor: pointer;
     }
-  @media print {
-  .cs-focus_bg {
-    background-color: #f1f1f1 !important; /* Light gray */
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-}
     td input.amount {
-  text-align: right;
+      text-align: right;
+    }
+    @media print {
+      .cs-focus_bg {
+        background-color: #f1f1f1 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+    .d-none {
+  display: none !important;
 }
+
   </style>
 </head>
 <body>
@@ -56,13 +60,24 @@
                         </div>
                     </div>
                 </div>
+                <!-- GST Dropdown -->
+                <div class="cs-mb10 cs-hide_print">
+                    <label>
+                        <strong contenteditable="true">GST Type:</strong></label>
+                    <select id="gstType" onchange="calculate()">
+                        <option value="cgst_sgst" selected>CGST + SGST (9% + 9%)</option>
+                        <option value="igst">IGST (18%)</option>
+                        <option value="none">No GST</option>
+                    </select>
+                </div>
                 <!-- Must Read -->
                 <div class="cs-invoice_head cs-mb10">
                     <div class="cs-invoice_left">
                         <b contenteditable="true" class="cs-primary_color">Must Read:</b>
                         <p class="cs-mb8" contenteditable="true">
                             Seating is on a first come, first served basis unless you have purchased ticket
-                            for a Reserved Seating performance.</p>
+                            for a Reserved Seating performance.
+                        </p>
                         <p>
                             <b contenteditable="true" class="cs-primary_color cs-semi_bold">Date Of Services:</b><br />
                             <input type="date" value="2025-06-19" />
@@ -127,6 +142,9 @@
                                         <th contenteditable="true" class="cs-text_right">
                                             Amount (₹)
                                         </th>
+                                        <th contenteditable="true" class="cs-text_right">
+                                            GST (₹)
+                                        </th>
                                         <th class="cs-hide_print" contenteditable="true">
                                             Action
                                         </th>
@@ -143,6 +161,9 @@
                                         <td>
                                             <input type="number" class="amount" value="60" />
                                         </td>
+                                        <td class="text-end gst">
+                                            ₹0.00
+                                        </td>
                                         <td class="cs-hide_print">
                                             <button class="btn-remove" onclick="removeRow(this)">
                                                 ×</button>
@@ -158,6 +179,9 @@
                                         <td>
                                             <input type="number" class="amount" value="120" />
                                         </td>
+                                        <td class="text-end gst">
+                                            ₹0.00
+                                        </td>
                                         <td class="cs-hide_print">
                                             <button class="btn-remove" onclick="removeRow(this)">
                                                 ×</button>
@@ -170,7 +194,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Total -->
+                <!-- Totals Section -->
                 <div class="cs-table cs-style2">
                     <div class="cs-table_responsive">
                         <table>
@@ -178,15 +202,53 @@
                                 <tr class="cs-table_baseline">
                                     <td class="cs-width_5">
                                         <b contenteditable="true" class="cs-primary_color">Pay By</b><br />
-                                          <input type="text" value="Credit Card - 236***************" />
-                                       <br />
+                                        <input type="text" value="Credit Card - 236***************" /><br />
                                         <input type="text" value="Amount: ₹113 - Due: ₹0" />
-                                        
                                     </td>
-                                    <td class="cs-width_5 cs-primary_color cs-bold cs-f16 cs-text_right" contenteditable="true">
+                                    <td class="cs-text_right">
+                                        <strong>Sub Total:</strong>
+                                    </td>
+                                    <td class="cs-text_right" id="subtotal">
+                                        ₹0.00
+                                    </td>
+                                </tr>
+                                <tr class="cs-table_baseline tax-cgst-sgst">
+                                    <td>
+                                    </td>
+                                    <td class="cs-text_right">
+                                        <strong>CGST (9%):</strong>
+                                    </td>
+                                    <td class="cs-text_right" id="cgst">
+                                        ₹0.00
+                                    </td>
+                                </tr>
+                                <tr class="cs-table_baseline tax-cgst-sgst">
+                                    <td>
+                                    </td>
+                                    <td class="cs-text_right">
+                                        <strong>SGST (9%):</strong>
+                                    </td>
+                                    <td class="cs-text_right" id="sgst">
+                                        ₹0.00
+                                    </td>
+                                </tr>
+                                <tr class="cs-table_baseline tax-igst d-none">
+                                    <td>
+                                    </td>
+                                    <td class="cs-text_right">
+                                        <strong>IGST (18%):</strong>
+                                    </td>
+                                    <td class="cs-text_right" id="igst">
+                                        ₹0.00
+                                    </td>
+                                </tr>
+                                <tr class="cs-table_baseline">
+                                    <td>
+                                    </td>
+                                    <td class="cs-text_right cs-primary_color cs-bold cs-f16" contenteditable="true">
                                         Total Amount:
                                     </td>
-                                    <td class="cs-width_2 cs-text_right cs-primary_color cs-bold cs-f16" id="totalAmount">
+                                    <td class="cs-text_right cs-primary_color cs-bold cs-f16" id="totalAmount">
                                         ₹0.00
                                     </td>
                                 </tr>
@@ -214,61 +276,85 @@
     </div>
     <!-- Script -->
     <script>
-    function convertToWords(num) {
-      const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
-        "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-        "Seventeen", "Eighteen", "Nineteen"];
-      const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
-      function toWords(n) {
-        if (n < 20) return ones[n];
-        if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
-        if (n < 1000) return ones[Math.floor(n / 100)] + " Hundred" + (n % 100 ? " and " + toWords(n % 100) : "");
-        if (n < 100000) return toWords(Math.floor(n / 1000)) + " Thousand " + toWords(n % 1000);
-        return toWords(Math.floor(n / 100000)) + " Lakh " + toWords(n % 100000);
+  function calculate() {
+    let subtotal = 0, cgst = 0, sgst = 0, igst = 0;
+    const gstType = document.getElementById("gstType")?.value || "none";
+
+    document.querySelectorAll("#item-body tr").forEach(row => {
+      const amountInput = row.querySelector(".amount");
+      const amount = parseFloat(amountInput?.value || 0);
+      let gstValue = 0;
+
+      if (gstType === "cgst_sgst" || gstType === "igst") {
+        gstValue = amount * 0.18;
       }
-      return toWords(Math.floor(num)) + " Rupees Only";
+
+      row.querySelector(".gst").textContent = gstType === "none" ? "₹0.00" : "₹" + gstValue.toFixed(2);
+      subtotal += amount;
+    });
+
+    if (gstType === "cgst_sgst") {
+      cgst = subtotal * 0.09;
+      sgst = subtotal * 0.09;
+    } else if (gstType === "igst") {
+      igst = subtotal * 0.18;
     }
 
-    function calculate() {
-      let total = 0;
-      document.querySelectorAll("#item-body .amount").forEach(input => {
-        total += parseFloat(input.value || 0);
-      });
-      const formatted = "₹" + total.toFixed(2);
-      document.getElementById("totalAmount").textContent = formatted;
-      document.getElementById("balanceDue").textContent = formatted;
-    }
+    const total = subtotal + cgst + sgst + igst;
+    document.getElementById("subtotal").textContent = "₹" + subtotal.toFixed(2);
+    document.getElementById("cgst").textContent = "₹" + cgst.toFixed(2);
+    document.getElementById("sgst").textContent = "₹" + sgst.toFixed(2);
+    document.getElementById("igst").textContent = "₹" + igst.toFixed(2);
+    document.getElementById("totalAmount").textContent = "₹" + total.toFixed(2);
+    document.getElementById("balanceDue").textContent = "₹" + total.toFixed(2);
 
-    function addRow() {
-      const row = document.createElement("tr");
-      const today = new Date().toISOString().split("T")[0];
-      row.innerHTML = `
-        <td contenteditable="true">New Item</td>
-        <td><input type="date" value="${today}" /></td>
-        <td><input type="number" class="amount" value="0" /></td>
-        <td class="cs-hide_print"><button class="btn-remove" onclick="removeRow(this)">×</button></td>
-      `;
-      document.getElementById("item-body").appendChild(row);
-      bindEvents();
-      calculate();
-    }
+// GST row toggling logic
+if (gstType === "cgst_sgst") {
+  document.querySelectorAll(".tax-cgst-sgst").forEach(el => el.classList.remove("d-none"));
+  document.querySelectorAll(".tax-igst").forEach(el => el.classList.add("d-none"));
+} else if (gstType === "igst") {
+  document.querySelectorAll(".tax-cgst-sgst").forEach(el => el.classList.add("d-none"));
+  document.querySelectorAll(".tax-igst").forEach(el => el.classList.remove("d-none"));
+} else {
+  // "none" selected
+  document.querySelectorAll(".tax-cgst-sgst").forEach(el => el.classList.add("d-none"));
+  document.querySelectorAll(".tax-igst").forEach(el => el.classList.add("d-none"));
+}
 
-    function removeRow(btn) {
-      btn.closest("tr").remove();
-      calculate();
-    }
 
-    function bindEvents() {
-      document.querySelectorAll(".amount").forEach(input => {
-        input.removeEventListener("input", calculate);
-        input.addEventListener("input", calculate);
-      });
-    }
+  }
 
-    window.onload = function () {
-      bindEvents();
-      calculate();
-    };
+  function addRow() {
+    const row = document.createElement("tr");
+    const today = new Date().toISOString().split("T")[0];
+    row.innerHTML = `
+      <td contenteditable="true">New Item</td>
+      <td><input type="date" value="${today}" /></td>
+      <td><input type="number" class="amount" value="0" /></td>
+      <td class="text-end gst">₹0.00</td>
+      <td class="cs-hide_print"><button class="btn-remove" onclick="removeRow(this)">×</button></td>
+    `;
+    document.getElementById("item-body").appendChild(row);
+    bindEvents();
+    calculate();
+  }
+
+  function removeRow(btn) {
+    btn.closest("tr").remove();
+    calculate();
+  }
+
+  function bindEvents() {
+    document.querySelectorAll(".amount").forEach(input => {
+      input.removeEventListener("input", calculate);
+      input.addEventListener("input", calculate);
+    });
+  }
+
+  window.onload = function () {
+    bindEvents();
+    calculate();
+  };
     </script>
 </body>
 </html>

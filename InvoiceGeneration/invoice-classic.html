@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -83,6 +83,7 @@
         <select id="taxType" class="form-select form-select-sm w-auto d-inline-block" onchange="calculate()">
           <option value="cgst_sgst" selected>CGST + SGST (9% + 9%)</option>
           <option value="igst">IGST (18%)</option>
+           <option value="none">No GST</option>
         </select>
       </div>
     </div>
@@ -233,15 +234,17 @@ function calculate() {
       gstAmount = baseAmount * 0.18;
       cgstTotal += baseAmount * 0.09;
       sgstTotal += baseAmount * 0.09;
-    } else {
+    } else if (taxType === "igst") {
       gstAmount = baseAmount * 0.18;
       igstTotal += gstAmount;
+    } else {
+      gstAmount = 0;
     }
 
     const total = baseAmount + gstAmount;
     subtotal += baseAmount;
 
-    row.querySelector(".gst-amount").textContent = "₹" + gstAmount.toFixed(2);
+    row.querySelector(".gst-amount").textContent = taxType === "none" ? "₹0.00" : "₹" + gstAmount.toFixed(2);
     row.querySelector(".amount").textContent = "₹" + total.toFixed(2);
   });
 
@@ -254,14 +257,19 @@ function calculate() {
   document.getElementById("igst").textContent = "₹" + igstTotal.toFixed(2);
   document.getElementById("amountWords").textContent = convertToWords(total);
 
+  // Toggle visibility of tax rows
   if (taxType === "cgst_sgst") {
     document.querySelectorAll(".tax-cgst-sgst").forEach(el => el.classList.remove("d-none"));
     document.querySelectorAll(".tax-igst").forEach(el => el.classList.add("d-none"));
-  } else {
+  } else if (taxType === "igst") {
     document.querySelectorAll(".tax-igst").forEach(el => el.classList.remove("d-none"));
     document.querySelectorAll(".tax-cgst-sgst").forEach(el => el.classList.add("d-none"));
+  } else {
+    // Hide all tax rows if No GST
+    document.querySelectorAll(".tax-cgst-sgst, .tax-igst").forEach(el => el.classList.add("d-none"));
   }
 }
+
 
 function addRow() {
   const tbody = document.getElementById("item-body");

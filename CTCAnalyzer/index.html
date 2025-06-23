@@ -1,0 +1,493 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTC Analyzer Tool | Free Salary Breakdown by Lemobot</title>
+    <meta name="description" content="Analyze your CTC and find your real in-hand salary. Built for Indian job seekers.">
+    <meta name="keywords" content="CTC Analyzer, Take Home Calculator, Salary Breakdown, Lemobot Tools, PF, Tax">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/fonts/flaticon_mycollection.css">
+    <link rel="stylesheet" href="../assets/css/scrollCue.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .valuation-card
+        {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            border: 1px solid #e2e2e2;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        .valuation-card input, .valuation-card select
+        {
+            margin-bottom: 15px;
+        }
+        .valuation-result
+        {
+            font-weight: bold;
+            margin-top: 20px;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader Area Start -->
+    <div class="preloader-area position-fixed text-center" id="preloader">
+        <div class="cube-wrapper">
+            <div class="cube-folding">
+                <span class="leaf1"></span><span class="leaf2"></span><span class="leaf3"></span>
+                <span class="leaf4"></span>
+            </div>
+            <span class="loading" data-name="Loading">Lemobot</span>
+        </div>
+    </div>
+    <!-- Preloader Area End -->
+    <!-- Top Header Warp Start -->
+    <div class="top-header-warp">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <ul>
+                            <li><i class="flaticon-phone-call"></i><a href="tel:9819413273">+ (91) 9819-413-273</a>
+                            </li>
+                            <li><i class="flaticon-email"></i><a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Header Warp End -->
+    <!-- Start Navbar Area -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+    Lemobot<span style="color: #007bff;">.</span>
+</a>
+                <button class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
+                    <span class="burger-menu">
+                        <span class="top-bar"></span>
+                        <span class="middle-bar"></span>
+                        <span class="bottom-bar"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+
+                       <li class="nav-item">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about/" class="nav-link">About <span>Us</span></a>
+                        </li>
+                          <li class="nav-item">
+                            <a href="/services/" class="nav-link">Services</a>
+                        </li>
+                          <li class="nav-item">
+                              <a href="/projects/" class="nav-link">Projects</a>
+                        </li>
+                         <li class="nav-item">
+                            <a href="/freetools/" class="nav-link active">Free Tools</a>
+                        </li>
+                          <li class="nav-item">
+                            <a href="/contact/" class="nav-link ">Contact 
+                                <span>Us</span> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!-- End Navbar Area -->
+    <!-- Start Mobile Device Navbar Area -->
+    <div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+                Lemobot<span style="color: #007bff;">.</span> </a>
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="accordion" id="navbarAccordion">
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/">Home </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/about/">About Us </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/services/">Services </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/projects/">Projects </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon active" href="/freetools/">Free Tools </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/contact/">Contact </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero -->
+    <section class="inner-hero-warp">
+  <div class="container">
+    <div class="inner-hero-content text-center">
+      <h1>CTC Analyzer Tool</h1>
+      <p class="lead mt-2">Know your real take-home salary, taxes, and deductions — instantly.</p>
+      <a href="#ctc" class="default-btn mt-3">Start Analysis</a>
+    </div>
+  </div>
+</section>
+    <!-- Why Use -->
+    <!-- Why We Built This Tool -->
+<section class="container my-5">
+  <h2 class="section-heading text-center mb-3">Why We Made This Tool</h2>
+  <div class="text-muted fs-6" style="max-width: 900px; margin: auto;">
+    <p>In India, the term <strong>“CTC” often hides more than it reveals</strong>. What looks like a ₹12 LPA offer might land you just ₹65,000/month — after deductions you didn’t even know existed.</p>
+    
+    <p>This tool was built for:</p>
+    <ul>
+      <li>🎓 <strong>Freshers</strong> negotiating their first job offer</li>
+      <li>💼 <strong>Mid-level employees</strong> switching roles</li>
+      <li>👨‍💻 <strong>Freelancers</strong> comparing full-time offers</li>
+    </ul>
+
+    <p>We don’t promise financial advice. But we do promise <strong>clarity</strong>. In a space full of jargon, hidden clauses, and “we’ll explain later,” this tool gives you real answers — now.</p>
+
+    <p class="text-end mt-3">— Team Lemobot</p>
+  </div>
+</section>
+<section class="container my-5">
+  <h2 class="section-heading text-center mb-3">Why This Tool Is Free</h2>
+  <div class="text-muted fs-6" style="max-width: 900px; margin: auto;">
+    <p>Other platforms bundle these features into premium products or paywalled HR software. We’ve made this available — for free — because we believe:</p>
+    
+    <ul>
+      <li>💡 Transparency around salary = empowered professionals</li>
+      <li>🛠️ Simple tools should be available to all, not just HRs</li>
+      <li>🚫 No ads, no upsells, no signups — just clarity</li>
+    </ul>
+
+    <p>This is part of our commitment to build clean, useful tools for real people — founders, freelancers, job seekers — not just corporates.</p>
+
+    <p class="text-end mt-3">Use it. Share it. No strings attached.</p>
+  </div>
+</section>
+
+    <!-- Calculator -->
+    <section class="container py-5" id="ctc">
+  <div class="valuation-card">
+  <h4 class="mb-4 text-center"><i class="fas fa-briefcase me-2"></i>CTC Breakdown & Take-Home Estimator</h4>
+  <form id="ctcForm">
+
+    <label>Total CTC (₹) <small class="text-muted d-block">Complete cost to company per year — includes fixed, variable, PF, bonuses, etc.</small></label>
+    <input type="number" id="Number1" class="form-control" placeholder="e.g. 900000" required>
+
+    <label>Fixed Pay (₹) <small class="text-muted d-block">Your guaranteed annual base salary (excluding bonuses, PF, or other perks).</small></label>
+    <input type="number" id="fixed" class="form-control" placeholder="e.g. 700000" required>
+
+    <label>Variable Pay (₹) <small class="text-muted d-block">Performance-based component (may be partially paid).</small></label>
+    <input type="number" id="variable" class="form-control" placeholder="e.g. 100000">
+
+    <label>Bonus / Joining Bonus (₹) <small class="text-muted d-block">One-time bonuses, retention bonuses, or yearly incentives.</small></label>
+    <input type="number" id="bonus" class="form-control" placeholder="e.g. 100000">
+
+    <label>EPF Deduction (%) <small class="text-muted d-block">Employee Provident Fund deduction — typically 12% of basic pay.</small></label>
+    <input type="number" id="epf" class="form-control" placeholder="e.g. 12" value="12">
+
+    <label>Location <small class="text-muted d-block">Used for HRA calculation — metros get higher tax relief on rent.</small></label>
+    <select id="location" class="form-control">
+      <option value="metro">Metro</option>
+      <option value="non-metro">Non-Metro</option>
+    </select>
+
+    <button type="submit" class="default-btn d-block w-100 mt-3">Calculate</button>
+  </form>
+
+  <div id="valuationResult" class="valuation-result d-none"></div>
+</div>
+
+</section>
+    <!-- Explanation -->
+    <section class="container my-5">
+  <h2 class="section-heading text-center mb-4">Understand Your Salary</h2>
+  <div class="text-muted" style="max-width: 900px; margin: auto;">
+    <h5>What is EPF, HRA, etc.?</h5>
+    <ul>
+      <li><strong>EPF</strong>: 12% of your basic pay is deducted & matched by employer.</li>
+      <li><strong>HRA</strong>: Part of your pay is tax-free if you pay rent.</li>
+    </ul>
+
+    <h5 class="mt-4">How to Increase Take-Home?</h5>
+    <ul>
+      <li>Negotiate fixed pay higher, variable lower.</li>
+      <li>Use tax-saving deductions under 80C, 80D.</li>
+    </ul>
+
+    <h5 class="mt-4">What Recruiters Don’t Say</h5>
+    <ul>
+      <li>CTC includes bonuses & hidden benefits.</li>
+      <li>Always ask for in-hand estimate before accepting.</li>
+    </ul>
+  </div>
+</section>
+    <!-- Footer Warp Start -->
+    <div class="footer-warp pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
+                        <ul class="footer-contact mt-4">
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-phone-call"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="tel:9819413273">+ (91) 9819-413-273</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-placeholder"></i>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        Unit No.7, Shivaji Nagar,<br>
+                                        Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Quick Links</h3>
+                        <ul class="footer-link">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Our Projects -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Our Services</h3>
+                        <ul class="footer-link">
+                            <li><a href="/services/">AI Chatbots</a></li>
+                            <li><a href="/services/">Machine Learning</a></li>
+                            <li><a href="/services/">WordPress</a></li>
+                            <li><a href="/services/">Shopify</a></li>
+                            <li><a href="/services/">.NET Applications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect Now -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Connect With Us</h3>
+                        <p>
+                            Have a project or question? Let's talk directly on WhatsApp.</p>
+                        <a href="https://wa.me/919819413273" target="_blank" class="default-btn d-inline-block mt-2">
+                            Connect Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Shapes -->
+    </div>
+    <!-- Footer Warp End -->
+    <!-- Copyright Warp Start -->
+    <div class="copyright-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="copy-right-content">
+                        <p>
+                            Copyright ©2025. All Rights Reserved. — Designed and Developed by <a href="https://www.lemobot.in/"
+                                target="_blank">Lemobot (OPC) Private Limited</a>
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-6 col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Warp End -->
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class="ri-arrow-up-circle-fill"></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+    <!-- Sidebar Area Start -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="flaticon-close"></i>
+            </button>
+            <div class="sidebar-warp">
+                <div class="footer-widget style2">
+                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                        Lemobot<span style="color: #007bff;">.</span> </a>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-phone-call"></i>
+                            </div>
+                            <div class="content">
+                                <a href="tel:008185659635">+ (91) 9819-413-273</a> <a href="tel:008185659635">+ (008)
+                                    186654965</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Riv1418erwood Drive, Suite 3245 CA 96052, United States</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="content">
+                                <a href="/cdn-cgi/l/email-protection#4f272a2323200f3b203d2e2b20612c2022"><span class="__cf_email__"
+                                    data-cfemail="b4dcd1d8d8dbf4c0dbc6d5d0db9ad7dbd9">[email&#160;protected]</span></a>
+                                <a href="/cdn-cgi/l/email-protection#14676164647b666054607b6675707b3a777b79"><span
+                                    class="__cf_email__" data-cfemail="3d4e484d4d524f497d49524f5c5952135e5250">[email&#160;protected]</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget style2">
+                    <h3>
+                        Get Newsletter</h3>
+                    <p>
+                        Get on the list and get 10% off your first order!</p>
+                    <form>
+                    <input type="text" class="form-control" placeholder="Enter Your Email">
+                    <button class="default-btn" type="submit">
+                        Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="footer-widget">
+                    <h3>
+                        Follow Us</h3>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Area End -->
+    <!-- Modal Area Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    <div class="input-group search-warp mb-3">
+                        <div class="input-box">
+                            <form>
+                            <input type="text" class="form-control" placeholder="Search Here" aria-describedby="button-addon2">
+                            <button class="btn" type="submit" id="button-addon2">
+                                <i class="flaticon-loupe"></i>
+                            </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Area End -->
+    <!-- Links of JS File -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/scrollCue.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+  document.getElementById("ctcForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const ctc = parseFloat(document.getElementById("ctc").value);
+    const fixed = parseFloat(document.getElementById("fixed").value);
+    const variable = parseFloat(document.getElementById("variable").value) || 0;
+    const bonus = parseFloat(document.getElementById("bonus").value) || 0;
+    const epfPercent = parseFloat(document.getElementById("epf").value) || 12;
+
+    const epf = (fixed * epfPercent) / 100;
+    const estimatedTax = fixed * 0.1; // Assumed flat 10%
+    const takeHome = fixed - epf - estimatedTax;
+    const monthly = takeHome / 12;
+
+    const output = `
+      <p><strong>📅 Monthly Take-Home:</strong> ₹${monthly.toFixed(0)}</p>
+      <p><strong>💰 Annual Take-Home:</strong> ₹${takeHome.toFixed(0)}</p>
+      <ul class="text-muted small mt-3">
+        <li>EPF Deduction: ₹${epf.toFixed(0)} / year</li>
+        <li>Estimated Tax: ₹${estimatedTax.toFixed(0)}</li>
+        <li>Variable & Bonus NOT included in above</li>
+      </ul>
+    `;
+    const resultDiv = document.getElementById("valuationResult");
+    resultDiv.classList.remove("d-none");
+    resultDiv.innerHTML = output;
+  });
+    </script>
+</body>
+</html>

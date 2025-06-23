@@ -1,250 +1,444 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lemobot Invoice Generator | Create Free GST Invoices Online</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lemobot Invoice Generator | Create Free GST Invoices Online</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Links Of CSS File -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/fonts/flaticon_mycollection.css">
+    <link rel="stylesheet" href="../assets/css/scrollCue.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        body
+        .blog-card .image
         {
-            font-family: 'Poppins' , sans-serif;
-            background-color: #f8f9fa;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 10px;
+            overflow: hidden;
         }
         
-        .hero
+        .blog-card .image img
         {
-            background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
         }
-        
-        .hero h1
+        .logo-fix
         {
-            font-weight: 700;
+            width: 80% !important;
+            height: auto;
         }
-        
-        .section-title
+        .blog-card .image .logo-text
         {
+            font-size: 1.5rem;
             font-weight: 600;
+            color: #333;
+            text-align: center;
+            text-transform: capitalize;
+            line-height: 1.3;
         }
         
-        .features i
+        .blog-card .image.no-logo
         {
-            font-size: 1.6rem;
-            margin-right: 10px;
-            color: #4364F7;
-        }
-        
-        .template-card
-        {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            padding: 20px;
-        }
-        
-        .template-card:hover
-        {
-            transform: translateY(-4px);
-        }
-        
-        .icon-box i
-        {
-            font-size: 2rem;
-            color: #4364F7;
-            margin-bottom: 15px;
-        }
-        
-        footer
-        {
-            background: #343a40;
-            color: white;
-            padding: 40px 0;
-        }
-        
-        footer a
-        {
-            color: #adb5bd;
-            text-decoration: none;
-        }
-        
-        .btn-primary
-        {
-            background-color: #4364F7;
-            border: none;
-        }
-        
-        .btn-primary:hover
-        {
-            background-color: #2c50d4;
+            background-color: #fff !important; /* Ensure white background */
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <!-- Hero -->
-    <section class="hero">
+
+<!-- Preloader -->
+<div class="preloader-area position-fixed text-center" id="preloader">
+  <div class="cube-wrapper">
+    <div class="cube-folding">
+      <span class="leaf1"></span><span class="leaf2"></span><span class="leaf3"></span><span class="leaf4"></span>
+    </div>
+    <span class="loading" data-name="Loading">Lemobot</span>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+      Lemobot<span style="color: #007bff;">.</span>
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas">
+      <span class="burger-menu"><span class="top-bar"></span><span class="middle-bar"></span><span class="bottom-bar"></span></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about/" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="/services/" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="/freetools/" class="nav-link active">Free Tools</a></li>
+        <li class="nav-item"><a href="/contact/" class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Navbar -->
+<div class="responsive-navbar offcanvas offcanvas-end" id="navbarOffcanvas">
+  <div class="offcanvas-header">
+    <a class="navbar-brand" href="/">Lemobot<span style="color: #007bff;">.</span></a>
+    <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i class="ri-close-line"></i></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="accordion" id="navbarAccordion">
+      <div class="accordion-item"><a class="accordion-button without-icon" href="/">Home</a></div>
+      <div class="accordion-item"><a class="accordion-button without-icon" href="/about/">About Us</a></div>
+      <div class="accordion-item"><a class="accordion-button without-icon" href="/services/">Services</a></div>
+      <div class="accordion-item"><a class="accordion-button without-icon" href="/projects/">Projects</a></div>
+      <div class="accordion-item"><a class="accordion-button without-icon active" href="/freetools/">Free Tools</a></div>
+      <div class="accordion-item"><a class="accordion-button without-icon" href="/contact/">Contact</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="inner-hero-warp">
   <div class="container">
-    <h1 class="display-5">Lemobot Invoice Generator</h1>
-    <p class="lead">Generate GST-ready, professional invoices instantly. No login. No hassle.</p>
-    <a href="#templates" class="btn btn-light btn-lg mt-3">Browse Invoice Templates</a>
+    <div class="inner-hero-content text-center">
+      <h1>Lemobot Invoice Generator</h1>
+      <p class="lead mt-2">Generate GST-ready, professional invoices instantly. No login. No hassle.</p>
+      <a href="#templates" class="default-btn mt-3">Browse Invoice Templates</a>
+    </div>
   </div>
 </section>
-    <!-- Features -->
-    <section class="container my-5">
+
+<!-- Features -->
+<section class="container py-5">
   <div class="text-center mb-4">
-    <h2 class="section-title">Features That Make It Powerful</h2>
+    <h2 class="section-heading">Features That Make It Powerful</h2>
     <p class="text-muted">Why thousands prefer Lemobot for fast, clean invoicing.</p>
   </div>
-  <div class="row text-center features">
+  <div class="row text-center">
     <div class="col-md-4 mb-4">
-      <i class="fas fa-file-invoice-dollar"></i>
+      <i class="fas fa-file-invoice-dollar fa-2x mb-2 text-primary"></i>
       <h5>Multiple Invoice Formats</h5>
       <p>From classic designs to colorful digital formats — choose what fits your brand.</p>
     </div>
     <div class="col-md-4 mb-4">
-      <i class="fas fa-percentage"></i>
+      <i class="fas fa-percentage fa-2x mb-2 text-primary"></i>
       <h5>Built-in GST Calculations</h5>
       <p>Handles CGST, SGST, IGST with auto-calculation & amount in words.</p>
     </div>
     <div class="col-md-4 mb-4">
-      <i class="fas fa-cloud-download-alt"></i>
+      <i class="fas fa-cloud-download-alt fa-2x mb-2 text-primary"></i>
       <h5>One-Click Print & Download</h5>
       <p>Instantly export your invoice to PDF or print it directly from browser.</p>
     </div>
   </div>
 </section>
-    <!-- Benefits -->
-    <section class="container my-5">
+
+<!-- Benefits -->
+<section class="container py-5">
   <div class="text-center mb-4">
-    <h2 class="section-title">Benefits of Using Lemobot</h2>
+    <h2 class="section-heading">Benefits of Using Lemobot</h2>
   </div>
-  <div class="row g-4">
-    <div class="col-md-4 text-center icon-box">
-      <i class="fas fa-bolt"></i>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <i class="fas fa-bolt fa-2x mb-2 text-primary"></i>
       <h5>Lightning Fast</h5>
       <p>No setup. Just open, fill in your invoice, and you're done in 3 minutes.</p>
     </div>
-    <div class="col-md-4 text-center icon-box">
-      <i class="fas fa-user-lock"></i>
+    <div class="col-md-4">
+      <i class="fas fa-user-lock fa-2x mb-2 text-primary"></i>
       <h5>No Login Needed</h5>
       <p>Privacy-friendly. We don’t store your data. Everything works right in your browser.</p>
     </div>
-    <div class="col-md-4 text-center icon-box">
-      <i class="fas fa-mobile-alt"></i>
+    <div class="col-md-4">
+      <i class="fas fa-mobile-alt fa-2x mb-2 text-primary"></i>
       <h5>Fully Responsive</h5>
       <p>Optimized for both desktop and mobile for on-the-go invoicing.</p>
     </div>
   </div>
 </section>
-    <!-- Philosophy Section -->
-    <section class="container my-5 text-center">
-  <h2 class="section-title mb-3">Why Free Forever?</h2>
-  <p class="text-muted mb-4">
+
+<!-- Philosophy -->
+<section class="container py-5 text-center">
+  <h2 class="section-heading">Why Free Forever?</h2>
+  <p class="text-muted my-3">
     We believe the tools you need to earn a living should be free and accessible — just like the internet was meant to be.
   </p>
-
-  <p class="fs-5 fst-italic fw-light mx-auto" style="max-width: 800px;">
-    “Invoices are for everyone — freelancers, students, shopkeepers, creators.
-    You shouldn't need an account, a subscription, or even tech knowledge to make one.”
-  </p>
-  <p class="text-muted mt-3 mb-4">— The Lemobot Team</p>
-
-  <p class="mt-4 small text-dark">
-    That’s why Lemobot will always be free to use. No logins. No hidden costs. No trials. Just fast, honest billing tools.
-  </p>
-
-  <hr class="my-4" style="max-width: 200px; margin-inline: auto;">
-
+  <blockquote class="fs-5 fst-italic">“Invoices are for everyone — freelancers, students, shopkeepers, creators. You shouldn't need an account, a subscription, or even tech knowledge to make one.”</blockquote>
+  <p class="text-muted">— The Lemobot Team</p>
+  <hr style="max-width: 200px; margin-inline: auto;">
   <h5 class="mt-4">Need More Power?</h5>
-  <p class="text-muted mb-3" style="max-width: 700px; margin-inline: auto;">
-    For those who need more — like saving customer records, accessing past invoices, or syncing across devices — 
-    we're building <strong>Lemobot Pro</strong>. It’s an optional upgrade designed for growing businesses.
+  <p class="text-muted mb-3">
+    For those who need more — like saving customer records, accessing past invoices, or syncing across devices — we're building <strong>Lemobot Pro</strong>.
   </p>
- <p class="small text-dark fw-semibold" style="color: #2c50d4;">
-  Invoicing stays free, <u>forever</u>.
-</p>
+  <p class="small fw-semibold text-dark">Invoicing stays free, <u>forever</u>.</p>
 </section>
-    <!-- Templates Section -->
-    <section class="container my-5" id="templates">
-  <div class="text-center mb-4">
-    <h2 class="section-title">Select an Invoice Template</h2>
-  </div>
 
+<!-- Templates -->
+<section class="container py-5" id="templates">
+  <div class="text-center mb-4">
+    <h2 class="section-heading">Select an Invoice Template</h2>
+  </div>
   <div class="row g-4">
     <div class="col-md-6">
-      <div class="template-card">
+      <div class="blog-card p-4 shadow-sm">
         <h5><i class="fa-regular fa-file-lines"></i> Classic Invoice</h5>
         <p>A simple, clear layout ideal for small businesses & freelancers.</p>
-        <a href="invoice-classic.html" target="_blank" class="btn btn-sm btn-primary">Use This Template</a>
+        <a href="invoice-classic.html" target="_blank" class="default-btn btn-sm">Use This Template</a>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="template-card">
+      <div class="blog-card p-4 shadow-sm">
         <h5><i class="fa-solid fa-receipt"></i> Modern Invoice</h5>
         <p>Clean and digital-friendly design with color highlights.</p>
-        <a href="invoice-modern.html" target="_blank" class="btn btn-sm btn-primary">Use This Template</a>
+        <a href="invoice-modern.html" target="_blank" class="default-btn btn-sm">Use This Template</a>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="template-card">
+      <div class="blog-card p-4 shadow-sm">
         <h5><i class="fa-solid fa-border-all"></i> Table Style</h5>
         <p>Best for item-heavy invoices with horizontal table layout.</p>
-        <a href="invoice-retail-hr.html" target="_blank" class="btn btn-sm btn-primary">Use This Template</a>
+        <a href="invoice-retail-hr.html" target="_blank" class="default-btn btn-sm">Use This Template</a>
       </div>
     </div>
-     <div class="col-md-6">
-      <div class="template-card">
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm">
         <h5><i class="fa-solid fa-border-all"></i> Student Billing</h5>
         <p>Best for item-heavy invoices with horizontal table layout.</p>
-        <a href="invoice-student.html" target="_blank" class="btn btn-sm btn-primary">Use This Template</a>
+        <a href="invoice-student.html" target="_blank" class="default-btn btn-sm">Use This Template</a>
       </div>
     </div>
   </div>
 </section>
-    <!-- Footer -->
-    <footer class="mt-5 text-white" style="background-color: #222;">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <h5 class="text-uppercase">Lemobot</h5>
-        <p class="small text-light">
-          Lemobot Invoice Generator helps businesses of all sizes create clean, GST-ready invoices without any login or software installation.
-        </p>
-      </div>
-      <div class="col-md-3 mb-4">
-        <h6 class="text-uppercase">Quick Links</h6>
-        <ul class="list-unstyled small">
-          <li><a href="#" class="text-light">Home</a></li>
-          <li><a href="#" class="text-light">Privacy Policy</a></li>
-          <li><a href="#" class="text-light">Terms of Use</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 mb-4">
-        <h6 class="text-uppercase">Support</h6>
-        <ul class="list-unstyled small">
-          <li>Email: <a href="mailto:lemobotofficial@gmail.com" class="text-light">lemobotofficial@gmail.com</a></li>
-          <li>Phone: +91 98194 13273</li>
-          <li>Mon–Fri: 9:00am – 6:00pm IST</li>
-        </ul>
-      </div>
-      <div class="col-md-2 mb-4 text-md-end text-center">
-        <h6 class="text-uppercase">Follow Us</h6>
-        <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+
+   <!-- Inner Project Warp End -->
+    <!-- Footer Warp Start -->
+    <div class="footer-warp pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
+                        <ul class="footer-contact mt-4">
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-phone-call"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="tel:9819413273">+ (91) 9819-413-273</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-placeholder"></i>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        Unit No.7, Shivaji Nagar,<br>
+                                        Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Quick Links</h3>
+                        <ul class="footer-link">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Our Projects -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Our Services</h3>
+                        <ul class="footer-link">
+                            <li><a href="/services/">AI Chatbots</a></li>
+                            <li><a href="/services/">Machine Learning</a></li>
+                            <li><a href="/services/">WordPress</a></li>
+                            <li><a href="/services/">Shopify</a></li>
+                            <li><a href="/services/">.NET Applications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect Now -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Connect With Us</h3>
+                        <p>
+                            Have a project or question? Let's talk directly on WhatsApp.</p>
+                        <a href="https://wa.me/919819413273" target="_blank" class="default-btn d-inline-block mt-2">
+                            Connect Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Shapes -->
     </div>
-    <hr class="border-secondary" />
-    <div class="text-center small text-light">
-       &copy; 2025 Lemobot (OPC) Pvt. Ltd · All rights reserved · Built with ❤️ in India · Empowering open & accessible invoicing for everyone.
+    <!-- Footer Warp End -->
+    <!-- Copyright Warp Start -->
+    <div class="copyright-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="copy-right-content">
+                        <p>
+                            Copyright ©2025. All Rights Reserved. — Designed and Developed by <a href="https://www.lemobot.in/"
+                                target="_blank">Lemobot (OPC) Private Limited</a>
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-6 col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
     </div>
-  </div>
-</footer>
+    <!-- Copyright Warp End -->
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class="ri-arrow-up-circle-fill"></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+    <!-- Sidebar Area Start -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="flaticon-close"></i>
+            </button>
+            <div class="sidebar-warp">
+                <div class="footer-widget style2">
+                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                        Lemobot<span style="color: #007bff;">.</span> </a>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-phone-call"></i>
+                            </div>
+                            <div class="content">
+                                <a href="tel:008185659635">+ (91) 9819-413-273</a> <a href="tel:008185659635">+ (008)
+                                    186654965</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Riv1418erwood Drive, Suite 3245 CA 96052, United States</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="content">
+                                <a href="/cdn-cgi/l/email-protection#4f272a2323200f3b203d2e2b20612c2022"><span class="__cf_email__"
+                                    data-cfemail="b4dcd1d8d8dbf4c0dbc6d5d0db9ad7dbd9">[email&#160;protected]</span></a>
+                                <a href="/cdn-cgi/l/email-protection#14676164647b666054607b6675707b3a777b79"><span
+                                    class="__cf_email__" data-cfemail="3d4e484d4d524f497d49524f5c5952135e5250">[email&#160;protected]</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget style2">
+                    <h3>
+                        Get Newsletter</h3>
+                    <p>
+                        Get on the list and get 10% off your first order!</p>
+                    <form>
+                    <input type="text" class="form-control" placeholder="Enter Your Email">
+                    <button class="default-btn" type="submit">
+                        Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="footer-widget">
+                    <h3>
+                        Follow Us</h3>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Area End -->
+    <!-- Modal Area Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    <div class="input-group search-warp mb-3">
+                        <div class="input-box">
+                            <form>
+                            <input type="text" class="form-control" placeholder="Search Here" aria-describedby="button-addon2">
+                            <button class="btn" type="submit" id="button-addon2">
+                                <i class="flaticon-loupe"></i>
+                            </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Area End -->
+    <!-- Links of JS File -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/scrollCue.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
 </body>
 </html>

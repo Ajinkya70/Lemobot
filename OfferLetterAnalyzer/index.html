@@ -1,0 +1,445 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offer Letter Analyzer | Free Tool by Lemobot</title>
+  <meta name="description" content="Analyze your offer letter and find the truth behind fixed pay, bonus structure, and red flags.">
+  <meta name="keywords" content="Offer Letter Analyzer, CTC Breakdown, Salary Analysis, Fixed Pay, Lemobot Tools">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/fonts/flaticon_mycollection.css">
+    <link rel="stylesheet" href="../assets/css/scrollCue.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+        .blog-card .image
+        {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 10px;
+            overflow: hidden;
+        }
+        
+        .blog-card .image img
+        {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .logo-fix
+        {
+            width: 80% !important;
+            height: auto;
+        }
+        .blog-card .image .logo-text
+        {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            text-transform: capitalize;
+            line-height: 1.3;
+        }
+        
+        .blog-card .image.no-logo
+        {
+            background-color: #fff !important; /* Ensure white background */
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+ <!-- Preloader Area Start -->
+    <div class="preloader-area position-fixed text-center" id="preloader">
+        <div class="cube-wrapper">
+            <div class="cube-folding">
+                <span class="leaf1"></span><span class="leaf2"></span><span class="leaf3"></span>
+                <span class="leaf4"></span>
+            </div>
+            <span class="loading" data-name="Loading">Lemobot</span>
+        </div>
+    </div>
+    <!-- Preloader Area End -->
+    <!-- Top Header Warp Start -->
+    <div class="top-header-warp">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <ul>
+                            <li><i class="flaticon-phone-call"></i><a href="tel:9819413273">+ (91) 9819-413-273</a>
+                            </li>
+                            <li><i class="flaticon-email"></i><a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Header Warp End -->
+    <!-- Start Navbar Area -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+    Lemobot<span style="color: #007bff;">.</span>
+</a>
+                <button class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
+                    <span class="burger-menu">
+                        <span class="top-bar"></span>
+                        <span class="middle-bar"></span>
+                        <span class="bottom-bar"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+
+                       <li class="nav-item">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about/" class="nav-link">About <span>Us</span></a>
+                        </li>
+                          <li class="nav-item">
+                            <a href="/services/" class="nav-link">Services</a>
+                        </li>
+                          <li class="nav-item">
+                              <a href="/projects/" class="nav-link">Projects</a>
+                        </li>
+                         <li class="nav-item">
+                            <a href="/freetools/" class="nav-link active">Free Tools</a>
+                        </li>
+                          <li class="nav-item">
+                            <a href="/contact/" class="nav-link ">Contact 
+                                <span>Us</span> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!-- End Navbar Area -->
+    <!-- Start Mobile Device Navbar Area -->
+    <div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+                Lemobot<span style="color: #007bff;">.</span> </a>
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="accordion" id="navbarAccordion">
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/">Home </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/about/">About Us </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/services/">Services </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/projects/">Projects </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon active" href="/freetools/">Free Tools </a>
+                </div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/contact/">Contact </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- Hero Section -->
+  <section class="inner-hero-warp">
+    <div class="container">
+      <div class="inner-hero-content text-center">
+        <h1>Offer Letter Analyzer</h1>
+        <p class="lead mt-2">Uncover what's fixed, what's risky, and what's just fluff — instantly.</p>
+        <a href="#analyzer" class="default-btn mt-3">Start Analysis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why We Made This Tool -->
+  <section class="container my-5">
+    <h2 class="section-heading text-center mb-3">Why We Made This Tool</h2>
+    <div class="text-muted fs-6" style="max-width: 900px; margin: auto;">
+      <p>Companies love to show a big CTC number — but that ₹20 LPA may be mostly variable, deferred bonuses, or ESOPs you’ll never see.</p>
+      <p>This tool helps you decode:</p>
+      <ul>
+        <li>💼 How much is truly fixed and paid monthly</li>
+        <li>🧾 What’s dependent on performance or hidden clauses</li>
+        <li>🚩 Whether an offer is stable — or risky</li>
+      </ul>
+      <p>Built for job seekers tired of HR jargon and surprises.</p>
+      <p class="text-end mt-3">— Team Lemobot</p>
+    </div>
+  </section>
+
+  <!-- Why Free -->
+  <section class="container my-5">
+    <h2 class="section-heading text-center mb-3">Why This Tool Is Free</h2>
+    <div class="text-muted fs-6" style="max-width: 900px; margin: auto;">
+      <p>Other sites charge for similar tools or lock them behind logins.</p>
+      <ul>
+        <li>🔓 No login. No ads. No upsell.</li>
+        <li>🛠️ Rule-based and clean — no AI fluff.</li>
+        <li>📖 Transparency helps job seekers make better decisions.</li>
+      </ul>
+      <p>It’s our way of giving back to the hiring ecosystem.</p>
+    </div>
+  </section>
+
+  <!-- Analyzer Tool -->
+  <section class="container py-5" id="analyzer">
+    <div class="valuation-card">
+      <h4 class="mb-4 text-center"><i class="fas fa-file-alt me-2"></i>Offer Letter Breakdown</h4>
+      <form id="offerForm">
+        <label>Total CTC (₹) <small class="text-muted d-block">Total cost to company, including all components.</small></label>
+        <input type="number" id="ctc" class="form-control" placeholder="e.g. 1200000" required>
+
+        <label>Fixed Pay (₹) <small class="text-muted d-block">Guaranteed annual salary (paid monthly).</small></label>
+        <input type="number" id="fixed" class="form-control" placeholder="e.g. 850000" required>
+
+        <label>Variable Pay (₹) <small class="text-muted d-block">Performance-based component.</small></label>
+        <input type="number" id="variable" class="form-control" placeholder="e.g. 250000">
+
+        <label>Joining Bonus / One-time (₹) <small class="text-muted d-block">One-time bonus, usually tied to lock-in clauses.</small></label>
+        <input type="number" id="bonus" class="form-control" placeholder="e.g. 100000">
+
+        <button type="submit" class="default-btn d-block w-100 mt-3">Analyze Offer</button>
+      </form>
+
+      <div id="analysisResult" class="valuation-result d-none"></div>
+    </div>
+  </section>
+
+  <!-- Footer Warp Start -->
+    <div class="footer-warp pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
+                        <ul class="footer-contact mt-4">
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-phone-call"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="tel:9819413273">+ (91) 9819-413-273</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-placeholder"></i>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        Unit No.7, Shivaji Nagar,<br>
+                                        Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Quick Links</h3>
+                        <ul class="footer-link">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Our Projects -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Our Services</h3>
+                        <ul class="footer-link">
+                            <li><a href="/services/">AI Chatbots</a></li>
+                            <li><a href="/services/">Machine Learning</a></li>
+                            <li><a href="/services/">WordPress</a></li>
+                            <li><a href="/services/">Shopify</a></li>
+                            <li><a href="/services/">.NET Applications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect Now -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Connect With Us</h3>
+                        <p>
+                            Have a project or question? Let's talk directly on WhatsApp.</p>
+                        <a href="https://wa.me/919819413273" target="_blank" class="default-btn d-inline-block mt-2">
+                            Connect Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Shapes -->
+    </div>
+    <!-- Footer Warp End -->
+    <!-- Copyright Warp Start -->
+    <div class="copyright-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="copy-right-content">
+                        <p>
+                            Copyright ©2025. All Rights Reserved. — Designed and Developed by <a href="https://www.lemobot.in/"
+                                target="_blank">Lemobot (OPC) Private Limited</a>
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-6 col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Warp End -->
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class="ri-arrow-up-circle-fill"></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+    <!-- Sidebar Area Start -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="flaticon-close"></i>
+            </button>
+            <div class="sidebar-warp">
+                <div class="footer-widget style2">
+                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                        Lemobot<span style="color: #007bff;">.</span> </a>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-phone-call"></i>
+                            </div>
+                            <div class="content">
+                                <a href="tel:008185659635">+ (91) 9819-413-273</a> <a href="tel:008185659635">+ (008)
+                                    186654965</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Riv1418erwood Drive, Suite 3245 CA 96052, United States</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="content">
+                                <a href="/cdn-cgi/l/email-protection#4f272a2323200f3b203d2e2b20612c2022"><span class="__cf_email__"
+                                    data-cfemail="b4dcd1d8d8dbf4c0dbc6d5d0db9ad7dbd9">[email&#160;protected]</span></a>
+                                <a href="/cdn-cgi/l/email-protection#14676164647b666054607b6675707b3a777b79"><span
+                                    class="__cf_email__" data-cfemail="3d4e484d4d524f497d49524f5c5952135e5250">[email&#160;protected]</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget style2">
+                    <h3>
+                        Get Newsletter</h3>
+                    <p>
+                        Get on the list and get 10% off your first order!</p>
+                    <form>
+                    <input type="text" class="form-control" placeholder="Enter Your Email">
+                    <button class="default-btn" type="submit">
+                        Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="footer-widget">
+                    <h3>
+                        Follow Us</h3>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Area End -->
+    <!-- Modal Area Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    <div class="input-group search-warp mb-3">
+                        <div class="input-box">
+                            <form>
+                            <input type="text" class="form-control" placeholder="Search Here" aria-describedby="button-addon2">
+                            <button class="btn" type="submit" id="button-addon2">
+                                <i class="flaticon-loupe"></i>
+                            </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Area End -->
+    <!-- Links of JS File -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/scrollCue.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+</body>
+</html>

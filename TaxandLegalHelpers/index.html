@@ -1,79 +1,135 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tax & Legal Help Tools | Free Calculators by Lemobot</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-    }
-    .hero {
-      background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-weight: 700;
-    }
-    .section-title {
-      font-weight: 600;
-    }
-    .tool-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      padding: 20px;
-      transition: 0.3s;
-      height: 100%;
-    }
-    .tool-card:hover {
-      transform: translateY(-5px);
-    }
-    .tool-card i {
-      font-size: 2rem;
-      color: #4364F7;
-      margin-bottom: 10px;
-    }
-    .btn-primary {
-      background-color: #4364F7;
-      border: none;
-    }
-    .btn-primary:hover {
-      background-color: #2c50d4;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 40px 0;
-    }
-    footer a {
-      color: #adb5bd;
-      text-decoration: none;
-    }
-    p, li {
-      text-align: justify;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tax & Legal Help Tools | Free Calculators by Lemobot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Links Of CSS File -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/fonts/flaticon_mycollection.css">
+    <link rel="stylesheet" href="../assets/css/scrollCue.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .blog-card .image
+        {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 10px;
+            overflow: hidden;
+        }
+        
+        .blog-card .image img
+        {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .logo-fix
+        {
+            width: 80% !important;
+            height: auto;
+        }
+        .blog-card .image .logo-text
+        {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            text-transform: capitalize;
+            line-height: 1.3;
+        }
+        
+        .blog-card .image.no-logo
+        {
+            background-color: #fff !important; /* Ensure white background */
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-
-<!-- Hero -->
-<section class="hero">
+    <!-- Preloader -->
+    <div class="preloader-area position-fixed text-center" id="preloader">
+        <div class="cube-wrapper">
+            <div class="cube-folding">
+                <span class="leaf1"></span><span class="leaf2"></span><span class="leaf3"></span>
+                <span class="leaf4"></span>
+            </div>
+            <span class="loading" data-name="Loading">Lemobot</span>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: black;">
+      Lemobot<span style="color: #007bff;">.</span>
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas">
+      <span class="burger-menu"><span class="top-bar"></span><span class="middle-bar"></span><span class="bottom-bar"></span></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about/" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="/services/" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="/freetools/" class="nav-link active">Free Tools</a></li>
+        <li class="nav-item"><a href="/contact/" class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- Mobile Navbar -->
+    <div class="responsive-navbar offcanvas offcanvas-end" id="navbarOffcanvas">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="/">Lemobot<span style="color: #007bff;">.</span></a>
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="accordion" id="navbarAccordion">
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/">Home</a></div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/about/">About Us</a></div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/services/">Services</a></div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/projects/">Projects</a></div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon active" href="/freetools/">Free Tools</a></div>
+                <div class="accordion-item">
+                    <a class="accordion-button without-icon" href="/contact/">Contact</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="inner-hero-warp">
   <div class="container">
-    <h1 class="display-5">Tax & Legal Help Tools</h1>
-    <p1 class="lead">Free, simple, and accurate financial tools — brought to you by Lemobot.</p>
-    <a href="#tools" class="btn btn-light btn-lg mt-3">Explore Tools</a>
+    <div class="inner-hero-content text-center">
+      <h1>Tax & Legal Help Tools
+</h1>
+      <p class="lead mt-2">Free, simple, and accurate financial tools — brought to you by Lemobot.
+
+</p>
+      <a href="#tools" class="default-btn mt-3">Explore Tools</a>
+    </div>
   </div>
 </section>
-
-<!-- Mission -->
-<section class="container my-5">
-  <h2 class="section-title text-center mb-3">Our Mission</h2>
+    <!-- Mission -->
+    <section class="container my-5">
+  <h2 class="section-heading text-center mb-3">Our Mission</h2>
   <p class="text-muted fs-5" style="max-width: 900px; margin: auto;">
     We believe that tools meant to help you earn, calculate, or comply with basic financial obligations should be free — just like the internet was meant to be.
     Lemobot’s mission is to empower freelancers, employees, students, and small business owners across India with no-login, privacy-friendly, zero-cost tools
@@ -83,10 +139,9 @@
     We believe tools for understanding your income should be just as free as tools for spending it.
   </p>
 </section>
-
-<!-- Why Free -->
-<section class="container my-5">
-  <h2 class="section-title text-center mb-3">Why We Made This Free</h2>
+    <!-- Why Free -->
+    <section class="container my-5">
+  <h2 class="section-heading text-center mb-3">Why We Made This Free</h2>
   <div class="text-muted fs-6" style="max-width: 900px; margin: auto;">
     <p>In India, most people either overpay taxes or avoid thinking about them altogether — not because they don’t care, but because the systems are intimidating.
     Filing income tax, understanding HRA, or even making a clean GST invoice shouldn’t feel like solving a puzzle.</p>
@@ -101,21 +156,18 @@
     <p class="text-end mt-3">— The Lemobot Team</p>
   </div>
 </section>
-
-<!-- About Lemobot -->
-<section class="container my-5">
-  <h2 class="section-title text-center mb-3">About Lemobot</h2>
+    <!-- About Lemobot -->
+    <section class="container my-5">
+  <h2 class="section-heading text-center mb-3">About Lemobot</h2>
   <p class="text-muted fs-5" style="max-width: 900px; margin: auto;">
     Lemobot is an Indian IT initiative focused on building honest, accessible tools for the everyday individual. Whether you're salaried, self-employed, a parent, a student, or just figuring it out — we create experiences that don’t require apps, accounts, or explanations. We believe open finance is good finance — and that India deserves financial tools that feel like utilities, not traps.
   </p>
 </section>
-
-<p class="text-muted fst-italic mb-4" style="max-width: 800px; margin: auto;">
-  These tools are for everyone — not just accountants. No jargon. No downloads. Just help.
-</p>
-<!-- Help Section: Which Tool Should I Use? -->
-<!-- Help Section: Which Tool Should I Use? -->
-<section class="container my-5">
+    <p class="text-muted fst-italic mb-4" style="max-width: 800px; margin: auto;">
+        These tools are for everyone — not just accountants. No jargon. No downloads. Just
+        help.</p>
+    <!-- Which Tool Should I Use -->
+    <section class="container my-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
       <div class="card border-info shadow-sm p-4">
@@ -123,10 +175,8 @@
           <i class="fas fa-question-circle fa-2x text-info me-3"></i>
           <h4 class="mb-0 text-info">Which Tool Should I Use?</h4>
         </div>
-        <p class="text-muted" style="text-align: justify;">
-          Not sure where to start? Here's a quick guide to help you choose the right calculator based on your needs:
-        </p>
-        <ul class="mt-3 ps-3" style="text-align: justify;">
+        <p class="text-muted">Not sure where to start? Here's a quick guide to help you choose the right calculator based on your needs:</p>
+        <ul class="mt-3 ps-3">
           <li><b>Income Tax Estimator</b> – Compare old vs new regime. Ideal for annual planning.</li>
           <li><b>HRA Exemption Calculator</b> – Calculate exempt HRA if you live in a rented home.</li>
           <li><b>Take-Home Salary Calculator</b> – Estimate your actual in-hand pay from CTC.</li>
@@ -141,41 +191,295 @@
     </div>
   </div>
 </section>
-
-
-
-<!-- Tools Section -->
-<section class="container my-5" id="tools">
+    <!-- Tools -->
+<section class="container py-5" id="tools">
   <div class="text-center mb-4">
-    <h2 class="section-title">Available Calculators</h2>
-    <p1 class="text-muted">Use any tool below. No login, no ads — just tools that work.</p>
+    <h2 class="section-heading">Available Calculators</h2>
+    <p class="text-muted">Use any tool below. No login, no ads — just tools that work.</p>
   </div>
   <div class="row g-4">
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-scale-balanced"></i><h5>Income Tax Estimator</h5><p>Compare Old vs New tax regime. Get auto suggestions and save better.</p><a href="income-tax.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-house-user"></i><h5>HRA Exemption Calculator</h5><p>Calculate how much HRA you can claim as exempt based on rent, salary and city.</p><a href="hra.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-wallet"></i><h5>Take-Home Salary Calculator</h5><p>Estimate your monthly in-hand salary after deductions like PF, HRA, and tax.</p><a href="take-home-salary-calculator.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-calendar-alt"></i><h5>Advance Tax Estimator</h5><p>Plan your quarterly advance tax payments with accurate calculations and due dates.</p><a href="advance-tax-estimator.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-search-dollar"></i><h5>TDS Finder Tool</h5><p>Confused about TDS? See if it applies to your income and how much is deducted.</p><a href="tds-finder.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-umbrella-beach"></i><h5>80C Deduction Optimizer</h5><p>Check how much of your 80C limit you’ve used — and how to fill the gap smartly.</p><a href="deduction-80c-optimizer.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-heartbeat"></i><h5>80D Deduction Optimizer</h5><p>Estimate your tax savings from health insurance premiums paid for self and family.</p><a href="deduction-80d-optimizer.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-bell"></i><h5>Proof Submission Reminder</h5><p>Never miss your company’s investment proof deadlines. Get checklist + reminders.</p><a href="proof-submission-reminder.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
-    <div class="col-md-6"><div class="tool-card text-center"><i class="fas fa-home"></i><h5>Home Loan Tax Benefit Estimator</h5><p>Find out your yearly tax saving under 80C & Section 24 for home loan repayments.</p><a href="home-loan-tax-benefit.html" class="btn btn-sm btn-primary" target="_blank">Use Tool</a></div></div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-scale-balanced me-2"></i>Income Tax Estimator</h5>
+        <p>Compare Old vs New tax regime. Get auto suggestions and save better.</p>
+        <a href="income-tax.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-house-user me-2"></i>HRA Exemption Calculator</h5>
+        <p>Calculate how much HRA you can claim as exempt based on rent, salary and city.</p>
+        <a href="hra.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-wallet me-2"></i>Take-Home Salary Calculator</h5>
+        <p>Estimate your monthly in-hand salary after deductions like PF, HRA, and tax.</p>
+        <a href="take-home-salary-calculator.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-calendar-alt me-2"></i>Advance Tax Estimator</h5>
+        <p>Plan your quarterly advance tax payments with accurate calculations and due dates.</p>
+        <a href="advance-tax-estimator.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-search-dollar me-2"></i>TDS Finder Tool</h5>
+        <p>Confused about TDS? See if it applies to your income and how much is deducted.</p>
+        <a href="tds-finder.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-umbrella-beach me-2"></i>80C Deduction Optimizer</h5>
+        <p>Check how much of your 80C limit you’ve used — and how to fill the gap smartly.</p>
+        <a href="deduction-80c-optimizer.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-heartbeat me-2"></i>80D Deduction Optimizer</h5>
+        <p>Estimate your tax savings from health insurance premiums paid for self and family.</p>
+        <a href="deduction-80d-optimizer.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-bell me-2"></i>Proof Submission Reminder</h5>
+        <p>Never miss your company’s investment proof deadlines. Get checklist + reminders.</p>
+        <a href="proof-submission-reminder.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="blog-card p-4 shadow-sm text-center">
+        <h5><i class="fas fa-home me-2"></i>Home Loan Tax Benefit Estimator</h5>
+        <p>Find out your yearly tax saving under 80C & Section 24 for home loan repayments.</p>
+        <a href="home-loan-tax-benefit.html" target="_blank" class="default-btn btn-sm">Use Tool</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="mt-5 text-white">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-md-4 mb-4"><h5 class="text-uppercase">Lemobot</h5><p class="small text-light">Lemobot builds honest tools that serve people first — for clarity, not profit. Built in India for everyone.</p></div>
-      <div class="col-md-3 mb-4"><h6 class="text-uppercase">Quick Links</h6><ul class="list-unstyled small"><li><a href="https://lemobot.in" class="text-light" target="_blank">Lemobot Home</a></li><li><a href="#" class="text-light">Privacy Policy</a></li><li><a href="#" class="text-light">Terms of Use</a></li></ul></div>
-      <div class="col-md-3 mb-4"><h6 class="text-uppercase">Support</h6><ul class="list-unstyled small"><li>Email: <a href="mailto:lemobotofficial@gmail.com" class="text-light">lemobotofficial@gmail.com</a></li><li>Phone: +91 98194 13273</li><li>Mon–Fri: 9:00am – 6:00pm IST</li></ul></div>
-      <div class="col-md-2 mb-4 text-md-end text-center"><h6 class="text-uppercase">Follow Us</h6><a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a><a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a><a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a></div>
+    <!-- Inner Project Warp End -->
+    <!-- Footer Warp Start -->
+    <div class="footer-warp pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                            Lemobot<span style="color: #007bff;">.</span> </a>
+                        <ul class="footer-contact mt-4">
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-phone-call"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="tel:9819413273">+ (91) 9819-413-273</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="mailto:lemobotofficial@gmail.com">lemobotofficial@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-placeholder"></i>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        Unit No.7, Shivaji Nagar,<br>
+                                        Aarey Milk Colony, Goregaon (East), Mumbai 400065</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Quick Links</h3>
+                        <ul class="footer-link">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Our Projects -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Our Services</h3>
+                        <ul class="footer-link">
+                            <li><a href="/services/">AI Chatbots</a></li>
+                            <li><a href="/services/">Machine Learning</a></li>
+                            <li><a href="/services/">WordPress</a></li>
+                            <li><a href="/services/">Shopify</a></li>
+                            <li><a href="/services/">.NET Applications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect Now -->
+                <div class="col-lg-3 col-sm-6" data-cue="fadeIn">
+                    <div class="footer-widget">
+                        <h3>
+                            Connect With Us</h3>
+                        <p>
+                            Have a project or question? Let's talk directly on WhatsApp.</p>
+                        <a href="https://wa.me/919819413273" target="_blank" class="default-btn d-inline-block mt-2">
+                            Connect Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Shapes -->
     </div>
-    <hr class="border-secondary" />
-    <div class="text-center small text-light">&copy; 2025 Lemobot (OPC) Pvt. Ltd · All rights reserved · Built in India with ❤️</div>
-  </div>
-</footer>
-
+    <!-- Footer Warp End -->
+    <!-- Copyright Warp Start -->
+    <div class="copyright-warp">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="copy-right-content">
+                        <p>
+                            Copyright ©2025. All Rights Reserved. — Designed and Developed by <a href="https://www.lemobot.in/"
+                                target="_blank">Lemobot (OPC) Private Limited</a>
+                        </p>
+                    </div>
+                </div>
+                <!--  <div class="col-lg-6 col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Warp End -->
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class="ri-arrow-up-circle-fill"></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+    <!-- Sidebar Area Start -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="flaticon-close"></i>
+            </button>
+            <div class="sidebar-warp">
+                <div class="footer-widget style2">
+                    <a class="navbar-brand" href="/" style="font-size: 32px; font-weight: bold; color: white;">
+                        Lemobot<span style="color: #007bff;">.</span> </a>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-phone-call"></i>
+                            </div>
+                            <div class="content">
+                                <a href="tel:008185659635">+ (91) 9819-413-273</a> <a href="tel:008185659635">+ (008)
+                                    186654965</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Riv1418erwood Drive, Suite 3245 CA 96052, United States</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="content">
+                                <a href="/cdn-cgi/l/email-protection#4f272a2323200f3b203d2e2b20612c2022"><span class="__cf_email__"
+                                    data-cfemail="b4dcd1d8d8dbf4c0dbc6d5d0db9ad7dbd9">[email&#160;protected]</span></a>
+                                <a href="/cdn-cgi/l/email-protection#14676164647b666054607b6675707b3a777b79"><span
+                                    class="__cf_email__" data-cfemail="3d4e484d4d524f497d49524f5c5952135e5250">[email&#160;protected]</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget style2">
+                    <h3>
+                        Get Newsletter</h3>
+                    <p>
+                        Get on the list and get 10% off your first order!</p>
+                    <form>
+                    <input type="text" class="form-control" placeholder="Enter Your Email">
+                    <button class="default-btn" type="submit">
+                        Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="footer-widget">
+                    <h3>
+                        Follow Us</h3>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill">
+                        </i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i>
+                        </a></li>
+                        <li><a href="https://google.com/" target="_blank"><i class="ri-google-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Area End -->
+    <!-- Modal Area Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    <div class="input-group search-warp mb-3">
+                        <div class="input-box">
+                            <form>
+                            <input type="text" class="form-control" placeholder="Search Here" aria-describedby="button-addon2">
+                            <button class="btn" type="submit" id="button-addon2">
+                                <i class="flaticon-loupe"></i>
+                            </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Area End -->
+    <!-- Links of JS File -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/scrollCue.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
 </body>
 </html>
